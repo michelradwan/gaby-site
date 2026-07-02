@@ -1636,47 +1636,21 @@
                 pageScrollCurrent = pageScrollTarget;
             }
 
-            // EFEITO PARALAXE PROFISSIONAL NO HERO
-            if (!prefersReducedMotion) {
-                var opacityVal = Math.max(1 - (heroScrollCurrent * 1.3), 0); 
-                
-                var title = heroHeader.querySelector('h1');
-                var loc = heroHeader.querySelector('.hero-location');
-                var tags = heroHeader.querySelectorAll('.hero-tagline');
-                var cta = heroHeader.querySelector('.btn-hero-booking');
-                
-                if (title) title.style.transform = 'translate3d(0, ' + (heroScrollCurrent * 160) + 'px, 0)';
-                if (loc) loc.style.transform = 'translate3d(0, ' + (heroScrollCurrent * 120) + 'px, 0)';
-                if (tags) {
-                    tags.forEach(function(el) {
-                        el.style.transform = 'translate3d(0, ' + (heroScrollCurrent * 80) + 'px, 0)';
-                    });
-                }
-                if (cta) cta.style.transform = 'translate3d(0, ' + (heroScrollCurrent * 40) + 'px, 0)';
-                
-                heroHeader.style.opacity = opacityVal;
-                
-                if (opacityVal === 0) {
-                    heroHeader.style.display = 'none';
-                } else {
-                    heroHeader.style.display = '';
-                }
-            } else {
-                heroHeader.style.opacity = 1;
-                heroHeader.style.display = '';
-                var title = heroHeader.querySelector('h1');
-                var loc = heroHeader.querySelector('.hero-location');
-                var tags = heroHeader.querySelectorAll('.hero-tagline');
-                var cta = heroHeader.querySelector('.btn-hero-booking');
-                if (title) title.style.transform = 'none';
-                if (loc) loc.style.transform = 'none';
-                if (tags) {
-                    tags.forEach(function(el) {
-                        el.style.transform = 'none';
-                    });
-                }
-                if (cta) cta.style.transform = 'none';
+            // EFEITO PARALAXE PROFISSIONAL NO HERO REMOVIDO
+            heroHeader.style.opacity = 1;
+            heroHeader.style.display = '';
+            var title = heroHeader.querySelector('h1');
+            var loc = heroHeader.querySelector('.hero-location');
+            var tags = heroHeader.querySelectorAll('.hero-tagline');
+            var cta = heroHeader.querySelector('.btn-hero-booking');
+            if (title) title.style.transform = 'none';
+            if (loc) loc.style.transform = 'none';
+            if (tags) {
+                tags.forEach(function(el) {
+                    el.style.transform = 'none';
+                });
             }
+            if (cta) cta.style.transform = 'none';
 
             if (!isMobile) {
                 btnCurrX += (btnTargetX - btnCurrX) * 0.12;
