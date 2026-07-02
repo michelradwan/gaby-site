@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabrielly Makeup — Editorial &amp; Bridal Luxe</title>
+    <meta name="description" content="Gabrielly Makeup — Alta maquiagem editorial, noivas e eventos de luxo em Acaraú, Ceará. Realce a sua essência com sofisticação.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Gabrielly Makeup — Editorial &amp; Bridal Luxe">
+    <meta property="og:description" content="Realçando a sua essência, revelando o seu brilho e esculpindo obras de arte na pele. Atendimento premium em Acaraú, Ceará.">
+    <meta property="og:image" content="images/foto gaby 02.jpeg">
+    <meta property="og:url" content="https://gabriellymmakeup.com.br">
+
+    <!-- Favicon SVG -->
+    <link class="fav-icon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230E0A09'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='34' font-weight='300' fill='%23D4B375' letter-spacing='2'%3EG%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Fonts Premium Combination -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Schema.org BeautySalon -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Gabrielly Makeup",
+      "description": "Atendimento de maquiagem premium em Acaraú, Ceará. Especialista em noivas, debutantes e maquiagem social de alta definição.",
+      "url": "https://gabriellymmakeup.com.br",
+      "telephone": "+55-88-9950-2322",
+      "image": "images/foto gaby 02.jpeg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Acaraú",
+        "addressRegion": "CE",
+        "addressCountry": "BR"
+      },
+      "sameAs": ["https://www.instagram.com/gabriellymmakeup"],
+      "priceRange": "$$$"
+    }
+    </script>
+
+    <style>
+        :root {
+            /* Palette Gold, Velvet Red & Champagne Silk */
+            --bg-light: #FAF7F4;
+            --bg-card: rgba(255, 255, 255, 0.45);
+            --text-dark: #1F1917;
+            --text-muted: #7E6F67;
+            --accent-gold: #D4B375;
+            --accent-gold-hover: #C39F5E;
+            --accent-rose: #E8B4A6;
+            
+            /* Veludo Vermelho */
+            --accent-red: #9C001A;
+            --accent-red-hover: #7E0013;
+            
+            --velvet-dark: #0F0B0A;
+            --velvet-card: rgba(24, 18, 17, 0.6);
+            --glass-border: rgba(212, 179, 117, 0.22);
+            --glass-bg: rgba(250, 247, 244, 0.6);
+            --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s ease;
+        }
+
+        * {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 1s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            line-height: 1.6;
+        }
+
+        /* --- TEXTURA DE FILME GRANULADO --- */
+        .film-grain {
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.045; pointer-events: none; z-index: 9998;
+        }
+
+        /* --- SISTEMA DE REVEAL ON SCROLL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
+
+        /* --- HEADER LUXO --- */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 2rem 4rem;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 5000;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid transparent;
+        }
+
+        header.scrolled {
+            padding: 1.2rem 4rem;
+            background-color: rgba(250, 247, 244, 0.92);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(14, 10, 9, 0.02);
+        }
+
+        body.dark-mode header.scrolled {
+            background-color: rgba(15, 11, 10, 0.92);
+            border-bottom: 1px solid rgba(212, 179, 117, 0.12);
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-links {
+            display: flex; gap: 2.5rem; list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            position: relative;
+            padding: 0.4rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute; bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background-color: var(--accent-red);
+            transition: var(--transition-fast);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-dark);
+        }
+
+        body.dark-mode .nav-links a:hover {
+            color: #FFF;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        body.dark-mode .nav-links a {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-header-right {
+            display: flex; align-items: center; gap: 2rem;
+        }
+
+        .header-instagram {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            text-decoration: none; color: var(--text-muted);
+            font-size: 0.7rem; letter-spacing: 0.2em;
+            text-transform: uppercase; font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .header-instagram:hover {
+            color: var(--accent-red);
+        }
+
+        .header-instagram svg {
+            width: 16px; height: 16px;
+            stroke: currentColor; fill: none; stroke-width: 1.5;
+        }
+
+        body.dark-mode .header-instagram { color: rgba(255, 255, 255, 0.6); }
+        body.dark-mode .header-instagram:hover { color: var(--accent-red); }
+
+        /* --- HAMBÚRGUER BUTTON --- */
+        .hamburger-btn {
+            display: none; flex-direction: column; justify-content: center; align-items: center;
+            width: 44px; height: 44px; background: none; border: none;
+            cursor: pointer; gap: 6px; z-index: 6000;
+        }
+
+        .hamburger-btn span {
+            display: block; width: 26px; height: 1px;
+            background-color: var(--text-dark);
+            transition: var(--transition-smooth);
+            transform-origin: center;
+        }
+
+        body.dark-mode .hamburger-btn span { background-color: #FFF; }
+
+        .hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* --- MOBILE OVERLAY --- */
+        .mobile-menu-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(250, 247, 244, 0.98);
+            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            z-index: 5500;
+            flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        body.dark-mode .mobile-menu-overlay {
+            background: rgba(15, 11, 10, 0.98);
+        }
+
+        .mobile-menu-overlay.visible {
+            opacity: 1; pointer-events: auto;
+        }
+
+        .mobile-menu-overlay nav {
+            display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
+        }
+
+        .mobile-menu-overlay a {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem; font-weight: 300;
+            letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+            color: var(--text-dark); padding: 0.5rem 2rem;
+            transition: var(--transition-smooth);
+            transform: translateY(30px); opacity: 0;
+        }
+
+        .mobile-menu-overlay.visible a {
+            transform: translateY(0); opacity: 1;
+        }
+
+        .mobile-menu-overlay a:nth-child(1) { transition-delay: 0.05s; }
+        .mobile-menu-overlay a:nth-child(2) { transition-delay: 0.1s; }
+        .mobile-menu-overlay a:nth-child(3) { transition-delay: 0.15s; }
+        .mobile-menu-overlay a:nth-child(4) { transition-delay: 0.2s; }
+        .mobile-menu-overlay a:nth-child(5) { transition-delay: 0.25s; }
+        .mobile-menu-overlay a:nth-child(6) { transition-delay: 0.3s; }
+
+        body.dark-mode .mobile-menu-overlay a { color: #FFF; }
+        .mobile-menu-overlay a:hover { color: var(--accent-red); transform: scale(1.05); }
+
+        .mobile-menu-footer {
+            margin-top: 4rem;
+            display: flex; align-items: center; gap: 0.6rem;
+            color: var(--text-muted); font-size: 0.8rem; letter-spacing: 0.2em;
+            text-transform: uppercase; text-decoration: none; transition: var(--transition-fast);
+            transform: translateY(30px); opacity: 0;
+        }
+
+        .mobile-menu-overlay.visible .mobile-menu-footer {
+            transform: translateY(0); opacity: 1;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s, opacity 0.6s ease 0.35s;
+        }
+
+        body.dark-mode .mobile-menu-footer { color: rgba(255, 255, 255, 0.5); }
+        .mobile-menu-footer:hover { color: var(--accent-red); }
+        .mobile-menu-footer svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+        /* --- CANVAS --- */
+        #glitter-canvas {
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 2;
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* --- SEÇÕES --- */
+        section {
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 9rem 2rem; position: relative; z-index: 10; background: transparent;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            justify-content: center; text-align: center;
+            background: radial-gradient(circle at 50% 40%, rgba(156, 0, 26, 0.03) 0%, transparent 70%);
+            overflow: hidden;
+        }
+
+        .hero-header {
+            max-width: 900px;
+            margin: 0 auto;
+            will-change: transform, opacity;
+        }
+
+        .hero-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 6rem;
+            font-weight: 300;
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.12em;
+            color: var(--text-dark);
+            text-shadow: 0 10px 30px rgba(14, 10, 9, 0.02);
+            transition: color 1s;
+            will-change: transform;
+        }
+
+        body.dark-mode .hero-header h1 { color: #FFF; }
+
+        .hero-location {
+            font-size: 0.85rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--accent-red);
+            margin-bottom: 3.5rem;
+            font-weight: 600;
+            will-change: transform;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-style: italic;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 3.5rem auto;
+            line-height: 1.5;
+            font-weight: 300;
+            will-change: transform;
+        }
+
+        body.dark-mode .hero-tagline {
+            color: #D3CDC6;
+        }
+
+        /* Botão Primário Hero - Red Velvet */
+        .btn-hero-booking {
+            display: inline-flex; align-items: center; gap: 15px;
+            padding: 20px 48px;
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-hover) 100%);
+            color: #FFF; text-decoration: none;
+            font-weight: 600; font-size: 0.8rem; letter-spacing: 0.25em;
+            text-transform: uppercase; border-radius: 50px;
+            box-shadow: 0 15px 35px rgba(156, 0, 26, 0.25);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(255,255,255,0.1);
+            will-change: transform;
+        }
+        .btn-hero-booking:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 20px 45px rgba(156, 0, 26, 0.38);
+            background: linear-gradient(135deg, #B50E2A 0%, #8C0015 100%);
+        }
+        .btn-hero-booking svg { width: 18px; height: 18px; fill: currentColor; }
+
+        /* --- DECORATIVE SCROLL INDICATOR --- */
+        .scroll-indicator {
+            position: absolute; bottom: 3rem; left: 50%;
+            transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center;
+            gap: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            width: 1px; height: 50px;
+            background: linear-gradient(to bottom, var(--accent-red), transparent);
+            animation: scrollLine 2s infinite ease-in-out;
+            transform-origin: top;
+        }
+
+        @keyframes scrollLine {
+            0% { transform: scaleY(0); }
+            50% { transform: scaleY(1); }
+            100% { transform: scaleY(0); transform: translateY(50px); }
+        }
+
+        /* --- SEÇÃO SOBRE A GABRIELLY SPLIT --- */
+        .about-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 9rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3.5rem;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 30px 80px rgba(14, 10, 9, 0.03);
+            width: 100%;
+        }
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+        .about-image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 45px rgba(14, 10, 9, 0.08);
+        }
+        .about-profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            transition: var(--transition-smooth);
+        }
+        .about-profile-img:hover {
+            transform: scale(1.03);
+        }
+        .about-text {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .about-text span {
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--accent-red);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+        .about-text h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        .badge-award {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.8rem;
+            background-color: rgba(156, 0, 26, 0.05);
+            border: 1px solid rgba(156, 0, 26, 0.18);
+            border-radius: 50px;
+            color: var(--accent-red);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: left;
+        }
+        .badge-award svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+        @media (max-width: 900px) {
+            .about-split {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .about-image-wrapper {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .about-text {
+                align-items: center;
+                text-align: center;
+            }
+            .about-text h2 {
+                font-size: 2.2rem;
+            }
+            .badge-award {
+                text-align: center;
+            }
+        }
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        /* --- SEÇÃO EXPERIÊNCIA / SERVIÇOS --- */
+        .experience {
+            max-width: 1050px; margin: 0 auto; width: 100%;
+        }
+
+        .section-intro {
+            text-align: center; margin-bottom: 5rem;
+            max-width: 750px;
+        }
+
+        .section-intro h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-intro h2::after {
+            content: '';
+            position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 1px;
+            background-color: var(--accent-red);
+        }
+
+        .section-intro p {
+            color: var(--text-muted);
+            font-size: 1.1rem; line-height: 1.8; font-weight: 300;
+            margin-top: 1.5rem;
+        }
+
+        body.dark-mode .section-intro p { color: #C5BCB5; }
+
+        /* --- ACCORDION SYSTEM LUXO --- */
+        .editorial-accordion-glass {
+            width: 100%;
+            margin-top: 2rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 2rem 3.5rem;
+            box-shadow: 0 30px 80px rgba(14, 10, 9, 0.04);
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .editorial-accordion-glass {
+            background-color: var(--velvet-card);
+            border-color: rgba(212, 179, 117, 0.12);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid rgba(212, 179, 117, 0.15);
+            transition: var(--transition-smooth);
+            padding: 0 1rem;
+        }
+
+        .accordion-item.active {
+            background-color: rgba(156, 0, 26, 0.015);
+            border-radius: 12px;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            width: 100%; padding: 2.5rem 0;
+            display: flex; justify-content: space-between; align-items: center;
+            background: none; border: none; color: inherit; cursor: pointer;
+            text-align: left; transition: var(--transition-fast);
+        }
+
+        .accordion-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            transition: var(--transition-fast);
+        }
+
+        .accordion-header:hover .accordion-title {
+            color: var(--accent-red);
+            transform: translateX(10px);
+        }
+
+        .accordion-icon {
+            width: 32px; height: 32px;
+            border: 1px solid rgba(156, 0, 26, 0.3);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; font-weight: 200;
+            transition: var(--transition-smooth);
+            color: var(--accent-red);
+        }
+
+        .accordion-header:hover .accordion-icon {
+            background-color: var(--accent-red);
+            color: #FFF;
+            border-color: var(--accent-red);
+        }
+
+        .accordion-content {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .accordion-body {
+            padding-bottom: 2.5rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 850px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            animation: fadeInBody 0.6s ease;
+        }
+
+        body.dark-mode .accordion-body { color: #CFC9C3; }
+
+        .accordion-body strong {
+            color: var(--accent-red);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .service-price {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--accent-red);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-price::before {
+            content: '';
+            width: 15px; height: 1px;
+            background-color: var(--accent-red);
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+            background-color: var(--accent-red);
+            color: #FFF;
+            border-color: var(--accent-red);
+        }
+
+        /* Botão específico no accordion - Velvet Red */
+        .btn-service-booking {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.8rem 1.8rem; margin-top: 1.5rem;
+            border: 1px solid var(--accent-red); border-radius: 50px;
+            color: var(--accent-red); text-decoration: none;
+            font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+            font-weight: 600; transition: var(--transition-fast);
+            align-self: flex-start;
+        }
+        .btn-service-booking:hover {
+            background-color: var(--accent-red);
+            color: #FFF;
+            box-shadow: 0 10px 25px rgba(156, 0, 26, 0.22);
+            transform: translateY(-1px);
+        }
+
+        /* --- NORMAS DE ATENDIMENTO --- */
+        .rules-card {
+            margin-top: 5rem;
+            width: 100%;
+            background-color: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 20px 50px rgba(14, 10, 9, 0.02);
+        }
+        .rules-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--accent-red);
+        }
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+        .rule-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .rule-item h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        .rule-item p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .rule-item strong {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .rules-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .rules-card {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        /* --- GALERIA COM TRANSIÇÃO EM 3D --- */
+        .galeria-section {
+            width: 100%; min-height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 9rem 2rem; position: relative; z-index: 20;
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 15px 50px rgba(13,9,8,0.02);
+            transition: background-color 1s cubic-bezier(0.16,1,0.3,1), border-color 1s ease;
+        }
+
+        body.dark-mode .galeria-section {
+            background-color: rgba(15, 11, 10, 0.5);
+            border-color: rgba(212, 179, 117, 0.08);
+        }
+
+        .single-slide-container {
+            position: relative; width: 100%; max-width: 500px; aspect-ratio: 3/4;
+            margin: 3rem auto 0 auto; display: flex; align-items: center; justify-content: center;
+            transform: translate3d(0,0,0);
+        }
+
+        .slide-frame {
+            width: 100%; height: 100%; position: relative; border-radius: 12px; overflow: hidden;
+            background-color: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            box-shadow: 0 35px 80px rgba(14,10,9,0.15); transform: translate3d(0,0,0);
+            perspective: 1200px;
+        }
+
+        .galeria-slide {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0;
+            transform: translate3d(100%, 0, -100px) rotateY(-35deg) scale(0.9);
+            transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+
+        .galeria-slide.active {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+            pointer-events: auto; z-index: 5;
+        }
+
+        .galeria-slide.prev-slide {
+            opacity: 0;
+            transform: translate3d(-100%, 0, -100px) rotateY(35deg) scale(0.9);
+            z-index: 2;
+        }
+
+        .galeria-slide.next-slide {
+            opacity: 0;
+            transform: translate3d(100%, 0, -100px) rotateY(-35deg) scale(0.9);
+            z-index: 2;
+        }
+
+        .galeria-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: center top;
+            transition: transform 1.5s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .galeria-slide.active:hover .galeria-img { transform: scale(1.05); }
+
+        .placeholder-visual {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: none; flex-direction: column; align-items: center; justify-content: center;
+            color: var(--text-muted); padding: 2rem; text-align: center;
+            background-color: rgba(236,228,220,0.55);
+            z-index: 1;
+        }
+        .placeholder-visual svg {
+            width: 40px; height: 40px; stroke: currentColor; fill: none;
+            margin-bottom: 1.2rem; opacity: 0.45;
+        }
+        .placeholder-visual p {
+            font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .btn-slide {
+            position: absolute; top: 50%; transform: translateY(-50%) translate3d(0,0,0);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--glass-border); color: var(--text-dark);
+            width: 64px; height: 64px; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; z-index: 10;
+            transition: var(--transition-smooth);
+            box-shadow: 0 10px 30px rgba(14,10,9,0.06);
+        }
+
+        .btn-slide:hover {
+            background-color: var(--accent-red); color: #FFF;
+            transform: translateY(-50%) scale(1.08) translate3d(0,0,0);
+            border-color: var(--accent-red);
+        }
+
+        .btn-slide.prev { left: -88px; }
+        .btn-slide.next { right: -88px; }
+
+        .slide-dots { display: flex; gap: 14px; margin-top: 2.5rem; z-index: 10; }
+        .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background-color: rgba(156, 0, 26, 0.15); cursor: pointer; transition: var(--transition-smooth);
+        }
+        .dot.active {
+            background-color: var(--accent-red);
+            transform: scale(1.4);
+            box-shadow: 0 0 10px rgba(156, 0, 26, 0.5);
+        }
+
+        /* --- DEPOIMENTOS --- */
+        .testimonials-section {
+            width: 100%; max-width: 1200px; margin: 0 auto;
+            padding: 9rem 2rem;
+            display: flex; flex-direction: column; align-items: center;
+        }
+
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 3rem; width: 100%; margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 4rem 3.5rem; border-radius: 16px; backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            transition: var(--transition-smooth);
+            position: relative;
+            box-shadow: 0 20px 50px rgba(14,10,9,0.02);
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '“';
+            position: absolute; top: 1.5rem; left: 2.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem; line-height: 1;
+            color: var(--accent-red); opacity: 0.12;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-red);
+            box-shadow: 0 30px 70px rgba(156, 0, 26, 0.04);
+        }
+
+        .testimonial-card:hover::before {
+            transform: scale(1.1) translateY(-5px);
+            color: var(--accent-red);
+            opacity: 0.18;
+        }
+
+        .testimonial-stars {
+            margin-bottom: 1.5rem; color: var(--accent-red);
+            font-size: 0.95rem; letter-spacing: 0.25em;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem; font-style: italic;
+            line-height: 1.6; margin-bottom: 2.5rem; font-weight: 300;
+            position: relative; z-index: 2;
+        }
+
+        .testimonial-author { display: flex; flex-direction: column; gap: 0.4rem; }
+
+        .testimonial-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem; letter-spacing: 0.15em;
+            text-transform: uppercase; font-weight: 500;
+        }
+
+        .testimonial-role {
+            font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em;
+        }
+
+        /* --- BOOKING --- */
+        .booking {
+            min-height: 110vh; display: flex; justify-content: center; align-items: center;
+            background: radial-gradient(circle at 50% 60%, rgba(156, 0, 26, 0.03) 0%, transparent 60%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking::before {
+            content: '';
+            position: absolute; top: -10%; left: -10%; width: 120%; height: 120%;
+            background: radial-gradient(circle at 70% 30%, rgba(156, 0, 26, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .booking-content {
+            opacity: 0; transform: translateY(50px) translate3d(0,0,0);
+            transition: all 1.5s cubic-bezier(0.16,1,0.3,1);
+            max-width: 800px; text-align: center;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .booking-content.visible {
+            opacity: 1; transform: translateY(0) translate3d(0,0,0);
+        }
+
+        .booking h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem; margin-bottom: 2rem; text-transform: uppercase;
+            letter-spacing: 0.15em; font-weight: 300;
+            line-height: 1.1;
+        }
+        
+        .booking p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem; line-height: 1.8; color: var(--text-muted);
+            margin-bottom: 4rem; font-weight: 300;
+        }
+
+        .booking-social {
+            display: inline-flex; justify-content: center; align-items: center; gap: 0.6rem;
+            margin-top: 2.5rem; text-decoration: none; color: var(--text-muted);
+            font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+            font-weight: 500; transition: var(--transition-fast);
+            padding: 0.5rem 1rem;
+        }
+
+        .booking-social:hover { color: var(--accent-red); }
+        .booking-social svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+        /* Botão WhatsApp - Red Velvet */
+        .btn-luxury-whats {
+            display: inline-flex; align-items: center; gap: 20px;
+            padding: 24px 60px;
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-hover) 100%);
+            color: #FFF; text-decoration: none;
+            font-weight: 600; font-size: 0.85rem; letter-spacing: 0.3em;
+            text-transform: uppercase; border-radius: 50px;
+            box-shadow: 0 20px 45px rgba(156, 0, 26, 0.22);
+            transition: var(--transition-smooth);
+            position: relative; overflow: hidden; pointer-events: auto;
+            transform: translate3d(0,0,0);
+        }
+
+        .btn-luxury-whats.pulse { animation: breathing-pulse 3.5s infinite ease-in-out; }
+
+        .btn-luxury-whats:hover {
+            background: linear-gradient(135deg, #B50E2A 0%, #8C0015 100%);
+            box-shadow: 0 25px 50px rgba(156, 0, 26, 0.35);
+            transform: scale(1.05) translate3d(0,-2px,0);
+        }
+
+        .btn-luxury-whats svg { width: 22px; height: 22px; fill: currentColor; }
+
+        /* --- BOTÃO FLUTUANTE DE CONVERSÃO --- */
+        .floating-booking {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 4500;
+            opacity: 0;
+            transform: translateY(20px) scale(0.9);
+            transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+            pointer-events: none;
+        }
+        .floating-booking.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        .btn-floating-luxury {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1.1rem 1.9rem;
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-hover) 100%);
+            color: #FFF;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 650;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            border-radius: 50px;
+            box-shadow: 0 12px 35px rgba(156, 0, 26, 0.25);
+            transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .btn-floating-luxury:hover {
+            background: linear-gradient(135deg, #B50E2A 0%, #8C0015 100%);
+            box-shadow: 0 15px 35px rgba(156, 0, 26, 0.35);
+            transform: translateY(-3px) scale(1.03);
+        }
+        .btn-floating-luxury svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 1100px) {
+            .btn-slide.prev { left: -20px; }
+            .btn-slide.next { right: -20px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-header h1 { font-size: 3.4rem; }
+            .hero-tagline { font-size: 1.6rem; }
+            header { padding: 1.5rem 2rem; }
+            header.scrolled { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .hamburger-btn { display: flex; }
+            .mobile-menu-overlay { display: flex; }
+            .header-instagram { display: none; }
+            .editorial-accordion-glass { padding: 1.5rem 2rem; }
+            .accordion-title { font-size: 1.4rem; }
+            .accordion-header { padding: 2rem 0; }
+            .testimonials-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .single-slide-container { max-width: 100%; padding: 0 1rem; }
+            .btn-slide { width: 52px; height: 52px; }
+            .btn-slide.prev { left: 10px; }
+            .btn-slide.next { right: 10px; }
+            .booking h2 { font-size: 3rem; }
+            .btn-luxury-whats { padding: 20px 40px; font-size: 0.8rem; letter-spacing: 0.2em; }
+            .section-intro h2 { font-size: 2.8rem; }
+            .floating-booking { bottom: 1.5rem; right: 1.5rem; }
+            .btn-floating-luxury { padding: 0.9rem 1.5rem; font-size: 0.65rem; }
+        }
+
+        /* prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            #glitter-canvas { display: none; }
+            html { scroll-behavior: auto; }
+            * { animation-duration: 0.01ms !important; transition-duration: 0.3s !important; }
+            body.dark-mode { background-color: var(--velvet-dark) !important; }
+            .booking-content { opacity: 1 !important; transform: none !important; }
+            .hero-header { transform: none !important; opacity: 1 !important; filter: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="film-grain"></div>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+        <nav>
+            <a href="#" onclick="closeMobileMenu()">Início</a>
+            <a href="#galeria" onclick="closeMobileMenu()">Galeria</a>
+            <a href="#sobre" onclick="closeMobileMenu()">Sobre</a>
+            <a href="#experiencia" onclick="closeMobileMenu()">Serviços</a>
+            <a href="#depoimentos" onclick="closeMobileMenu()">Opiniões</a>
+            <a href="#booking" onclick="closeMobileMenu()">Agendar</a>
+        </nav>
+        <a href="https://www.instagram.com/gabriellymmakeup" target="_blank" rel="noopener" class="mobile-menu-footer">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @gabriellymmakeup
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header id="editorial-header">
+        <ul class="nav-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#experiencia">Serviços</a></li>
+            <li><a href="#depoimentos">Opiniões</a></li>
+            <li><a href="#booking">Agendar</a></li>
+        </ul>
+        <div class="nav-header-right">
+            <a href="https://www.instagram.com/gabriellymmakeup" target="_blank" rel="noopener" class="header-instagram" aria-label="Instagram @gabriellymmakeup">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                @gabriellymmakeup
+            </a>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Canvas de Partículas (Glitter ambiente flutuante) -->
+    <canvas id="glitter-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-header reveal">
+            <h1 class="reveal-delay-1">Gabrielly Makeup</h1>
+            <p class="hero-location reveal-delay-2">📍 Acaraú • Ceará</p>
+            <p class="hero-tagline reveal-delay-3">A beleza que revela quem você realmente é.</p>
+            <p class="hero-tagline reveal-delay-3" style="font-size: 1.25rem; font-family: 'Montserrat', sans-serif; font-style: normal; margin-top: -2rem; max-width: 650px; font-weight: 300;">Especialista em maquiagem para noivas, eventos e ensaios.</p>
+            <div class="reveal-delay-3" style="margin-top: 2rem;">
+                <a href="#booking" class="btn-hero-booking">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
+                    Quero Agendar Meu Horário
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <!-- GALERIA -->
+    <div class="galeria-section" id="galeria">
+        <div class="section-intro reveal">
+            <h2>Minhas Produções</h2>
+            <p>Alguns dos meus trabalhos recentes. Deslize ou use as setas para ver a delicadeza de cada detalhe na pele.</p>
+        </div>
+        <div class="single-slide-container reveal reveal-delay-1">
+            <button class="btn-slide prev" id="btn-prev" aria-label="Anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="slide-frame">
+                <!-- SLIDE 1 -->
+                <div class="galeria-slide">
+                    <img src="images/foto gaby 02.jpeg" alt="Gabrielly Makeup - Noiva Couture" class="galeria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-visual">
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <p>Noiva Couture</p>
+                    </div>
+                </div>
+                <!-- SLIDE 2 -->
+                <div class="galeria-slide">
+                    <img src="images/foto gaby 03.jpeg" alt="Gabrielly Makeup - Social Privée" class="galeria-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-visual">
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <p>Social Privée</p>
+                    </div>
+                </div>
+                <!-- SLIDE 3 -->
+                <div class="galeria-slide">
+                    <img src="images/foto gaby 05.jpeg" alt="Gabrielly Makeup - Estilo Editorial" class="galeria-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-visual">
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <p>Estilo Editorial</p>
+                    </div>
+                </div>
+                <!-- SLIDE 4 -->
+                <div class="galeria-slide">
+                    <img src="images/foto gaby 06.jpeg" alt="Gabrielly Makeup - Gala Premium" class="galeria-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-visual">
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <p>Gala Premium</p>
+                    </div>
+                </div>
+                <!-- SLIDE 5 -->
+                <div class="galeria-slide">
+                    <img src="images/foto 04 gaby.jpeg" alt="Gabrielly Makeup - Atelier" class="galeria-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-visual">
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <p>Atelier</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-slide next" id="btn-next" aria-label="Seguinte">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+        <div class="slide-dots" id="slide-dots"></div>
+    </div>
+
+    <!-- SOBRE A GABRIELLY -->
+    <section class="about-section" id="sobre">
+        <div class="about-container reveal">
+            <div class="about-split">
+                <div class="about-image-wrapper">
+                    <img src="images/WhatsApp%20Image%202026-07-01%20at%2023.34.07%20(1).jpeg" alt="Ana Gabrielly - Maquiadora Premiada" class="about-profile-img">
+                </div>
+                <div class="about-text">
+                    <span>Conheça a Profissional</span>
+                    <h2>Quem é Ana Gabrielly?</h2>
+                    <p>Olá, sou Ana Gabrielly. Tenho 20 anos e sou apaixonada pela arte da maquiagem. Com formação técnica em Enfermagem, descobri minha verdadeira paixão ao me aventurar no universo da beleza. Há quase 2 anos, venho aprimorando minhas habilidades e criando produções personalizadas de alta fidelidade para as minhas clientes.</p>
+                    <p>Ao unir precisão técnica e sensibilidade artística, me dedico a compreender os desejos de cada mulher, proporcionando resultados que destacam e celebram a sua beleza natural.</p>
+                    <div class="badge-award">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Vencedora do Prêmio Melhores do Ano 2025 - Acaraú
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Accordion -->
+    <section class="experience" id="experiencia">
+        <div class="section-intro reveal">
+            <h2>Menu de Serviços</h2>
+            <p>Escolha a experiência ideal para o seu momento. Todos os atendimentos são personalizados e focados no conforto e na durabilidade da sua produção.</p>
+        </div>
+        
+        <div class="editorial-accordion-glass reveal reveal-delay-1">
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">Maquiagem Social</span>
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <strong>Glamour &amp; Sofisticação</strong>
+                        <p>Uma produção impecável desenvolvida com técnica blindada para garantir máxima durabilidade. Ideal para eventos especiais, casamentos, formaturas ou ensaios fotográficos. Inclui aplicação de cílios postiços luxuosos para um toque extra de glamour, além de esfumados e pigmentos refinados para valorizar a beleza dos seus olhos.</p>
+                        <p>Aproximadamente 1h15 • Acabamento impecável resistente a água e suor.</p>
+                        <p class="service-price">R$ 90,00</p>
+                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20uma%20Maquiagem%20Social%20(R$%2090,00)." target="_blank" rel="noopener" class="btn-service-booking">Agendar Maquiagem Social</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">Maquiagem Express</span>
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <strong>Leveza &amp; Naturalidade</strong>
+                        <p>A beleza da simplicidade. Uma técnica focada em construir uma pele natural realçada de forma leve, limpa e discreta. Perfeita para reuniões de trabalho, eventos diurnos ou para quem prefere um visual minimalista elegante. Esta modalidade não inclui cílios postiços, sombras complexas ou pigmentos.</p>
+                        <p>Aproximadamente 45 minutos • Pele fresca com efeito glow natural.</p>
+                        <p class="service-price">R$ 70,00</p>
+                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20uma%20Maquiagem%20Express%20(R$%2070,00)." target="_blank" rel="noopener" class="btn-service-booking">Agendar Maquiagem Express</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">Penteados Personalizados</span>
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <strong>Design &amp; Acabamento para o Cabelo</strong>
+                        <p>Penteados elegantes estruturados de acordo com o seu desejo e estilo do evento. Desenvolvemos designs despojados, soltos românticos, semi presos modernos, rabos de cavalo imponentes ou tranças super trabalhadas.</p>
+                        <p>Aproximadamente 1h00 • Inclui produtos profissionais de fixação para alta durabilidade.</p>
+                        <p class="service-price">R$ 90,00</p>
+                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20um%20Penteado%20Personalizado%20(R$%2090,00)." target="_blank" rel="noopener" class="btn-service-booking">Agendar Penteado</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">Babyliss</span>
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <strong>Movimento, Ondas &amp; Volume</strong>
+                        <p>A finalização perfeita para dar balanço aos fios. Ideal para criar cabelos com movimentos fluidos, ondas volumosas clássicas ou cachos definidos, proporcionando uma moldura radiante para o seu rosto.</p>
+                        <p>Aproximadamente 40 minutos • Acabamento leve com toque sedoso e alta durabilidade.</p>
+                        <p class="service-price">R$ 70,00</p>
+                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20um%20Babyliss%20(R$%2070,00)." target="_blank" rel="noopener" class="btn-service-booking">Agendar Babyliss</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NORMAS DE ATENDIMENTO -->
+        <div class="rules-card reveal reveal-delay-2">
+            <h3>Normas de Atendimento</h3>
+            <div class="rules-grid">
+                <div class="rule-item">
+                    <h4>Agendamento &amp; Sinal</h4>
+                    <p>Para efetuar e confirmar a sua reserva, solicitamos o pagamento de um sinal de <strong>50% do valor</strong> do procedimento. Esse valor é integralmente abatido no dia do atendimento, restando apenas o pagamento do valor restante.</p>
+                </div>
+                <div class="rule-item">
+                    <h4>Cancelamentos</h4>
+                    <p>Em caso de desmarque ou imprevistos por parte da cliente, o valor do sinal não será devolvido, sendo retido como taxa de cancelamento do horário reservado.</p>
+                </div>
+                <div class="rule-item">
+                    <h4>Uso de Ácidos na Pele</h4>
+                    <p>Caso faça uso contínuo de ácidos ou tratamentos dermatológicos fortes, pedimos que <strong>suspenda o uso 3 dias antes</strong> do atendimento, para garantir a aderência, viço e fixação ideal da maquiagem.</p>
+                </div>
+                <div class="rule-item">
+                    <h4>Atendimento a Domicílio</h4>
+                    <p>Para atendimentos fora do estúdio (ex: domicílio, hotéis ou chácaras), será cobrada uma taxa adicional de deslocamento calculada sob consulta, dependendo da sua região.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="testimonials-section" id="depoimentos">
+        <div class="section-intro reveal">
+            <h2>O que dizem as minhas clientes</h2>
+            <p>O melhor reflexo do meu trabalho está no brilho do olhar de quem confia em mim em momentos especiais.</p>
+        </div>
+        <div class="testimonials-grid reveal reveal-delay-1">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"A Gaby foi a melhor escolha que fiz para o meu casamento. Ela entendeu exatamente o que eu queria — uma maquiagem leve, mas que me deixou com cara de rica. Durou a festa toda sob o calor de Acaraú!"</p>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">Beatriz Vasconcelos</span>
+                    <span class="testimonial-role">Noiva de Acaraú, CE</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Sempre que tenho um evento em Acaraú, me produzo com a Gaby. A pele que ela faz é inexplicável, super leve e fotografa muito bem. Sem contar o atendimento, que é maravilhoso."</p>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">Clara Silveira</span>
+                    <span class="testimonial-role">Cliente VIP</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Fiz minha maquiagem com ela para ser madrinha e fiquei chocada com a durabilidade. Chorei horrores na cerimônia e a pele continuou perfeita, sem abrir nada. Nota mil!"</p>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">Mariana Frota</span>
+                    <span class="testimonial-role">Madrinha de Casamento</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Superou minhas expectativas tanto na maquiagem quanto no atendimento! A Gaby é super atenciosa, fez tudo do jeitinho que eu pedi. Já vou marcar minhas próximas produções."</p>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">Alícia Meireles</span>
+                    <span class="testimonial-role">Cliente Recorrente</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="booking" id="booking">
+        <div class="booking-content id-booking-content">
+            <h2>Vamos Agendar o Seu Momento?</h2>
+            <p>Os atendimentos no estúdio são limitados para garantir um momento calmo, exclusivo e totalmente focado em você. Clique no botão abaixo para conversar no WhatsApp e reservar o seu horário.</p>
+            <a href="#" id="whatsapp-btn" target="_blank" rel="noopener" class="btn-luxury-whats pulse">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
+                Conversar no WhatsApp e Agendar
+            </a>
+            <a href="https://www.instagram.com/gabriellymmakeup" target="_blank" rel="noopener" class="booking-social">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                Siga no Instagram
+            </a>
+        </div>
+    </section>
+
+    <!-- Botão Flutuante de Conversão -->
+    <div class="floating-booking" id="floating-booking">
+        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener" class="btn-floating-luxury" aria-label="Agendar via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
+            Agendar
+        </a>
+    </div>
+
+    <script>
+        // ============================================================
+        // CONFIGURACAO CENTRAL
+        // ============================================================
+        var WHATSAPP_NUMBER = "558899502322"; // +55 88 9950-2322
+        var WHATSAPP_MSG = encodeURIComponent("Olá, Gabrielly! Visitei o seu site e gostaria de consultar a disponibilidade de datas para uma produção.");
+        var whatsBtn = document.getElementById('whatsapp-btn');
+        whatsBtn.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + WHATSAPP_MSG;
+
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var body = document.body;
+        var headerEl = document.getElementById('editorial-header');
+        var heroHeader = document.querySelector('.hero-header');
+        var floatingBooking = document.getElementById('floating-booking');
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var isMobile = winW < 768;
+
+        // DECLARAR COORDENADAS DO BOTÃO MAGNÉTICO
+        var btnTargetX = 0, btnTargetY = 0, btnCurrX = 0, btnCurrY = 0;
+
+        // Scroll Reveal Observer (Acelerado e suave)
+        var revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // Booking Section Observer
+        var bookingEl = document.querySelector('.booking');
+        var bookingContent = document.querySelector('.booking-content');
+        var bookingObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    bookingContent.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        bookingObserver.observe(bookingEl);
+
+        var resizeTimer = null;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                winW = window.innerWidth;
+                winH = window.innerHeight;
+                isMobile = winW < 768;
+                resizeGlitterCanvas();
+            }, 180);
+        }, { passive: true });
+
+        // HEADER SCROLL & FLOATING BUTTON
+        var lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Header sticky show/hide
+            if (st > 80) { headerEl.classList.add('scrolled'); } else { headerEl.classList.remove('scrolled'); }
+            if (st > lastScrollTop && st > 200) { headerEl.classList.add('hidden'); } else { headerEl.classList.remove('hidden'); }
+            lastScrollTop = st <= 0 ? 0 : st;
+
+            // Mostrar botão flutuante pós-hero
+            if (st > 400) {
+                floatingBooking.classList.add('visible');
+            } else {
+                floatingBooking.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        // VARIÁVEIS DE SCROLL FÍSICO / INTERPOLADO (LERP)
+        var heroScrollTarget = 0;
+        var heroScrollCurrent = 0;
+        var pageScrollTarget = 0;
+        var pageScrollCurrent = 0;
+        var LERP = 0.082;
+        var LERP_HERO = 0.052; 
+
+        window.addEventListener('scroll', function() {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            var docH = document.documentElement.scrollHeight - window.innerHeight;
+            
+            heroScrollTarget = Math.min(st / 800, 1);
+            pageScrollTarget = Math.min(Math.max(st / (docH || 1), 0), 1);
+        }, { passive: true });
+
+        // MENU MOBILE
+        var hamburgerBtn = document.getElementById('hamburger-btn');
+        var mobileOverlay = document.getElementById('mobile-menu-overlay');
+        var mobileMenuOpen = false;
+
+        function openMobileMenu() {
+            mobileMenuOpen = true;
+            hamburgerBtn.classList.add('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            mobileOverlay.classList.add('visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenuOpen = false;
+            hamburgerBtn.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            mobileOverlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', function() { if (mobileMenuOpen) { closeMobileMenu(); } else { openMobileMenu(); } });
+        mobileOverlay.addEventListener('click', function(e) { if (e.target === mobileOverlay) { closeMobileMenu(); } });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && mobileMenuOpen) { closeMobileMenu(); } });
+
+        // ACCORDION
+        document.querySelectorAll('.accordion-header').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.parentElement;
+                var content = item.querySelector('.accordion-content');
+                var isActive = item.classList.contains('active');
+                document.querySelectorAll('.accordion-item').forEach(function(el) {
+                    el.classList.remove('active');
+                    el.querySelector('.accordion-content').style.maxHeight = '0';
+                    el.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                });
+                if (!isActive) {
+                    item.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // CANVAS DE GLITTER AMBIENTE FLUTUANTE LUXUOSO
+        var glitterCanvas = document.getElementById('glitter-canvas');
+        var gCtx = glitterCanvas.getContext('2d');
+        var particles = [];
+        var MAX_PARTICLES = isMobile ? 35 : 75;
+
+        function resizeGlitterCanvas() {
+            var dpr = window.devicePixelRatio || 1;
+            glitterCanvas.width = winW * dpr;
+            glitterCanvas.height = winH * dpr;
+            glitterCanvas.style.width = winW + 'px';
+            glitterCanvas.style.height = winH + 'px';
+            gCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        resizeGlitterCanvas();
+
+        function AmbientParticle() {
+            this.reset(true);
+        }
+        AmbientParticle.prototype.reset = function(init) {
+            this.x = Math.random() * winW;
+            this.y = init ? Math.random() * winH : winH + 10;
+            this.size = Math.random() * 2.2 + 0.6;
+            this.speedY = -(Math.random() * 0.7 + 0.3);
+            this.speedX = (Math.random() - 0.5) * 0.4;
+            this.alpha = Math.random() * 0.5 + 0.2;
+            this.maxAlpha = Math.random() * 0.7 + 0.3;
+            this.fadeSpeed = Math.random() * 0.005 + 0.002;
+            this.hue = Math.random() > 0.4 ? 40 : 20;
+            this.oscillationSpeed = Math.random() * 0.02;
+            this.oscillationDistance = Math.random() * 2;
+            this.angle = Math.random() * Math.PI * 2;
+        };
+        AmbientParticle.prototype.update = function() {
+            this.y += this.speedY;
+            this.angle += this.oscillationSpeed;
+            this.x += this.speedX + Math.sin(this.angle) * 0.05 * this.oscillationDistance;
+            
+            if (this.alpha < this.maxAlpha) {
+                this.alpha += 0.01;
+            }
+
+            if (this.y < -20 || this.x < -20 || this.x > winW + 20) {
+                this.reset(false);
+            }
+        };
+        AmbientParticle.prototype.draw = function() {
+            gCtx.save();
+            gCtx.globalAlpha = Math.max(0, this.alpha);
+            gCtx.shadowBlur = 8;
+            gCtx.shadowColor = 'hsla(' + this.hue + ', 85%, 75%, 0.6)';
+            gCtx.fillStyle = 'hsla(' + this.hue + ', 90%, 82%, ' + this.alpha + ')';
+            gCtx.beginPath();
+            gCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            gCtx.fill();
+            gCtx.restore();
+        };
+
+        for (var p = 0; p < MAX_PARTICLES; p++) {
+            particles.push(new AmbientParticle());
+        }
+
+        function mainLoop() {
+            if (!prefersReducedMotion) {
+                gCtx.clearRect(0, 0, winW, winH);
+                for (var i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+            }
+
+            var heroDelta = Math.abs(heroScrollTarget - heroScrollCurrent);
+            if (heroDelta > 0.0001) {
+                heroScrollCurrent += (heroScrollTarget - heroScrollCurrent) * LERP_HERO;
+            } else {
+                heroScrollCurrent = heroScrollTarget;
+            }
+
+            var pageDelta = Math.abs(pageScrollTarget - pageScrollCurrent);
+            if (pageDelta > 0.0001) {
+                pageScrollCurrent += (pageScrollTarget - pageScrollCurrent) * LERP;
+            } else {
+                pageScrollCurrent = pageScrollTarget;
+            }
+
+            // EFEITO PARALAXE PROFISSIONAL NO HERO
+            if (!prefersReducedMotion) {
+                var opacityVal = Math.max(1 - (heroScrollCurrent * 1.3), 0); 
+                
+                var title = heroHeader.querySelector('h1');
+                var loc = heroHeader.querySelector('.hero-location');
+                var tags = heroHeader.querySelectorAll('.hero-tagline');
+                var cta = heroHeader.querySelector('.btn-hero-booking');
+                
+                if (title) title.style.transform = 'translate3d(0, ' + (heroScrollCurrent * 160) + 'px, 0)';
+                if (loc) loc.style.transform = 'translate3d(0, ' + (heroScrollCurrent * 120) + 'px, 0)';
+                if (tags) {
+                    tags.forEach(function(el) {
+                        el.style.transform = 'translate3d(0, ' + (heroScrollCurrent * 80) + 'px, 0)';
+                    });
+                }
+                if (cta) cta.style.transform = 'translate3d(0, ' + (heroScrollCurrent * 40) + 'px, 0)';
+                
+                heroHeader.style.opacity = opacityVal;
+                
+                if (opacityVal === 0) {
+                    heroHeader.style.display = 'none';
+                } else {
+                    heroHeader.style.display = '';
+                }
+            } else {
+                heroHeader.style.opacity = 1;
+                heroHeader.style.display = '';
+                var title = heroHeader.querySelector('h1');
+                var loc = heroHeader.querySelector('.hero-location');
+                var tags = heroHeader.querySelectorAll('.hero-tagline');
+                var cta = heroHeader.querySelector('.btn-hero-booking');
+                if (title) title.style.transform = 'none';
+                if (loc) loc.style.transform = 'none';
+                if (tags) {
+                    tags.forEach(function(el) {
+                        el.style.transform = 'none';
+                    });
+                }
+                if (cta) cta.style.transform = 'none';
+            }
+
+            if (!isMobile) {
+                btnCurrX += (btnTargetX - btnCurrX) * 0.12;
+                btnCurrY += (btnTargetY - btnCurrY) * 0.12;
+                whatsBtn.style.transform = 'translate3d(' + btnCurrX + 'px, ' + btnCurrY + 'px, 0)';
+            }
+
+            requestAnimationFrame(mainLoop);
+        }
+        mainLoop();
+
+        // GALERIA (SISTEMA DE ANIMAÇÃO 3D MAGAZINE-STYLE)
+        var slides = document.querySelectorAll('.galeria-slide');
+        var btnPrev = document.getElementById('btn-prev');
+        var btnNext = document.getElementById('btn-next');
+        var dotsContainer = document.getElementById('slide-dots');
+        var activeSlideIndex = 0;
+        var autoSlideTimer = null;
+
+        slides.forEach(function(_, index) {
+            var dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) { dot.classList.add('active'); }
+            dot.addEventListener('click', function() { changeSlide(index); });
+            dotsContainer.appendChild(dot);
+        });
+
+        var dots = document.querySelectorAll('.dot');
+
+        function changeSlide(index) {
+            slides.forEach(function(slide) {
+                slide.classList.remove('active', 'prev-slide', 'next-slide');
+            });
+            dots[activeSlideIndex].classList.remove('active');
+
+            activeSlideIndex = ((index % slides.length) + slides.length) % slides.length;
+
+            var prevIndex = (activeSlideIndex - 1 + slides.length) % slides.length;
+            var nextIndex = (activeSlideIndex + 1) % slides.length;
+
+            slides[activeSlideIndex].classList.add('active');
+            slides[prevIndex].classList.add('prev-slide');
+            slides[nextIndex].classList.add('next-slide');
+
+            dots[activeSlideIndex].classList.add('active');
+            resetAutoSlide();
+        }
+
+        if (slides.length > 0) {
+            var prevIndex = (activeSlideIndex - 1 + slides.length) % slides.length;
+            var nextIndex = (activeSlideIndex + 1) % slides.length;
+            slides[activeSlideIndex].classList.add('active');
+            slides[prevIndex].classList.add('prev-slide');
+            slides[nextIndex].classList.add('next-slide');
+        }
+
+        function resetAutoSlide() {
+            clearTimeout(autoSlideTimer);
+            autoSlideTimer = setTimeout(function() { changeSlide(activeSlideIndex + 1); }, 10000);
+        }
+
+        btnNext.addEventListener('click', function() { changeSlide(activeSlideIndex + 1); });
+        btnPrev.addEventListener('click', function() { changeSlide(activeSlideIndex - 1); });
+
+        // Touch swipe robusto
+        var touchStartX = 0;
+        var touchStartY = 0;
+        var slideFrame = document.querySelector('.slide-frame');
+        
+        slideFrame.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        
+        slideFrame.addEventListener('touchend', function(e) {
+            var touchEndX = e.changedTouches[0].clientX;
+            var touchEndY = e.changedTouches[0].clientY;
+            
+            var dx = touchEndX - touchStartX;
+            var dy = touchEndY - touchStartY;
+            
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+                changeSlide(activeSlideIndex + (dx < 0 ? 1 : -1));
+            }
+        }, { passive: true });
+
+        resetAutoSlide();
+
+        // BOTÃO WHATSAPP MAGNÉTICO
+        window.addEventListener('mousemove', function(e) {
+            if (isMobile) { return; }
+            var rect = whatsBtn.getBoundingClientRect();
+            var cx = rect.left + rect.width / 2;
+            var cy = rect.top + rect.height / 2;
+            var dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+            if (dist < 120) {
+                btnTargetX = (e.clientX - cx) * 0.4;
+                btnTargetY = (e.clientY - cy) * 0.4;
+                whatsBtn.classList.remove('pulse');
+            } else {
+                btnTargetX = 0; btnTargetY = 0;
+                whatsBtn.classList.add('pulse');
+            }
+        });
+
+    </script>
+</body>
+</html>
