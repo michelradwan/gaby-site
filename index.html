@@ -3379,18 +3379,7 @@
         }
         setupTriggers();
 
-        // Controlar cliques nos cartões de opções (Step 1, Step 2, Step 3)
-        document.querySelectorAll('.assistant-option-card').forEach(function(card) {
-            card.addEventListener('click', function(e) {
-                var input = this.querySelector('input');
-                if (e.target !== input) {
-                    input.checked = !input.checked;
-                    // Forçar evento de mudança manualmente
-                    var event = new Event('change', { bubbles: true });
-                    input.dispatchEvent(event);
-                }
-            });
-        });
+
 
         // Monitorar mudanças nos inputs
         document.querySelectorAll('input[name="assistant-service"]').forEach(function(input) {
