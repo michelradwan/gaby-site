@@ -488,22 +488,121 @@
             justify-content: center;
             gap: 0.8rem;
             margin-top: 1.5rem;
-            padding: 0.8rem 1.8rem;
-            background-color: rgba(156, 0, 26, 0.05);
-            border: 1px solid rgba(156, 0, 26, 0.18);
+            padding: 0.85rem 2rem;
             border-radius: 50px;
-            color: var(--accent-red);
             font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             text-align: left;
+            position: relative;
+            overflow: hidden;
+            
+            /* Bordas premium douradas metálicas com fundo Vinho (accent-red) */
+            border: 1.5px solid transparent;
+            background: linear-gradient(var(--accent-red), var(--accent-red)) padding-box, 
+                        linear-gradient(90deg, 
+                            var(--accent-gold) 0%, 
+                            var(--accent-rose) 50%,
+                            var(--accent-gold) 100%
+                        ) border-box;
+            background-size: 100% 100%, 200% auto;
+            color: #FFFFFF;
+            
+            /* Sombra dourada premium sutil */
+            box-shadow: 
+                0 4px 15px rgba(156, 0, 26, 0.15),
+                0 2px 6px rgba(212, 179, 117, 0.12);
+                
+            transition: 
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.3s ease;
+            
+            animation: premiumBorderFlow 6s linear infinite;
+            cursor: default;
         }
+
+        /* Efeito de brilho reflexivo (sweep) */
+        .badge-award::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.35) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            pointer-events: none;
+            animation: premiumShineSweep 5s infinite ease-in-out;
+        }
+
+        /* SVG da Estrela Pulsante Dourada */
         .badge-award svg {
             width: 16px;
             height: 16px;
-            fill: currentColor;
+            fill: var(--accent-gold);
             flex-shrink: 0;
+            filter: drop-shadow(0 0 2px rgba(212, 179, 117, 0.8));
+            animation: starScalePulse 2s infinite ease-in-out;
+        }
+
+        /* Ajustes para o modo escuro (Dark Mode) - mantendo o fundo vinho mas adaptando a sombra */
+        body.dark-mode .badge-award {
+            background: linear-gradient(var(--accent-red), var(--accent-red)) padding-box, 
+                        linear-gradient(90deg, 
+                            var(--accent-gold) 0%, 
+                            var(--accent-rose) 50%,
+                            var(--accent-gold) 100%
+                        ) border-box;
+            background-size: 100% 100%, 200% auto;
+            color: #FFFFFF;
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.4),
+                0 2px 10px rgba(212, 179, 117, 0.15);
+        }
+
+
+
+        /* Animações (Keyframes) */
+        @keyframes premiumBorderFlow {
+            0% {
+                background-position: 0% 50%, 0% 50%;
+            }
+            50% {
+                background-position: 0% 50%, 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%, 0% 50%;
+            }
+        }
+
+        @keyframes premiumShineSweep {
+            0% {
+                left: -150%;
+            }
+            30% {
+                left: 150%;
+            }
+            100% {
+                left: 150%;
+            }
+        }
+
+        @keyframes starScalePulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 2px rgba(212, 179, 117, 0.5));
+            }
+            50% {
+                transform: scale(1.22);
+                filter: drop-shadow(0 0 8px rgba(212, 179, 117, 0.95));
+            }
         }
         @media (max-width: 900px) {
             .about-split {
@@ -1070,6 +1169,451 @@
             fill: currentColor;
         }
 
+        /* --- SEÇÃO CURSO VIP --- */
+        .course-section {
+            padding: 8rem 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            position: relative;
+            z-index: 10;
+            transition: background-color 1.5s cubic-bezier(0.16, 1, 0.3, 1), color 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .course-section.in-view {
+            background-color: #1C0609; /* Vinho aveludado profundo */
+            color: #FAF7F4;
+        }
+        
+        .course-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2.5rem;
+        }
+        
+        .course-section .section-intro {
+            text-align: center;
+            margin: 0 auto 4rem auto;
+            max-width: 750px;
+        }
+        
+        .course-section .section-intro span {
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--accent-red);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .section-intro span {
+            color: var(--accent-gold);
+        }
+        
+        .course-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view h2 {
+            color: #FFFFFF;
+        }
+        
+        .course-section .section-intro p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .section-intro p {
+            color: rgba(250, 247, 244, 0.75);
+        }
+        
+        .course-split {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .course-learn-col h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            color: var(--accent-red);
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-learn-col h3 {
+            color: var(--accent-gold);
+        }
+        
+        .course-learn-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        
+        .course-learn-list li {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+        }
+        
+        .course-learn-list li .bullet-icon {
+            font-size: 1rem;
+            color: var(--accent-red);
+            margin-top: 0.15rem;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-learn-list li .bullet-icon {
+            color: var(--accent-gold);
+        }
+        
+        .course-learn-list li strong {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-learn-list li strong {
+            color: #FFFFFF;
+        }
+        
+        .course-learn-list li p {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            font-weight: 300;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-learn-list li p {
+            color: rgba(250, 247, 244, 0.65);
+        }
+        
+        /* CARD INFORMAÇÃO DO CURSO VIP */
+        .course-card-glass {
+            background-color: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: background-color 1.5s ease, border-color 1.5s ease, box-shadow 1.5s ease;
+            position: relative;
+        }
+        
+        .course-section.in-view .course-card-glass {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-color: rgba(212, 179, 117, 0.25);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+        }
+        
+        .course-price-tag {
+            text-align: center;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            transition: border-color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-price-tag {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .course-price-tag .price-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-price-tag .price-label {
+            color: rgba(250, 247, 244, 0.5);
+        }
+        
+        .course-price-tag .price-value {
+            font-family: 'Cinzel', serif;
+            font-size: 3.2rem;
+            font-weight: 300;
+            color: var(--accent-red);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-price-tag .price-value {
+            color: var(--accent-gold);
+        }
+        
+        .course-price-tag .price-payment {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            letter-spacing: 0.05em;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-price-tag .price-payment {
+            color: #FFFFFF;
+        }
+        
+        .course-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+        
+        .detail-icon {
+            font-size: 1.4rem;
+            color: var(--accent-red);
+            flex-shrink: 0;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .detail-icon {
+            color: var(--accent-gold);
+        }
+        
+        .detail-item strong {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.15rem;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .detail-item strong {
+            color: #FFFFFF;
+        }
+        
+        .detail-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .detail-item p {
+            color: rgba(250, 247, 244, 0.6);
+        }
+        
+        .btn-course-booking {
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            background-color: var(--accent-red);
+            color: #FFFFFF;
+            padding: 1.1rem 2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(156, 0, 26, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        
+        .btn-course-booking:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(156, 0, 26, 0.25);
+            background-color: var(--accent-red-hover);
+        }
+        
+        .course-section.in-view .btn-course-booking {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
+            color: var(--text-dark);
+            box-shadow: 0 10px 25px rgba(212, 179, 117, 0.25);
+        }
+        
+        .course-section.in-view .btn-course-booking:hover {
+            box-shadow: 0 15px 30px rgba(212, 179, 117, 0.4);
+            transform: translateY(-2px) scale(1.01);
+        }
+        
+        @media (max-width: 900px) {
+            .course-split {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .course-section .section-intro h2 {
+                font-size: 2.2rem;
+            }
+            .course-card-glass {
+                padding: 2.5rem 1.5rem;
+            }
+            .course-price-tag .price-value {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* --- GALERIA DO CURSO VIP --- */
+        .course-gallery {
+            margin-top: 6rem;
+            border-top: 1px solid rgba(156, 0, 26, 0.1);
+            padding-top: 5rem;
+            transition: border-color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-gallery {
+            border-top-color: rgba(212, 179, 117, 0.2);
+        }
+        
+        .course-gallery h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent-red);
+            transition: color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-gallery h3 {
+            color: var(--accent-gold);
+        }
+        
+        .course-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .course-gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 3 / 4;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 1.5s ease;
+        }
+        
+        .course-section.in-view .course-gallery-item {
+            border-color: rgba(212, 179, 117, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        .course-gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .course-gallery-media {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .course-gallery-item:hover .course-gallery-media {
+            transform: scale(1.05);
+        }
+        
+        .course-gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 1rem 1rem 1rem;
+            background: linear-gradient(to top, rgba(15, 11, 10, 0.85) 0%, rgba(15, 11, 10, 0) 100%);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        @media (max-width: 900px) {
+            .course-container {
+                padding: 0 1.5rem;
+            }
+            .course-info-col {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            .course-card-glass {
+                max-width: 480px;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .course-gallery {
+                margin-top: 4.5rem;
+                padding-top: 3.5rem;
+            }
+            .course-gallery h3 {
+                font-size: 1.5rem;
+                margin-bottom: 2.5rem;
+            }
+            .course-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            .course-gallery-grid .course-gallery-item:first-child {
+                grid-column: span 2;
+                aspect-ratio: 16 / 9;
+            }
+        }
+        
+        @media (max-width: 550px) {
+            .course-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .course-gallery-grid .course-gallery-item:first-child {
+                grid-column: span 1;
+                aspect-ratio: 4 / 5;
+            }
+            .course-gallery-item {
+                aspect-ratio: 4 / 5;
+            }
+            .course-section .section-intro h2 {
+                font-size: 1.45rem;
+                letter-spacing: 0.05em;
+                text-align: center;
+                display: block;
+                width: 100%;
+            }
+        }
+
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 1100px) {
             .btn-slide.prev { left: -20px; }
@@ -1096,6 +1640,7 @@
             .booking h2 { font-size: 3rem; }
             .btn-luxury-whats { padding: 20px 40px; font-size: 0.8rem; letter-spacing: 0.2em; }
             .section-intro h2 { font-size: 2.8rem; }
+            .course-section .section-intro h2 { font-size: 1.8rem; }
             .floating-booking { bottom: 1.5rem; right: 1.5rem; }
             .btn-floating-luxury { padding: 0.9rem 1.5rem; font-size: 0.65rem; }
         }
@@ -1122,6 +1667,7 @@
             <a href="#galeria" onclick="closeMobileMenu()">Galeria</a>
             <a href="#sobre" onclick="closeMobileMenu()">Sobre</a>
             <a href="#experiencia" onclick="closeMobileMenu()">Serviços</a>
+            <a href="#curso" onclick="closeMobileMenu()">Curso VIP</a>
             <a href="#depoimentos" onclick="closeMobileMenu()">Opiniões</a>
             <a href="#booking" onclick="closeMobileMenu()">Agendar</a>
         </nav>
@@ -1138,6 +1684,7 @@
             <li><a href="#galeria">Galeria</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#experiencia">Serviços</a></li>
+            <li><a href="#curso">Curso VIP</a></li>
             <li><a href="#depoimentos">Opiniões</a></li>
             <li><a href="#booking">Agendar</a></li>
         </ul>
@@ -1183,7 +1730,14 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 19l-7-7 7-7"/></svg>
             </button>
             <div class="slide-frame">
-                <!-- SLIDE 1 -->
+                <!-- SLIDE 1 (VÍDEO PORTFÓLIO) -->
+                <div class="galeria-slide">
+                    <video class="galeria-img lazy-video" autoplay muted loop playsinline preload="none" poster="images/foto%20gaby%2002.jpeg" style="object-fit: cover; width: 100%; height: 100%; border: none;">
+                        <source data-src="images/video%2001%20gaby.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </div>
+                <!-- SLIDE 2 -->
                 <div class="galeria-slide">
                     <img src="images/foto gaby 02.jpeg" alt="Gabrielly Makeup - Noiva Couture" class="galeria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="placeholder-visual">
@@ -1349,6 +1903,132 @@
         </div>
     </section>
 
+    <!-- SEÇÃO CURSO VIP -->
+    <section class="course-section" id="curso">
+        <div class="course-container reveal">
+            <div class="section-intro">
+                <span>Aperfeiçoe Sua Beleza</span>
+                <h2>Curso VIP de Automaquiagem</h2>
+                <p>Estou aqui para lhe convidar a participar da melhor experiência que você terá com a maquiagem. Nós vamos passar um dia incrível aprendendo técnicas de maquiagem para você se sentir confiante e bonita. 💫</p>
+            </div>
+            
+            <div class="course-split">
+                <!-- O que vai aprender -->
+                <div class="course-learn-col">
+                    <h3>O que você vai dominar:</h3>
+                    <ul class="course-learn-list">
+                        <li>
+                            <span class="bullet-icon">✦</span>
+                            <div>
+                                <strong>Técnicas Básicas e Avançadas</strong>
+                                <p>Aprenda desde a preparação higiênica e hidratação adequada até técnicas avançadas de maquiagem para festas.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bullet-icon">✦</span>
+                            <div>
+                                <strong>Preparação de Pele Completa</strong>
+                                <p>Entenda como identificar o seu tipo de pele e aplicar bases e corretivos para um acabamento perfeito.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bullet-icon">✦</span>
+                            <div>
+                                <strong>Técnica de Pele Blindada</strong>
+                                <p>Aprenda o segredo profissional de fazer uma maquiagem super resistente à água, suor e com durabilidade extrema.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bullet-icon">✦</span>
+                            <div>
+                                <strong>Camuflagem de Manchas</strong>
+                                <p>Técnicas eficientes e naturais para neutralizar melasma, marcas de acne, cicatrizes e olheiras profundas.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bullet-icon">✦</span>
+                            <div>
+                                <strong>Técnicas de Olhos e Cílios</strong>
+                                <p>Domine o esfumado perfeito, delineados simétricos e a aplicação rápida e confortável de cílios postiços.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bullet-icon">✦</span>
+                            <div>
+                                <strong>Orientação de Kit Essencial</strong>
+                                <p>Saiba exatamente quais produtos e pincéis são realmente necessários para começar, evitando gastos desnecessários.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Informações e CTA -->
+                <div class="course-info-col">
+                    <div class="course-card-glass">
+                        <div class="course-price-tag">
+                            <span class="price-label">Investimento Único</span>
+                            <span class="price-value">R$ 300,00</span>
+                            <span class="price-payment">Super Acessível 💸</span>
+                        </div>
+                        
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">⏱</span>
+                                <div>
+                                    <strong>Duração: 6 Horas</strong>
+                                    <p>Imersão completa: 3 horas teóricas + 3 horas práticas focadas em você.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏆</span>
+                                <div>
+                                    <strong>Certificado de Conclusão</strong>
+                                    <p>Ganhe um certificado assinado ao final da sua jornada.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎁</span>
+                                <div>
+                                    <strong>Um Mimo Especial 💄</strong>
+                                    <p>Um presente exclusivo preparado com carinho para você se sentir ainda mais bonita!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20saber%20mais%20e%20reservar%20uma%20vaga%20para%20o%20Curso%20VIP%20de%20Automaquiagem%20(R$%20300,00)." target="_blank" rel="noopener" class="btn-course-booking">
+                            Quero Reservar Minha Experiência
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Galeria do Curso VIP -->
+            <div class="course-gallery">
+                <h3>Resultados & Momentos do Curso</h3>
+                <div class="course-gallery-grid">
+                    <!-- Item 1 (Vídeo do Curso) -->
+                    <div class="course-gallery-item">
+                        <video class="course-gallery-media lazy-video" autoplay muted loop playsinline preload="none" poster="images/foto%20curso%2001.jpeg">
+                            <source data-src="images/video%20curso%20gaby%201%20.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos.
+                        </video>
+                        <div class="course-gallery-caption">Técnica em Prática</div>
+                    </div>
+                    <!-- Item 2 (Foto 1) -->
+                    <div class="course-gallery-item">
+                        <img src="images/foto%20curso%2001.jpeg" alt="Aluna no Curso de Automaquiagem" class="course-gallery-media" loading="lazy">
+                        <div class="course-gallery-caption">Mentoria VIP</div>
+                    </div>
+                    <!-- Item 3 (Foto 2) -->
+                    <div class="course-gallery-item">
+                        <img src="images/foto%20curso%2002%20.jpeg" alt="Resultado de Automaquiagem" class="course-gallery-media" loading="lazy">
+                        <div class="course-gallery-caption">Resultado Real</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- DEPOIMENTOS -->
     <section class="testimonials-section" id="depoimentos">
         <div class="section-intro reveal">
@@ -1358,7 +2038,7 @@
         <div class="testimonials-grid reveal reveal-delay-1">
             <div class="testimonial-card">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"A Gaby foi a melhor escolha que fiz para o meu casamento. Ela entendeu exatamente o que eu queria — uma maquiagem leve, mas que me deixou com cara de rica. Durou a festa toda sob o calor de Acaraú!"</p>
+                <p class="testimonial-text">"Mulher, eu simplesmente não tenho palavras pro seu trabalho! Eu chorei do início ao fim da cerimônia, abracei todo mundo e, quando me olhei no espelho no fim da festa, a maquiagem ainda estava intacta, sem um borrão sequer. Todo mundo elogiou a pele, parecia que eu tinha nascido assim kkk. Obrigada por ter deixado meu dia mais perfeito!"</p>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Beatriz Vasconcelos</span>
                     <span class="testimonial-role">Noiva de Acaraú, CE</span>
@@ -1366,15 +2046,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Sempre que tenho um evento em Acaraú, me produzo com a Gaby. A pele que ela faz é inexplicável, super leve e fotografa muito bem. Sem contar o atendimento, que é maravilhoso."</p>
-                <div class="testimonial-author">
-                    <span class="testimonial-name">Clara Silveira</span>
-                    <span class="testimonial-role">Cliente VIP</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Fiz minha maquiagem com ela para ser madrinha e fiquei chocada com a durabilidade. Chorei horrores na cerimônia e a pele continuou perfeita, sem abrir nada. Nota mil!"</p>
+                <p class="testimonial-text">"Gaby, vim aqui te agradecer! Eu tinha muito medo de ficar parecendo que estava com aquela 'máscara' de reboco, sabe? Mas você fez uma maquiagem super leve e que valorizou meus traços. O melhor foi que durou o evento inteiro sob aquele mormaço de Acaraú sem abrir na testa ou no nariz. Ganhou uma cliente pra vida!"</p>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Mariana Frota</span>
                     <span class="testimonial-role">Madrinha de Casamento</span>
@@ -1382,7 +2054,15 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Superou minhas expectativas tanto na maquiagem quanto no atendimento! A Gaby é super atenciosa, fez tudo do jeitinho que eu pedi. Já vou marcar minhas próximas produções."</p>
+                <p class="testimonial-text">"Gaby do céu, as fotos da minha colação de grau ficaram surreais! A pele estava impecável, sem aquele efeito estourado do flash que eu morria de medo. Minhas amigas ficaram todas me perguntando quem tinha feito. Além de ser uma profissional incrível, o seu papo no atelier deixou meu dia super leve. Já quero a próxima!"</p>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">Clara Silveira</span>
+                    <span class="testimonial-role">Formanda</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Menina, eu sou muito chata com maquiagem e geralmente saio querendo lavar o rosto quando faço com alguém kkk. Mas com você foi diferente, você ouviu cada detalhe do que eu queria e me deixou super à vontade. Me senti muito maravilhosa! A maquiagem durou a noite toda e a pele não ficou oleosa. Perfeita demais!"</p>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Alícia Meireles</span>
                     <span class="testimonial-role">Cliente Recorrente</span>
@@ -1755,6 +2435,47 @@
                 whatsBtn.classList.add('pulse');
             }
         });
+
+        // Lazy loading para os vídeos principais
+        window.addEventListener('load', function() {
+            var mainVideo = document.querySelector('.galeria-slide video.lazy-video');
+            if (mainVideo) {
+                var source = mainVideo.querySelector('source');
+                if (source && source.dataset.src) {
+                    source.src = source.dataset.src;
+                    mainVideo.load();
+                }
+            }
+        });
+
+        // Observer para ativar o tema de cor vinho e carregar o vídeo do Curso VIP ao rolar
+        var courseVideoLoaded = false;
+        var courseSectionEl = document.getElementById('curso');
+        if (courseSectionEl) {
+            var courseSectionObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        
+                        // Carregar o vídeo do curso sob demanda (somente quando estiver na tela)
+                        if (!courseVideoLoaded) {
+                            var courseVideo = entry.target.querySelector('video.lazy-video');
+                            if (courseVideo) {
+                                var source = courseVideo.querySelector('source');
+                                if (source && source.dataset.src) {
+                                    source.src = source.dataset.src;
+                                    courseVideo.load();
+                                    courseVideoLoaded = true;
+                                }
+                            }
+                        }
+                    } else {
+                        entry.target.classList.remove('in-view');
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -100px 0px" });
+            courseSectionObserver.observe(courseSectionEl);
+        }
 
     </script>
 </body>
