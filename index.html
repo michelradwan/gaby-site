@@ -1654,6 +1654,568 @@
             .booking-content { opacity: 1 !important; transform: none !important; }
             .hero-header { transform: none !important; opacity: 1 !important; filter: none !important; }
         }
+
+        /* --- FAQ SECTION --- */
+        .faq-section {
+            padding: 8rem 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            position: relative;
+            z-index: 10;
+            transition: background-color 1.5s cubic-bezier(0.16, 1, 0.3, 1), color 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .faq-section.in-view {
+            background-color: #0F0B0A;
+            color: #FAF7F4;
+        }
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2.5rem;
+        }
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 4rem;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+        .faq-section.in-view .faq-item {
+            background: rgba(24, 18, 17, 0.6);
+            border-color: rgba(212, 179, 117, 0.12);
+        }
+        .faq-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(212, 179, 117, 0.4);
+            box-shadow: 0 10px 30px rgba(14, 10, 9, 0.03);
+        }
+        .faq-header {
+            width: 100%;
+            padding: 2rem 2.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            outline: none;
+        }
+        .faq-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            padding-right: 1.5rem;
+        }
+        .faq-section.in-view .faq-title {
+            color: #FFFFFF;
+        }
+        .faq-header:hover .faq-title {
+            color: var(--accent-red);
+        }
+        .faq-section.in-view .faq-header:hover .faq-title {
+            color: var(--accent-gold);
+        }
+        .faq-icon {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--accent-red);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .faq-section.in-view .faq-icon {
+            color: var(--accent-gold);
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .faq-body {
+            padding: 0 2.5rem 2rem 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        .faq-section.in-view .faq-body {
+            color: rgba(250, 247, 244, 0.7);
+        }
+        .faq-body strong {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+        .faq-section.in-view .faq-body strong {
+            color: var(--accent-gold);
+        }
+        @media (max-width: 768px) {
+            .faq-container { padding: 0 1.5rem; }
+            .faq-header { padding: 1.5rem; }
+            .faq-body { padding: 0 1.5rem 1.5rem 1.5rem; }
+            .faq-title { font-size: 1rem; }
+        }
+
+        /* --- ASSISTENTE DE ORÇAMENTO MODAL --- */
+        .assistant-modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(14, 10, 9, 0.5);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .assistant-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .assistant-card {
+            background: rgba(250, 247, 244, 0.96);
+            border: 1px solid var(--glass-border);
+            width: 90%;
+            max-width: 580px;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+            position: relative;
+            transform: scale(0.92);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+        body.dark-mode .assistant-card {
+            background: rgba(24, 18, 17, 0.96);
+            border-color: rgba(212, 179, 117, 0.15);
+        }
+        .assistant-modal.open .assistant-card {
+            transform: scale(1);
+        }
+        .assistant-close {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10;
+        }
+        .assistant-close:hover {
+            color: var(--accent-red);
+        }
+        body.dark-mode .assistant-close:hover {
+            color: var(--accent-gold);
+        }
+        
+        .assistant-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .assistant-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        body.dark-mode .assistant-header h3 {
+            color: #FFFFFF;
+        }
+        .assistant-header p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+        
+        .assistant-steps-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        .assistant-steps-indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0;
+            width: 100%; height: 1px;
+            background: rgba(14, 10, 9, 0.08);
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+        body.dark-mode .assistant-steps-indicator::before {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .assistant-step-dot {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            border: 1px solid var(--text-muted);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+        body.dark-mode .assistant-step-dot {
+            background: var(--velvet-dark);
+        }
+        .assistant-step-dot.active {
+            background: var(--accent-red);
+            border-color: var(--accent-red);
+            color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(156, 0, 26, 0.35);
+        }
+        body.dark-mode .assistant-step-dot.active {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--text-dark);
+            box-shadow: 0 0 15px rgba(212, 179, 117, 0.35);
+        }
+        .assistant-step-dot.completed {
+            background: var(--text-dark);
+            border-color: var(--text-dark);
+            color: #FFFFFF;
+        }
+        body.dark-mode .assistant-step-dot.completed {
+            background: #FFFFFF;
+            border-color: #FFFFFF;
+            color: var(--text-dark);
+        }
+        
+        .assistant-step-pane {
+            display: none;
+            flex-direction: column;
+            overflow-y: auto;
+            flex-grow: 1;
+            padding-right: 0.5rem;
+        }
+        .assistant-step-pane.active {
+            display: flex;
+        }
+        
+        /* Form controls */
+        .assistant-group {
+            margin-bottom: 1.5rem;
+        }
+        .assistant-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            display: block;
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-label {
+            color: #FFFFFF;
+        }
+        
+        /* Grid of Options */
+        .assistant-options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .assistant-option-card {
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        body.dark-mode .assistant-option-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(212, 179, 117, 0.12);
+            color: #FFF;
+        }
+        .assistant-option-card:hover {
+            border-color: var(--accent-red);
+            background: rgba(156, 0, 26, 0.02);
+        }
+        body.dark-mode .assistant-option-card:hover {
+            border-color: var(--accent-gold);
+            background: rgba(212, 179, 117, 0.02);
+        }
+        .assistant-option-card.selected {
+            border-color: var(--accent-red);
+            background: rgba(156, 0, 26, 0.04);
+        }
+        body.dark-mode .assistant-option-card.selected {
+            border-color: var(--accent-gold);
+            background: rgba(212, 179, 117, 0.05);
+        }
+        .assistant-option-card input[type="checkbox"],
+        .assistant-option-card input[type="radio"] {
+            margin-right: 1.2rem;
+            accent-color: var(--accent-red);
+            width: 18px; height: 18px;
+            cursor: pointer;
+        }
+        body.dark-mode .assistant-option-card input[type="checkbox"],
+        body.dark-mode .assistant-option-card input[type="radio"] {
+            accent-color: var(--accent-gold);
+        }
+        .assistant-option-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+        .assistant-option-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-option-name {
+            color: #FFFFFF;
+        }
+        .assistant-option-price {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            color: var(--accent-red);
+            font-weight: 500;
+        }
+        body.dark-mode .assistant-option-price {
+            color: var(--accent-gold);
+        }
+        
+        /* Date / Shift selectors */
+        .assistant-date-input {
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.3);
+            color: var(--text-dark);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .assistant-date-input {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(212, 179, 117, 0.12);
+            color: #FFFFFF;
+        }
+        .assistant-date-input:focus {
+            border-color: var(--accent-red);
+        }
+        body.dark-mode .assistant-date-input:focus {
+            border-color: var(--accent-gold);
+        }
+        
+        /* Counter controls */
+        .assistant-counter-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .assistant-counter-btn {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .assistant-counter-btn {
+            border-color: rgba(212, 179, 117, 0.12);
+            color: #FFFFFF;
+        }
+        .assistant-counter-btn:hover {
+            border-color: var(--accent-red);
+            color: var(--accent-red);
+        }
+        body.dark-mode .assistant-counter-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        .assistant-counter-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: 30px;
+            text-align: center;
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-counter-value {
+            color: #FFFFFF;
+        }
+        
+        /* Info alert block */
+        .assistant-info-alert {
+            background: rgba(156, 0, 26, 0.04);
+            border-left: 3px solid var(--accent-red);
+            padding: 1rem 1.2rem;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-top: 1rem;
+        }
+        body.dark-mode .assistant-info-alert {
+            background: rgba(212, 179, 117, 0.05);
+            border-left-color: var(--accent-gold);
+            color: rgba(250, 247, 244, 0.7);
+        }
+        
+        /* Summary pane */
+        .assistant-summary-list {
+            background: rgba(14, 10, 9, 0.02);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--glass-border);
+        }
+        body.dark-mode .assistant-summary-list {
+            background: rgba(255, 255, 255, 0.01);
+            border-color: rgba(212, 179, 117, 0.1);
+        }
+        .assistant-summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+        body.dark-mode .assistant-summary-row {
+            color: rgba(250, 247, 244, 0.7);
+        }
+        .assistant-summary-row:last-child {
+            margin-bottom: 0;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(14, 10, 9, 0.06);
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+        body.dark-mode .assistant-summary-row:last-child {
+            border-top-color: rgba(255, 255, 255, 0.06);
+            color: #FFFFFF;
+        }
+        .assistant-summary-total-price {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-red) !important;
+        }
+        body.dark-mode .assistant-summary-total-price {
+            color: var(--accent-gold) !important;
+        }
+        
+        /* Footer / Navigation */
+        .assistant-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        .assistant-btn-nav {
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .assistant-btn-nav.btn-back {
+            background: none;
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+        body.dark-mode .assistant-btn-nav.btn-back {
+            border-color: rgba(212, 179, 117, 0.12);
+            color: rgba(250, 247, 244, 0.6);
+        }
+        .assistant-btn-nav.btn-back:hover {
+            border-color: var(--text-dark);
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-btn-nav.btn-back:hover {
+            border-color: #FFFFFF;
+            color: #FFFFFF;
+        }
+        .assistant-btn-nav.btn-next {
+            background-color: var(--accent-red);
+            color: #FFFFFF;
+            flex-grow: 1;
+            text-align: center;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .assistant-btn-nav.btn-next:hover {
+            background-color: var(--accent-red-hover);
+            box-shadow: 0 8px 20px rgba(156, 0, 26, 0.2);
+            transform: translateY(-1px);
+        }
+        body.dark-mode .assistant-btn-nav.btn-next {
+            background-color: var(--accent-gold);
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-btn-nav.btn-next:hover {
+            background-color: var(--accent-gold-hover);
+            box-shadow: 0 8px 20px rgba(212, 179, 117, 0.2);
+        }
+        .assistant-btn-nav.btn-whatsapp {
+            background: #25D366;
+            color: #FFFFFF;
+            flex-grow: 1;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            text-decoration: none;
+        }
+        .assistant-btn-nav.btn-whatsapp:hover {
+            background: #20BA5A;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+            transform: translateY(-1px);
+        }
+        .assistant-btn-nav.btn-whatsapp svg {
+            width: 16px; height: 16px;
+            fill: currentColor;
+        }
+        @media (max-width: 580px) {
+            .assistant-card { padding: 2rem; width: 95%; }
+            .assistant-header h3 { font-size: 1.4rem; }
+            .assistant-option-card { padding: 0.9rem 1.1rem; }
+            .assistant-option-name { font-size: 0.85rem; }
+            .assistant-option-price { font-size: 0.85rem; }
+            .assistant-footer { flex-direction: column-reverse; gap: 0.8rem; }
+            .assistant-btn-nav.btn-next { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -1710,7 +2272,7 @@
             <p class="hero-tagline reveal-delay-3">A beleza que revela quem você realmente é.</p>
             <p class="hero-tagline reveal-delay-3" style="font-size: 1.25rem; font-family: 'Montserrat', sans-serif; font-style: normal; margin-top: -2rem; max-width: 650px; font-weight: 300;">Especialista em maquiagem para noivas, eventos e ensaios.</p>
             <div class="reveal-delay-3" style="margin-top: 2rem;">
-                <a href="#booking" class="btn-hero-booking">
+                <a href="#" class="btn-hero-booking btn-trigger-assistant">
                     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
                     Quero Agendar Meu Horário
                 </a>
@@ -1825,7 +2387,7 @@
                         <p>Uma produção impecável desenvolvida com técnica blindada para garantir máxima durabilidade. Ideal para eventos especiais, casamentos, formaturas ou ensaios fotográficos. Inclui aplicação de cílios postiços luxuosos para um toque extra de glamour, além de esfumados e pigmentos refinados para valorizar a beleza dos seus olhos.</p>
                         <p>Aproximadamente 1h15 • Acabamento impecável resistente a água e suor.</p>
                         <p class="service-price">R$ 90,00</p>
-                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20uma%20Maquiagem%20Social%20(R$%2090,00)." target="_blank" rel="noopener" class="btn-service-booking">Agendar Maquiagem Social</a>
+                        <a href="#" class="btn-service-booking btn-trigger-assistant" data-service="social">Agendar Maquiagem Social</a>
                     </div>
                 </div>
             </div>
@@ -1841,7 +2403,7 @@
                         <p>A beleza da simplicidade. Uma técnica focada em construir uma pele natural realçada de forma leve, limpa e discreta. Perfeita para reuniões de trabalho, eventos diurnos ou para quem prefere um visual minimalista elegante. Esta modalidade não inclui cílios postiços, sombras complexas ou pigmentos.</p>
                         <p>Aproximadamente 45 minutos • Pele fresca com efeito glow natural.</p>
                         <p class="service-price">R$ 70,00</p>
-                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20uma%20Maquiagem%20Express%20(R$%2070,00)." target="_blank" rel="noopener" class="btn-service-booking">Agendar Maquiagem Express</a>
+                        <a href="#" class="btn-service-booking btn-trigger-assistant" data-service="express">Agendar Maquiagem Express</a>
                     </div>
                 </div>
             </div>
@@ -1857,7 +2419,7 @@
                         <p>Penteados elegantes estruturados de acordo com o seu desejo e estilo do evento. Desenvolvemos designs despojados, soltos românticos, semi presos modernos, rabos de cavalo imponentes ou tranças super trabalhadas.</p>
                         <p>Aproximadamente 1h00 • Inclui produtos profissionais de fixação para alta durabilidade.</p>
                         <p class="service-price">R$ 90,00</p>
-                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20um%20Penteado%20Personalizado%20(R$%2090,00)." target="_blank" rel="noopener" class="btn-service-booking">Agendar Penteado</a>
+                        <a href="#" class="btn-service-booking btn-trigger-assistant" data-service="penteado">Agendar Penteado</a>
                     </div>
                 </div>
             </div>
@@ -1873,7 +2435,7 @@
                         <p>A finalização perfeita para dar balanço aos fios. Ideal para criar cabelos com movimentos fluidos, ondas volumosas clássicas ou cachos definidos, proporcionando uma moldura radiante para o seu rosto.</p>
                         <p>Aproximadamente 40 minutos • Acabamento leve com toque sedoso e alta durabilidade.</p>
                         <p class="service-price">R$ 70,00</p>
-                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20um%20Babyliss%20(R$%2070,00)." target="_blank" rel="noopener" class="btn-service-booking">Agendar Babyliss</a>
+                        <a href="#" class="btn-service-booking btn-trigger-assistant" data-service="babyliss">Agendar Babyliss</a>
                     </div>
                 </div>
             </div>
@@ -1995,7 +2557,7 @@
                             </div>
                         </div>
                         
-                        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20saber%20mais%20e%20reservar%20uma%20vaga%20para%20o%20Curso%20VIP%20de%20Automaquiagem%20(R$%20300,00)." target="_blank" rel="noopener" class="btn-course-booking">
+                        <a href="#" class="btn-course-booking btn-trigger-assistant" data-service="curso">
                             Quero Reservar Minha Experiência
                         </a>
                     </div>
@@ -2071,17 +2633,90 @@
         </div>
     </section>
 
+    <!-- SEÇÃO FAQ (DÚVIDAS FREQUENTES) -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container reveal">
+            <div class="section-intro">
+                <span>Dúvidas Frequentes</span>
+                <h2>Informações Úteis</h2>
+                <p>Aqui você encontra respostas para as principais dúvidas sobre os atendimentos, preparação e agendamentos.</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <!-- Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-title">Como faço para garantir a minha vaga/data?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-body">
+                            <p>Os agendamentos são confirmados mediante um sinal de <strong>30% do valor da produção</strong> (via Pix). O restante do pagamento pode ser realizado no dia do atendimento em dinheiro, Pix ou cartão.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-title">Você atende fora do estúdio / em outras cidades?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-body">
+                            <p>Sim! Realizamos atendimentos a domicílio (Home Care), em hotéis ou locais de eventos (principalmente noivas e debutantes) em toda a região de Acaraú, Cruz, Jijoca e arredores. A <strong>taxa de deslocamento</strong> é calculada com base na distância e pode ser consultada no simulador de agendamento ou diretamente no nosso WhatsApp.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-title">Quais marcas de maquiagem você utiliza?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-body">
+                            <p>Trabalhamos exclusivamente com maquiagens importadas e de alta performance para garantir acabamento de luxo, resistência à água e durabilidade sob o calor. Nossos produtos incluem marcas como <strong>MAC Cosmetics, Dior, NARS, Huda Beauty, Kryolan, Atelier Paris</strong>, entre outras.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-title">Com quanta antecedência devo reservar maquiagem para Noiva?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-body">
+                            <p>Recomendamos agendar com pelo menos <strong>3 a 6 meses de antecedência</strong>. As datas de noivas exigem bloqueio de agenda e um planejamento minucioso para o teste de maquiagem e cabelo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- BOOKING -->
     <section class="booking" id="booking">
         <div class="booking-content id-booking-content">
             <h2>Vamos Agendar o Seu Momento?</h2>
-            <p>Os atendimentos no estúdio são limitados para garantir um momento calmo, exclusivo e totalmente focado em você. Clique no botão abaixo para conversar no WhatsApp e reservar o seu horário.</p>
-            <a href="#" id="whatsapp-btn" target="_blank" rel="noopener" class="btn-luxury-whats pulse">
-                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
-                Conversar no WhatsApp e Agendar
+            <p>Os atendimentos no estúdio são limitados para garantir um momento calmo, exclusivo e totalmente focado em
+                você. Clique no botão abaixo para iniciar o simulador e agendar o seu horário.</p>
+            <a href="#" id="whatsapp-btn" class="btn-luxury-whats btn-trigger-assistant pulse">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z" />
+                </svg>
+                Simular Orçamento &amp; Agendar
             </a>
             <a href="https://www.instagram.com/gabriellymmakeup" target="_blank" rel="noopener" class="booking-social">
-                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
                 Siga no Instagram
             </a>
         </div>
@@ -2089,10 +2724,174 @@
 
     <!-- Botão Flutuante de Conversão -->
     <div class="floating-booking" id="floating-booking">
-        <a href="https://wa.me/558899502322?text=Olá,%20Gabrielly!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener" class="btn-floating-luxury" aria-label="Agendar via WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
+        <a href="#" class="btn-floating-luxury btn-trigger-assistant" aria-label="Agendar via WhatsApp">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z" />
+            </svg>
             Agendar
         </a>
+    </div>
+
+    <!-- MODAL DO ASSISTENTE DE AGENDAMENTO -->
+    <div class="assistant-modal" id="assistant-modal">
+        <div class="assistant-card">
+            <button class="assistant-close" id="assistant-close" aria-label="Fechar">&times;</button>
+            
+            <div class="assistant-header">
+                <h3>Agendamento de Luxo</h3>
+                <p>Simule e envie os dados da sua produção</p>
+            </div>
+            
+            <div class="assistant-steps-indicator">
+                <div class="assistant-step-dot active" data-step="1">1</div>
+                <div class="assistant-step-dot" data-step="2">2</div>
+                <div class="assistant-step-dot" data-step="3">3</div>
+                <div class="assistant-step-dot" data-step="4">4</div>
+            </div>
+            
+            <!-- STEP 1: SERVIÇOS -->
+            <div class="assistant-step-pane active" data-step="1">
+                <span class="assistant-label">Selecione os Serviços Desejados</span>
+                <div class="assistant-options-grid">
+                    <label class="assistant-option-card">
+                        <input type="checkbox" name="assistant-service" value="social" data-price="90">
+                        <div class="assistant-option-info">
+                            <span class="assistant-option-name">Maquiagem Social</span>
+                            <span class="assistant-option-price">R$ 90,00</span>
+                        </div>
+                    </label>
+                    <label class="assistant-option-card">
+                        <input type="checkbox" name="assistant-service" value="express" data-price="70">
+                        <div class="assistant-option-info">
+                            <span class="assistant-option-name">Maquiagem Express</span>
+                            <span class="assistant-option-price">R$ 70,00</span>
+                        </div>
+                    </label>
+                    <label class="assistant-option-card">
+                        <input type="checkbox" name="assistant-service" value="penteado" data-price="90">
+                        <div class="assistant-option-info">
+                            <span class="assistant-option-name">Penteado Personalizado</span>
+                            <span class="assistant-option-price">R$ 90,00</span>
+                        </div>
+                    </label>
+                    <label class="assistant-option-card">
+                        <input type="checkbox" name="assistant-service" value="babyliss" data-price="70">
+                        <div class="assistant-option-info">
+                            <span class="assistant-option-name">Babyliss</span>
+                            <span class="assistant-option-price">R$ 70,00</span>
+                        </div>
+                    </label>
+                    <label class="assistant-option-card">
+                        <input type="checkbox" name="assistant-service" value="curso" data-price="300">
+                        <div class="assistant-option-info">
+                            <span class="assistant-option-name">Curso VIP de Automaquiagem</span>
+                            <span class="assistant-option-price">R$ 300,00</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- STEP 2: LOGÍSTICA / LOCAL -->
+            <div class="assistant-step-pane" data-step="2">
+                <span class="assistant-label">Local do Atendimento</span>
+                <div class="assistant-options-grid">
+                    <label class="assistant-option-card selected">
+                        <input type="radio" name="assistant-location" value="estudio" checked>
+                        <div class="assistant-option-info">
+                            <span class="assistant-option-name">Atendimento no Estúdio (Acaraú)</span>
+                            <span class="assistant-option-price">Sem Taxa</span>
+                        </div>
+                    </label>
+                    <label class="assistant-option-card">
+                        <input type="radio" name="assistant-location" value="externo">
+                        <div class="assistant-option-info">
+                            <span class="assistant-option-name">Domicílio / Hotel / Outra Cidade</span>
+                            <span class="assistant-option-price">Taxa Sob Consulta</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="assistant-info-alert" id="assistant-loc-alert" style="display:none;">
+                    📍 <strong>Nota sobre atendimento externo:</strong> Para atendimentos fora do estúdio, será calculada uma taxa de deslocamento adicional com base na distância. A Gabrielly confirmará o valor no WhatsApp.
+                </div>
+            </div>
+            
+            <!-- STEP 3: DATA & TURNO -->
+            <div class="assistant-step-pane" data-step="3">
+                <div class="assistant-group">
+                    <label class="assistant-label" for="assistant-date">Escolha a Data Sugerida</label>
+                    <input type="date" id="assistant-date" class="assistant-date-input" required>
+                </div>
+                <div class="assistant-group">
+                    <label class="assistant-label">Turno de Preferência</label>
+                    <div class="assistant-options-grid">
+                        <label class="assistant-option-card selected">
+                            <input type="radio" name="assistant-shift" value="manha" checked>
+                            <div class="assistant-option-info">
+                                <span class="assistant-option-name">Manhã (Ideal para casamentos/ensaios diurnos)</span>
+                            </div>
+                        </label>
+                        <label class="assistant-option-card">
+                            <input type="radio" name="assistant-shift" value="tarde">
+                            <div class="assistant-option-info">
+                                <span class="assistant-option-name">Tarde (Ideal para formaturas/eventos noturnos)</span>
+                            </div>
+                        </label>
+                        <label class="assistant-option-card">
+                            <input type="radio" name="assistant-shift" value="noite">
+                            <div class="assistant-option-info">
+                                <span class="assistant-option-name">Noite (Sob consulta especial)</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STEP 4: QUANTIDADE DE PESSOAS & RESUMO -->
+            <div class="assistant-step-pane" data-step="4">
+                <div class="assistant-group">
+                    <label class="assistant-label">Número de Pessoas para Produzir</label>
+                    <div class="assistant-counter-wrapper">
+                        <button class="assistant-counter-btn" id="counter-dec" type="button">-</button>
+                        <span class="assistant-counter-value" id="counter-val">1</span>
+                        <button class="assistant-counter-btn" id="counter-inc" type="button">+</button>
+                    </div>
+                </div>
+                
+                <span class="assistant-label" style="margin-top: 1.5rem;">Resumo da sua Simulação</span>
+                <div class="assistant-summary-list">
+                    <div class="assistant-summary-row">
+                        <span>Serviços Selecionados:</span>
+                        <span id="summary-services">Nenhum</span>
+                    </div>
+                    <div class="assistant-summary-row">
+                        <span>Local:</span>
+                        <span id="summary-location">Estúdio</span>
+                    </div>
+                    <div class="assistant-summary-row">
+                        <span>Data &amp; Turno:</span>
+                        <span id="summary-date">Não informada</span>
+                    </div>
+                    <div class="assistant-summary-row">
+                        <span>Quantidade de Pessoas:</span>
+                        <span id="summary-people">1</span>
+                    </div>
+                    <div class="assistant-summary-row">
+                        <span>Subtotal Estimado:</span>
+                        <span class="assistant-summary-total-price" id="summary-total">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="assistant-footer">
+                <button class="assistant-btn-nav btn-back" id="assistant-prev" style="visibility:hidden;">Voltar</button>
+                <button class="assistant-btn-nav btn-next" id="assistant-next">Avançar</button>
+                <a href="#" target="_blank" rel="noopener" class="assistant-btn-nav btn-whatsapp" id="assistant-submit" style="display:none;">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
+                    Consultar Vaga no WhatsApp
+                </a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -2477,6 +3276,330 @@
             courseSectionObserver.observe(courseSectionEl);
         }
 
+        // ============================================================
+        // SISTEMA DE DÚVIDAS FREQUENTES (FAQ)
+        // ============================================================
+        var faqHeaders = document.querySelectorAll('.faq-header');
+        faqHeaders.forEach(function(header) {
+            header.addEventListener('click', function() {
+                var item = this.parentElement;
+                var content = item.querySelector('.faq-content');
+                var isActive = item.classList.contains('active');
+                
+                // Fechar todos os outros
+                document.querySelectorAll('.faq-item').forEach(function(otherItem) {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-content').style.maxHeight = null;
+                        otherItem.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Alternar o atual
+                if (isActive) {
+                    item.classList.remove('active');
+                    content.style.maxHeight = null;
+                    this.setAttribute('aria-expanded', 'false');
+                } else {
+                    item.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ============================================================
+        // ASSISTENTE DE AGENDAMENTO INTERATIVO (MODAL)
+        // ============================================================
+        var assistantModal = document.getElementById('assistant-modal');
+        var assistantClose = document.getElementById('assistant-close');
+        var btnPrev = document.getElementById('assistant-prev');
+        var btnNext = document.getElementById('assistant-next');
+        var btnSubmit = document.getElementById('assistant-submit');
+        
+        var currentStep = 1;
+        var totalPeople = 1;
+        
+        // Mapeamento de Serviços
+        var SERVICES_INFO = {
+            'social': { name: 'Maquiagem Social', price: 90 },
+            'express': { name: 'Maquiagem Express', price: 70 },
+            'penteado': { name: 'Penteado Personalizado', price: 90 },
+            'babyliss': { name: 'Babyliss', price: 70 },
+            'curso': { name: 'Curso VIP de Automaquiagem', price: 300 }
+        };
+
+        // Abrir Modal
+        function openAssistant(preselectedService) {
+            assistantModal.classList.add('open');
+            goToStep(1);
+            
+            // Se houver pré-seleção
+            if (preselectedService && SERVICES_INFO[preselectedService]) {
+                document.querySelectorAll('input[name="assistant-service"]').forEach(function(input) {
+                    if (input.value === preselectedService) {
+                        input.checked = true;
+                        input.closest('.assistant-option-card').classList.add('selected');
+                    } else {
+                        input.checked = false;
+                        input.closest('.assistant-option-card').classList.remove('selected');
+                    }
+                });
+            } else {
+                // Resetar seleção se abriu limpo
+                document.querySelectorAll('input[name="assistant-service"]').forEach(function(input) {
+                    input.checked = false;
+                    input.closest('.assistant-option-card').classList.remove('selected');
+                });
+            }
+            updateSummary();
+        }
+
+        // Fechar Modal
+        function closeAssistant() {
+            assistantModal.classList.remove('open');
+        }
+
+        assistantClose.addEventListener('click', closeAssistant);
+        assistantModal.addEventListener('click', function(e) {
+            if (e.target === assistantModal) {
+                closeAssistant();
+            }
+        });
+
+        // Adicionar gatilho aos botões de agendamento do site
+        function setupTriggers() {
+            document.querySelectorAll('.btn-trigger-assistant').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var service = this.getAttribute('data-service');
+                    openAssistant(service);
+                });
+            });
+        }
+        setupTriggers();
+
+        // Controlar cliques nos cartões de opções (Step 1, Step 2, Step 3)
+        document.querySelectorAll('.assistant-option-card').forEach(function(card) {
+            card.addEventListener('click', function(e) {
+                var input = this.querySelector('input');
+                if (e.target !== input) {
+                    input.checked = !input.checked;
+                    // Forçar evento de mudança manualmente
+                    var event = new Event('change', { bubbles: true });
+                    input.dispatchEvent(event);
+                }
+            });
+        });
+
+        // Monitorar mudanças nos inputs
+        document.querySelectorAll('input[name="assistant-service"]').forEach(function(input) {
+            input.addEventListener('change', function() {
+                var card = this.closest('.assistant-option-card');
+                if (this.checked) {
+                    card.classList.add('selected');
+                } else {
+                    card.classList.remove('selected');
+                }
+                updateSummary();
+            });
+        });
+
+        // Domicílio / Estúdio
+        document.querySelectorAll('input[name="assistant-location"]').forEach(function(input) {
+            input.addEventListener('change', function() {
+                document.querySelectorAll('input[name="assistant-location"]').forEach(function(i) {
+                    i.closest('.assistant-option-card').classList.remove('selected');
+                });
+                var card = this.closest('.assistant-option-card');
+                card.classList.add('selected');
+                
+                var alertBlock = document.getElementById('assistant-loc-alert');
+                if (this.value === 'externo') {
+                    alertBlock.style.display = 'block';
+                } else {
+                    alertBlock.style.display = 'none';
+                }
+                updateSummary();
+            });
+        });
+
+        // Turno
+        document.querySelectorAll('input[name="assistant-shift"]').forEach(function(input) {
+            input.addEventListener('change', function() {
+                document.querySelectorAll('input[name="assistant-shift"]').forEach(function(i) {
+                    i.closest('.assistant-option-card').classList.remove('selected');
+                });
+                var card = this.closest('.assistant-option-card');
+                card.classList.add('selected');
+                updateSummary();
+            });
+        });
+
+        // Data
+        document.getElementById('assistant-date').addEventListener('change', updateSummary);
+
+        // Contador de Pessoas
+        var counterVal = document.getElementById('counter-val');
+        document.getElementById('counter-dec').addEventListener('click', function() {
+            if (totalPeople > 1) {
+                totalPeople--;
+                counterVal.textContent = totalPeople;
+                updateSummary();
+            }
+        });
+        document.getElementById('counter-inc').addEventListener('click', function() {
+            if (totalPeople < 10) {
+                totalPeople++;
+                counterVal.textContent = totalPeople;
+                updateSummary();
+            }
+        });
+
+        // Navegação de Etapas
+        function goToStep(step) {
+            currentStep = step;
+            
+            // Atualizar panes
+            document.querySelectorAll('.assistant-step-pane').forEach(function(pane) {
+                pane.classList.remove('active');
+                if (parseInt(pane.getAttribute('data-step')) === step) {
+                    pane.classList.add('active');
+                }
+            });
+            
+            // Atualizar dots
+            document.querySelectorAll('.assistant-step-dot').forEach(function(dot) {
+                var dStep = parseInt(dot.getAttribute('data-step'));
+                dot.classList.remove('active', 'completed');
+                if (dStep === step) {
+                    dot.classList.add('active');
+                } else if (dStep < step) {
+                    dot.classList.add('completed');
+                }
+            });
+            
+            // Atualizar botões de navegação
+            if (step === 1) {
+                btnPrev.style.visibility = 'hidden';
+            } else {
+                btnPrev.style.visibility = 'visible';
+            }
+            
+            if (step === 4) {
+                btnNext.style.display = 'none';
+                btnSubmit.style.display = 'flex';
+                updateSummary();
+            } else {
+                btnNext.style.display = 'block';
+                btnSubmit.style.display = 'none';
+            }
+        }
+
+        btnNext.addEventListener('click', function() {
+            if (currentStep === 1) {
+                // Validar se escolheu ao menos um serviço
+                var selected = document.querySelectorAll('input[name="assistant-service"]:checked');
+                if (selected.length === 0) {
+                    alert('Por favor, selecione pelo menos um serviço para continuar.');
+                    return;
+                }
+            }
+            if (currentStep === 3) {
+                // Validar se preencheu a data
+                var dateVal = document.getElementById('assistant-date').value;
+                if (!dateVal) {
+                    alert('Por favor, selecione a data desejada para continuar.');
+                    return;
+                }
+            }
+            if (currentStep < 4) {
+                goToStep(currentStep + 1);
+            }
+        });
+
+        btnPrev.addEventListener('click', function() {
+            if (currentStep > 1) {
+                goToStep(currentStep - 1);
+            }
+        });
+
+        // Atualizar Resumo e link WhatsApp
+        function updateSummary() {
+            var selectedServices = [];
+            var servicesTotal = 0;
+            
+            document.querySelectorAll('input[name="assistant-service"]:checked').forEach(function(input) {
+                var key = input.value;
+                if (SERVICES_INFO[key]) {
+                    selectedServices.push(SERVICES_INFO[key].name);
+                    servicesTotal += SERVICES_INFO[key].price;
+                }
+            });
+            
+            // Atualizar lista no HTML
+            var servicesLabel = selectedServices.join(', ');
+            document.getElementById('summary-services').textContent = selectedServices.length > 0 ? servicesLabel : 'Nenhum';
+            
+            // Local
+            var locationType = document.querySelector('input[name="assistant-location"]:checked').value;
+            var locationLabel = locationType === 'estudio' ? 'Estúdio (Acaraú)' : 'Domicílio / Externo';
+            document.getElementById('summary-location').textContent = locationLabel;
+            
+            // Data
+            var dateInput = document.getElementById('assistant-date').value;
+            var dateLabel = 'Não informada';
+            var dateFormatted = '';
+            if (dateInput) {
+                var parts = dateInput.split('-');
+                dateLabel = parts[2] + '/' + parts[1] + '/' + parts[0];
+                dateFormatted = dateLabel;
+            }
+            
+            var shiftType = document.querySelector('input[name="assistant-shift"]:checked').value;
+            var shiftLabel = shiftType === 'manha' ? 'Manhã' : (shiftType === 'tarde' ? 'Tarde' : 'Noite');
+            document.getElementById('summary-date').textContent = dateInput ? dateLabel + ' (' + shiftLabel + ')' : 'Não informada';
+            
+            // Pessoas
+            document.getElementById('summary-people').textContent = totalPeople;
+            
+            // Total
+            var grandTotal = servicesTotal * totalPeople;
+            var totalFormatted = 'R$ ' + grandTotal.toFixed(2).replace('.', ',');
+            document.getElementById('summary-total').textContent = totalFormatted;
+            
+            // WhatsApp Link
+            if (selectedServices.length > 0) {
+                var message = "Olá, Gabrielly! Usei o simulador do seu site e gostaria de consultar a disponibilidade para o seguinte agendamento:\n\n";
+                message += "💅 *Serviços:* " + servicesLabel + "\n";
+                message += "📍 *Local:* " + locationLabel + "\n";
+                message += "📅 *Data:* " + (dateFormatted ? dateFormatted : "A combinar") + " (Turno: " + shiftLabel + ")\n";
+                message += "👥 *Quantidade:* " + totalPeople + (totalPeople > 1 ? " pessoas" : " pessoa") + "\n";
+                message += "💰 *Subtotal Estimado:* " + totalFormatted + "\n\n";
+                if (locationType === 'externo') {
+                    message += "_(Gostaria de consultar o valor da taxa de deslocamento para o meu endereço)_";
+                } else {
+                    message += "Aguardo sua confirmação para prosseguir com a reserva!";
+                }
+                
+                btnSubmit.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+            }
+        }
+
+        // Adicionar gatilho para os observadores de in-view do FAQ
+        var faqSectionEl = document.getElementById('faq');
+        if (faqSectionEl) {
+            var faqSectionObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    } else {
+                        entry.target.classList.remove('in-view');
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -100px 0px" });
+            faqSectionObserver.observe(faqSectionEl);
+        }
     </script>
 </body>
 </html>
