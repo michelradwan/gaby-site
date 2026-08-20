@@ -20,7 +20,7 @@
     <!-- Google Fonts Premium Combination -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- JSON-LD Schema.org BeautySalon -->
     <script type="application/ld+json">
@@ -43,25 +43,29 @@
     }
     </script>
 
+    <!-- Supabase JS Client & Config -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+
     <style>
         :root {
-            /* Palette Gold, Velvet Red & Champagne Silk */
-            --bg-light: #FAF7F4;
-            --bg-card: rgba(255, 255, 255, 0.45);
-            --text-dark: #1F1917;
-            --text-muted: #7E6F67;
+            /* Palette Editorial Luxe */
+            --bg-light: #F8F5F1;
+            --bg-card: rgba(255, 255, 255, 0.6);
+            --text-dark: #211D1D;
+            --text-muted: #6B635F;
             --accent-gold: #D4B375;
             --accent-gold-hover: #C39F5E;
             --accent-rose: #E8B4A6;
             
-            /* Veludo Vermelho */
-            --accent-red: #9C001A;
-            --accent-red-hover: #7E0013;
+            /* Vinho / Bordô Profundo */
+            --accent-red: #8E001C;
+            --accent-red-hover: #750017;
             
             --velvet-dark: #0F0B0A;
             --velvet-card: rgba(24, 18, 17, 0.6);
-            --glass-border: rgba(212, 179, 117, 0.22);
-            --glass-bg: rgba(250, 247, 244, 0.6);
+            --glass-border: rgba(142, 0, 28, 0.1);
+            --glass-bg: rgba(248, 245, 241, 0.7);
             --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             --transition-fast: all 0.3s ease;
         }
@@ -79,13 +83,13 @@
         }
 
         body {
+            font-family: 'Manrope', 'Montserrat', sans-serif;
             background-color: var(--bg-light);
             color: var(--text-dark);
-            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
-            transition: background-color 1s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
             line-height: 1.6;
+            transition: background-color 1s ease, color 1s ease;
+            position: relative;
         }
 
         /* --- TEXTURA DE FILME GRANULADO --- */
@@ -304,106 +308,174 @@
             padding: 9rem 2rem; position: relative; z-index: 10; background: transparent;
         }
 
-        /* --- HERO --- */
+        /* --- HERO SECTION (EDITORIAL LUXE) --- */
         .hero {
-            justify-content: center; text-align: center;
-            background: radial-gradient(circle at 50% 40%, rgba(156, 0, 26, 0.03) 0%, transparent 70%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--bg-light);
+            padding: 8rem 2rem 5rem 2rem;
+            position: relative;
+            z-index: 10;
             overflow: hidden;
         }
 
         .hero-header {
-            max-width: 900px;
+            max-width: 820px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             will-change: transform, opacity;
         }
 
-        .hero-header h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 6rem;
+        /* 1. Logo / Título GABRIELLY MAKEUP */
+        .hero-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(3.2rem, 6.5vw, 5.8rem);
             font-weight: 300;
             line-height: 1.05;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.18em;
             color: var(--text-dark);
-            text-shadow: 0 10px 30px rgba(14, 10, 9, 0.02);
-            transition: color 1s;
-            will-change: transform;
+            margin: 0 0 1.2rem 0;
+            padding-left: 0.18em; /* Compensa o letter-spacing para centralização perfeita */
+            transition: color 1s ease;
         }
 
-        body.dark-mode .hero-header h1 { color: #FFF; }
+        body.dark-mode .hero-title {
+            color: #FFFFFF;
+        }
 
-        .hero-location {
-            font-size: 0.85rem;
-            letter-spacing: 0.35em;
+        /* 2. Localização ACARAÚ · CEARÁ */
+        .hero-location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.28em;
             text-transform: uppercase;
             color: var(--accent-red);
-            margin-bottom: 3.5rem;
-            font-weight: 600;
-            will-change: transform;
+            margin-bottom: 2.8rem;
+            padding-left: 0.28em;
         }
 
-        .hero-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+        .hero-location-icon {
+            stroke: var(--accent-red);
+            opacity: 0.85;
+            margin-top: -1px;
+            flex-shrink: 0;
+        }
+
+        /* 3. Frase Editorial */
+        .hero-quote {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.95rem);
             font-style: italic;
-            color: var(--text-muted);
-            max-width: 720px;
-            margin: 0 auto 3.5rem auto;
-            line-height: 1.5;
+            font-weight: 400;
+            color: var(--text-dark);
+            max-width: 620px;
+            margin: 0 auto 1.4rem auto;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+            opacity: 0.92;
+        }
+
+        body.dark-mode .hero-quote {
+            color: #FAF7F4;
+        }
+
+        /* 4. Descrição / Subtítulo */
+        .hero-desc {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(0.88rem, 1.2vw, 1rem);
             font-weight: 300;
-            will-change: transform;
-        }
-
-        body.dark-mode .hero-tagline {
-            color: #D3CDC6;
-        }
-
-        /* Botão Primário Hero - Red Velvet */
-        .btn-hero-booking {
-            display: inline-flex; align-items: center; gap: 15px;
-            padding: 20px 48px;
-            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-hover) 100%);
-            color: #FFF; text-decoration: none;
-            font-weight: 600; font-size: 0.8rem; letter-spacing: 0.25em;
-            text-transform: uppercase; border-radius: 50px;
-            box-shadow: 0 15px 35px rgba(156, 0, 26, 0.25);
-            transition: var(--transition-smooth);
-            border: 1px solid rgba(255,255,255,0.1);
-            will-change: transform;
-        }
-        .btn-hero-booking:hover {
-            transform: translateY(-3px) !important;
-            box-shadow: 0 20px 45px rgba(156, 0, 26, 0.38);
-            background: linear-gradient(135deg, #B50E2A 0%, #8C0015 100%);
-        }
-        .btn-hero-booking svg { width: 18px; height: 18px; fill: currentColor; }
-
-        /* --- DECORATIVE SCROLL INDICATOR --- */
-        .scroll-indicator {
-            position: absolute; bottom: 3rem; left: 50%;
-            transform: translateX(-50%);
-            display: flex; flex-direction: column; align-items: center;
-            gap: 0.8rem;
             color: var(--text-muted);
-            font-size: 0.65rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            opacity: 0.7;
+            max-width: 520px;
+            margin: 0 auto 3rem auto;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
         }
 
-        .scroll-indicator::after {
-            content: '';
-            width: 1px; height: 50px;
-            background: linear-gradient(to bottom, var(--accent-red), transparent);
-            animation: scrollLine 2s infinite ease-in-out;
+        body.dark-mode .hero-desc {
+            color: rgba(250, 247, 244, 0.7);
+        }
+
+        /* 5. Botão CTA Primário */
+        .hero-cta-wrapper {
+            margin-bottom: 3.5rem;
+        }
+
+        .btn-hero-booking {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.1rem 2.8rem;
+            background-color: var(--accent-red);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            border-radius: 8px;
+            box-shadow: 0 10px 28px rgba(142, 0, 28, 0.18);
+            border: 1px solid rgba(142, 0, 28, 0.3);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            outline: none;
+        }
+
+        .btn-hero-booking:hover {
+            background-color: var(--accent-red-hover);
+            box-shadow: 0 14px 34px rgba(142, 0, 28, 0.28);
+            transform: translateY(-2px);
+            border-color: rgba(142, 0, 28, 0.5);
+        }
+
+        /* 6. Indicador de Scroll Minimalista */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            pointer-events: none;
+        }
+
+        .scroll-text {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            opacity: 0.65;
+            padding-left: 0.35em;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 38px;
+            background: linear-gradient(to bottom, var(--text-muted), transparent);
+            opacity: 0.4;
+            animation: scrollLineAnimation 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
             transform-origin: top;
         }
 
-        @keyframes scrollLine {
-            0% { transform: scaleY(0); }
-            50% { transform: scaleY(1); }
-            100% { transform: scaleY(0); transform: translateY(50px); }
+        @keyframes scrollLineAnimation {
+            0% { transform: scaleY(0); opacity: 0; }
+            40% { transform: scaleY(1); opacity: 0.5; }
+            80% { transform: scaleY(1) translateY(12px); opacity: 0; }
+            100% { transform: scaleY(0) translateY(12px); opacity: 0; }
         }
 
         /* --- SEÇÃO SOBRE A GABRIELLY SPLIT --- */
@@ -1459,9 +1531,138 @@
             box-shadow: 0 10px 25px rgba(212, 179, 117, 0.25);
         }
         
-        .course-section.in-view .btn-course-booking:hover {
-            box-shadow: 0 15px 30px rgba(212, 179, 117, 0.4);
-            transform: translateY(-2px) scale(1.01);
+        /* ESTILOS DAS ABAS DOS CURSOS */
+        .course-tab-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .course-tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 0.9rem 2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            outline: none;
+        }
+
+        .course-tab-btn .tab-btn-icon {
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .course-tab-btn .tab-btn-text {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-tab-btn .tab-btn-text strong {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .course-tab-btn .tab-btn-text small {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .course-section.in-view .course-tab-btn .tab-btn-text strong {
+            color: #FAF7F4;
+        }
+
+        .course-tab-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-red);
+        }
+
+        .course-section.in-view .course-tab-btn:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .course-tab-btn.active {
+            background: var(--accent-red);
+            border-color: var(--accent-red);
+            box-shadow: 0 10px 25px rgba(156, 0, 26, 0.25);
+        }
+
+        .course-tab-btn.active .tab-btn-text strong,
+        .course-tab-btn.active .tab-btn-text small {
+            color: #FFFFFF !important;
+        }
+
+        .course-section.in-view .course-tab-btn.active {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
+            border-color: var(--accent-gold);
+            box-shadow: 0 12px 30px rgba(212, 179, 117, 0.35);
+        }
+
+        .course-section.in-view .course-tab-btn.active .tab-btn-text strong {
+            color: #0E0A09 !important;
+        }
+
+        .course-section.in-view .course-tab-btn.active .tab-btn-text small {
+            color: rgba(14, 10, 9, 0.8) !important;
+            font-weight: 500;
+        }
+
+        .course-target-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--accent-red);
+            background: rgba(156, 0, 26, 0.08);
+            border: 1px solid rgba(156, 0, 26, 0.15);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            transition: all 1.5s ease;
+        }
+
+        .course-section.in-view .course-target-badge {
+            color: var(--accent-gold);
+            background: rgba(212, 179, 117, 0.1);
+            border-color: rgba(212, 179, 117, 0.25);
+        }
+
+        .course-highlight-badge {
+            position: absolute;
+            top: -12px;
+            right: 25px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
+            color: #0E0A09;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(212, 179, 117, 0.4);
+        }
+
+        .course-tab-content {
+            animation: fadeInCourseTab 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeInCourseTab {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         @media (max-width: 900px) {
@@ -1614,35 +1815,286 @@
             }
         }
 
-        /* --- RESPONSIVIDADE --- */
-        @media (max-width: 1100px) {
-            .btn-slide.prev { left: -20px; }
-            .btn-slide.next { right: -20px; }
+        /* ============================================================
+           AUDITORIA E CORREÇÃO DEFINITIVA DE RESPONSIVIDADE
+           ============================================================ */
+
+        /* Telas Grandes & Ultrawide (> 1440px) */
+        @media (min-width: 1441px) {
+            .about-section, .experience, .testimonials-section, .course-container, .faq-container {
+                max-width: 1200px;
+            }
+            .hero-header {
+                max-width: 900px;
+            }
         }
 
+        /* Tablets & Telas Médias (<= 1100px) */
+        @media (max-width: 1100px) {
+            .btn-slide.prev { left: -15px; }
+            .btn-slide.next { right: -15px; }
+            header { padding: 1.5rem 3rem; }
+            header.scrolled { padding: 1rem 3rem; }
+        }
+
+        /* Tablets e Telas Menores (<= 900px) */
+        @media (max-width: 900px) {
+            section {
+                padding: 6rem 1.5rem;
+            }
+            .about-section {
+                padding: 6rem 1.5rem;
+            }
+            .about-split {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .about-image-wrapper {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+            .about-text {
+                align-items: center;
+                text-align: center;
+            }
+            .about-text h2 {
+                font-size: 2.2rem;
+            }
+            .badge-award {
+                text-align: center;
+            }
+            .course-split {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .course-info-col {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            .course-card-glass {
+                max-width: 520px;
+                width: 100%;
+                padding: 2.5rem 1.8rem;
+            }
+            .course-price-tag .price-value {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* Mobile & Tablets Verticais (<= 768px) */
         @media (max-width: 768px) {
-            .hero-header h1 { font-size: 3.4rem; }
-            .hero-tagline { font-size: 1.6rem; }
-            header { padding: 1.5rem 2rem; }
-            header.scrolled { padding: 1rem 2rem; }
+            section {
+                padding: 5rem 1.25rem;
+            }
+            
+            /* Header & Mobile Menu */
+            header { padding: 1.25rem 1.5rem; }
+            header.scrolled { padding: 0.9rem 1.5rem; }
             .nav-links { display: none; }
             .hamburger-btn { display: flex; }
             .mobile-menu-overlay { display: flex; }
             .header-instagram { display: none; }
-            .editorial-accordion-glass { padding: 1.5rem 2rem; }
-            .accordion-title { font-size: 1.4rem; }
-            .accordion-header { padding: 2rem 0; }
-            .testimonials-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            .single-slide-container { max-width: 100%; padding: 0 1rem; }
-            .btn-slide { width: 52px; height: 52px; }
-            .btn-slide.prev { left: 10px; }
-            .btn-slide.next { right: 10px; }
-            .booking h2 { font-size: 3rem; }
-            .btn-luxury-whats { padding: 20px 40px; font-size: 0.8rem; letter-spacing: 0.2em; }
-            .section-intro h2 { font-size: 2.8rem; }
-            .course-section .section-intro h2 { font-size: 1.8rem; }
-            .floating-booking { bottom: 1.5rem; right: 1.5rem; }
-            .btn-floating-luxury { padding: 0.9rem 1.5rem; font-size: 0.65rem; }
+
+            /* Hero */
+            .hero { padding: 7rem 1.25rem 4rem 1.25rem; min-height: 100svh; }
+            .hero-title { font-size: clamp(2.4rem, 8vw, 3.2rem); letter-spacing: 0.12em; margin-bottom: 0.8rem; }
+            .hero-location-badge { font-size: 0.65rem; letter-spacing: 0.22em; margin-bottom: 1.8rem; }
+            .hero-quote { font-size: 1.35rem; line-height: 1.45; margin-bottom: 1.2rem; }
+            .hero-desc { font-size: 0.88rem; margin-bottom: 2.2rem; }
+            .btn-hero-booking { padding: 1rem 2.2rem; font-size: 0.72rem; letter-spacing: 0.14em; width: 100%; max-width: 320px; }
+            .hero-cta-wrapper { margin-bottom: 2.5rem; width: 100%; display: flex; justify-content: center; }
+
+            /* Seções Gerais */
+            .section-intro { margin-bottom: 3.5rem; }
+            .section-intro h2 { font-size: 2.4rem; letter-spacing: 0.08em; }
+            .section-intro p { font-size: 0.95rem; }
+
+            /* Galeria */
+            .galeria-section { padding: 6rem 1.25rem; }
+            .single-slide-container { max-width: 100%; margin-top: 1.5rem; padding: 0; }
+            .btn-slide { width: 48px; height: 48px; }
+            .btn-slide.prev { left: 8px; }
+            .btn-slide.next { right: 8px; }
+
+            /* Accordion */
+            .editorial-accordion-glass { padding: 1.5rem; border-radius: 16px; }
+            .accordion-header { padding: 1.8rem 0; }
+            .accordion-title { font-size: 1.3rem; letter-spacing: 0.04em; }
+            .accordion-body { font-size: 0.92rem; }
+            .btn-service-booking { width: 100%; text-align: center; }
+
+            /* Normas */
+            .rules-card { padding: 2rem 1.5rem; margin-top: 3.5rem; }
+            .rules-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+
+            /* Testimonials */
+            .testimonials-section { padding: 6rem 1.25rem; }
+            .testimonials-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .testimonial-card { padding: 3rem 2rem; }
+            .testimonial-text { font-size: 1.35rem; }
+
+            /* Cursos */
+            .course-section { padding: 6rem 0; }
+            .course-container { padding: 0 1.25rem; }
+            .course-tab-selector { gap: 0.8rem; margin-bottom: 2.5rem; }
+            .course-tab-btn { padding: 0.8rem 1.4rem; width: 100%; max-width: 320px; justify-content: center; }
+            .course-gallery { margin-top: 4rem; padding-top: 3rem; }
+            .course-gallery h3 { font-size: 1.5rem; margin-bottom: 2rem; }
+            .course-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+            .course-gallery-grid .course-gallery-item:first-child { grid-column: span 2; aspect-ratio: 16 / 9; }
+
+            /* FAQ */
+            .faq-section { padding: 6rem 0; }
+            .faq-container { padding: 0 1.25rem; }
+            .faq-header { padding: 1.5rem; }
+            .faq-body { padding: 0 1.5rem 1.5rem 1.5rem; }
+            .faq-title { font-size: 1rem; }
+
+            /* Booking Final */
+            .booking { min-height: auto; padding: 7rem 1.25rem; }
+            .booking h2 { font-size: 2.6rem; letter-spacing: 0.08em; }
+            .booking p { font-size: 1.25rem; margin-bottom: 2.5rem; }
+            .btn-luxury-whats { padding: 1.1rem 2rem; font-size: 0.75rem; letter-spacing: 0.18em; width: 100%; max-width: 340px; justify-content: center; }
+
+            /* Botão Flutuante */
+            .floating-booking { bottom: 1.2rem; right: 1.2rem; }
+            .btn-floating-luxury { padding: 0.85rem 1.4rem; font-size: 0.65rem; letter-spacing: 0.15em; }
+        }
+
+        /* Telas Pequenas de Celular (<= 480px, incluindo 320px, 360px, 375px, 390px, 430px) */
+        @media (max-width: 480px) {
+            section {
+                padding: 4.5rem 1rem;
+            }
+            .hero {
+                padding: 6.5rem 1rem 3.5rem 1rem;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+                letter-spacing: 0.08em;
+                padding-left: 0.08em;
+                word-break: break-word;
+            }
+            .hero-location-badge {
+                font-size: 0.62rem;
+                letter-spacing: 0.18em;
+                padding-left: 0.18em;
+            }
+            .hero-quote {
+                font-size: 1.2rem;
+            }
+            .hero-desc {
+                font-size: 0.85rem;
+            }
+            .btn-hero-booking {
+                padding: 0.95rem 1.6rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.12em;
+            }
+            .about-container {
+                padding: 2rem 1.2rem;
+            }
+            .about-text h2 {
+                font-size: 1.85rem;
+            }
+            .badge-award {
+                padding: 0.75rem 1.2rem;
+                font-size: 0.68rem;
+                letter-spacing: 0.04em;
+                line-height: 1.4;
+            }
+            .section-intro h2 {
+                font-size: 1.95rem;
+            }
+            .editorial-accordion-glass {
+                padding: 1rem 1.2rem;
+            }
+            .accordion-title {
+                font-size: 1.15rem;
+            }
+            .course-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .course-gallery-grid .course-gallery-item:first-child {
+                grid-column: span 1;
+                aspect-ratio: 4 / 5;
+            }
+            .course-gallery-item {
+                aspect-ratio: 4 / 5;
+            }
+            .course-card-glass {
+                padding: 2rem 1.2rem;
+            }
+            .course-price-tag .price-value {
+                font-size: 2.4rem;
+            }
+            .course-highlight-badge {
+                right: 15px;
+                font-size: 0.58rem;
+                padding: 0.3rem 0.8rem;
+            }
+            .testimonial-card {
+                padding: 2.2rem 1.4rem;
+            }
+            .testimonial-text {
+                font-size: 1.15rem;
+            }
+            .booking h2 {
+                font-size: 2.1rem;
+            }
+            .booking p {
+                font-size: 1.1rem;
+            }
+            .assistant-card {
+                padding: 1.5rem 1.2rem;
+                width: 95%;
+                border-radius: 18px;
+            }
+            .assistant-header h3 {
+                font-size: 1.3rem;
+            }
+            .assistant-option-card {
+                padding: 0.8rem 1rem;
+            }
+            .assistant-option-name {
+                font-size: 0.82rem;
+            }
+            .assistant-option-price {
+                font-size: 0.82rem;
+            }
+            .assistant-btn-nav {
+                padding: 0.85rem 1.4rem;
+                font-size: 0.72rem;
+            }
+        }
+
+        /* Celulares Ultra Compactos (<= 360px e 320px) */
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 1.95rem;
+            }
+            .hero-quote {
+                font-size: 1.1rem;
+            }
+            .section-intro h2 {
+                font-size: 1.7rem;
+            }
+            .about-text h2 {
+                font-size: 1.65rem;
+            }
+            .booking h2 {
+                font-size: 1.85rem;
+            }
+            .course-tab-btn {
+                padding: 0.75rem 1rem;
+            }
+            .course-tab-btn .tab-btn-text strong {
+                font-size: 0.85rem;
+            }
+            .course-price-tag .price-value {
+                font-size: 2.1rem;
+            }
         }
 
         /* prefers-reduced-motion */
@@ -2036,6 +2488,171 @@
             border-color: var(--accent-gold);
         }
         
+        /* Grade de Horários em Tempo Real (Supabase) */
+        .slots-container {
+            margin-top: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .slots-status-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .slots-legend {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.72rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.available { background-color: #20BA5A; }
+        .legend-dot.booked { background-color: #E63946; }
+
+        .time-slots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+            gap: 0.6rem;
+            max-height: 190px;
+            overflow-y: auto;
+            padding: 0.4rem 0.2rem;
+        }
+
+        .time-slot-btn {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 0.65rem 0.4rem;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.25s ease;
+            outline: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        body.dark-mode .time-slot-btn {
+            background: rgba(255, 255, 255, 0.03);
+            color: #FFFFFF;
+            border-color: rgba(212, 179, 117, 0.15);
+        }
+
+        .time-slot-btn:hover:not(:disabled) {
+            border-color: var(--accent-red);
+            transform: translateY(-2px);
+            background: rgba(142, 0, 28, 0.05);
+        }
+
+        body.dark-mode .time-slot-btn:hover:not(:disabled) {
+            border-color: var(--accent-gold);
+            background: rgba(212, 179, 117, 0.08);
+        }
+
+        .time-slot-btn.selected {
+            background: var(--accent-red) !important;
+            border-color: var(--accent-red) !important;
+            color: #FFFFFF !important;
+            box-shadow: 0 4px 15px rgba(142, 0, 28, 0.3);
+            transform: scale(1.02);
+        }
+
+        body.dark-mode .time-slot-btn.selected {
+            background: var(--accent-gold) !important;
+            border-color: var(--accent-gold) !important;
+            color: #0E0A09 !important;
+            box-shadow: 0 4px 15px rgba(212, 179, 117, 0.3);
+        }
+
+        .time-slot-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: rgba(0, 0, 0, 0.04);
+            border-color: rgba(0, 0, 0, 0.06);
+            text-decoration: line-through;
+        }
+
+        body.dark-mode .time-slot-btn:disabled {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(255, 255, 255, 0.04);
+        }
+
+        .slot-badge {
+            font-size: 0.6rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .slots-loading {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .slots-empty {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--accent-red);
+            background: rgba(142, 0, 28, 0.04);
+            border-radius: 10px;
+        }
+
+        /* Inputs de Identificação do Cliente */
+        .customer-input {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.4);
+            color: var(--text-dark);
+            outline: none;
+            transition: all 0.3s ease;
+            margin-bottom: 0.9rem;
+        }
+
+        body.dark-mode .customer-input {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(212, 179, 117, 0.15);
+            color: #FFFFFF;
+        }
+
+        .customer-input:focus {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 10px rgba(142, 0, 28, 0.15);
+        }
+
+        body.dark-mode .customer-input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 10px rgba(212, 179, 117, 0.15);
+        }
+
         /* Counter controls */
         .assistant-counter-wrapper {
             display: flex;
@@ -2264,21 +2881,40 @@
     <!-- Canvas de Partículas (Glitter ambiente flutuante) -->
     <canvas id="glitter-canvas"></canvas>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section Refinada (Editorial Luxe) -->
+    <section class="hero" id="hero">
         <div class="hero-header reveal">
-            <h1 class="reveal-delay-1">Gabrielly Makeup</h1>
-            <p class="hero-location reveal-delay-2">📍 Acaraú • Ceará</p>
-            <p class="hero-tagline reveal-delay-3">A beleza que revela quem você realmente é.</p>
-            <p class="hero-tagline reveal-delay-3" style="font-size: 1.25rem; font-family: 'Montserrat', sans-serif; font-style: normal; margin-top: -2rem; max-width: 650px; font-weight: 300;">Especialista em maquiagem para noivas, eventos e ensaios.</p>
-            <div class="reveal-delay-3" style="margin-top: 2rem;">
+            <!-- 1. GABRIELLY MAKEUP -->
+            <h1 class="hero-title reveal-delay-1">Gabrielly Makeup</h1>
+
+            <!-- 2. LOCALIZAÇÃO -->
+            <div class="hero-location-badge reveal-delay-2">
+                <svg class="hero-location-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>ACARAÚ · CEARÁ</span>
+            </div>
+
+            <!-- 3. FRASE -->
+            <p class="hero-quote reveal-delay-3">“A beleza que revela quem você realmente é.”</p>
+
+            <!-- 4. DESCRIÇÃO -->
+            <p class="hero-desc reveal-delay-3">Especialista em maquiagem para noivas, eventos e ensaios.</p>
+
+            <!-- 5. CTA -->
+            <div class="hero-cta-wrapper reveal-delay-3">
                 <a href="#" class="btn-hero-booking btn-trigger-assistant">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
-                    Quero Agendar Meu Horário
+                    AGENDAR MEU HORÁRIO
                 </a>
             </div>
         </div>
-        <div class="scroll-indicator">Scroll</div>
+
+        <!-- 6. INDICADOR DE SCROLL -->
+        <div class="scroll-indicator">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
     <!-- GALERIA -->
@@ -2465,146 +3101,211 @@
         </div>
     </section>
 
-    <!-- SEÇÃO CURSO VIP -->
+    <!-- SEÇÃO CURSOS DE MAQUIAGEM COM SELETOR INTERATIVO -->
     <section class="course-section" id="curso">
         <div class="course-container reveal">
             <div class="section-intro">
-                <span>Aperfeiçoe Sua Beleza</span>
-                <h2>Curso VIP de Automaquiagem</h2>
-                <p>Estou aqui para lhe convidar a participar da melhor experiência que você terá com a maquiagem. Nós vamos passar um dia incrível aprendendo técnicas de maquiagem para você se sentir confiante e bonita. 💫</p>
+                <span>Experiência Educacional de Alto Nível</span>
+                <h2>Cursos de Maquiagem</h2>
+                <p>Escolha o seu objetivo e viva uma imersão prática, personalizada e transformadora no universo da beleza.</p>
             </div>
-            
-            <div class="course-split">
-                <!-- O que vai aprender -->
-                <div class="course-learn-col">
-                    <h3>O que você vai dominar:</h3>
-                    <ul class="course-learn-list">
-                        <li>
-                            <span class="bullet-icon">✦</span>
-                            <div>
-                                <strong>Técnicas Básicas e Avançadas</strong>
-                                <p>Aprenda desde a preparação higiênica e hidratação adequada até técnicas avançadas de maquiagem para festas.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="bullet-icon">✦</span>
-                            <div>
-                                <strong>Preparação de Pele Completa</strong>
-                                <p>Entenda como identificar o seu tipo de pele e aplicar bases e corretivos para um acabamento perfeito.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="bullet-icon">✦</span>
-                            <div>
-                                <strong>Técnica de Pele Blindada</strong>
-                                <p>Aprenda o segredo profissional de fazer uma maquiagem super resistente à água, suor e com durabilidade extrema.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="bullet-icon">✦</span>
-                            <div>
-                                <strong>Camuflagem de Manchas</strong>
-                                <p>Técnicas eficientes e naturais para neutralizar melasma, marcas de acne, cicatrizes e olheiras profundas.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="bullet-icon">✦</span>
-                            <div>
-                                <strong>Técnicas de Olhos e Cílios</strong>
-                                <p>Domine o esfumado perfeito, delineados simétricos e a aplicação rápida e confortável de cílios postiços.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="bullet-icon">✦</span>
-                            <div>
-                                <strong>Orientação de Kit Essencial</strong>
-                                <p>Saiba exatamente quais produtos e pincéis são realmente necessários para começar, evitando gastos desnecessários.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Informações e CTA (Cards dos Cursos) -->
-                <div class="course-info-col" style="display: flex; flex-direction: column; gap: 2rem;">
-                    <!-- Card 1: Automaquiagem -->
-                    <div class="course-card-glass">
-                        <div class="course-price-tag">
-                            <span class="price-label">Curso VIP de Automaquiagem</span>
-                            <span class="price-value">R$ 350,00</span>
-                            <span class="price-payment">Individual &amp; Personalizado 💸</span>
-                        </div>
-                        
-                        <div class="course-details">
-                            <div class="detail-item">
-                                <span class="detail-icon">⏱</span>
-                                <div>
-                                    <strong>Duração: 6 Horas</strong>
-                                    <p>Imersão completa: 3 horas teóricas + 3 horas práticas focadas em você.</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">🏆</span>
-                                <div>
-                                    <strong>Certificado de Conclusão</strong>
-                                    <p>Ganhe um certificado assinado ao final da sua jornada.</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">🎁</span>
-                                <div>
-                                    <strong>Um Mimo Especial 💄</strong>
-                                    <p>Um presente exclusivo preparado com carinho para você se sentir ainda mais bonita!</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="#" class="btn-course-booking btn-trigger-assistant" data-service="curso">
-                            Reservar Automaquiagem (R$ 350,00)
-                        </a>
-                    </div>
 
-                    <!-- Card 2: Maquiagem Profissional -->
-                    <div class="course-card-glass">
-                        <div class="course-price-tag">
-                            <span class="price-label">Curso Maquiagem Profissional</span>
-                            <span class="price-value">R$ 687,00</span>
-                            <span class="price-payment">Formação Completa para Maquiadoras 🌟</span>
+            <!-- SELETOR DE PERFIL / ABAS DE CURSO -->
+            <div class="course-tab-selector">
+                <button type="button" class="course-tab-btn active" onclick="switchCourseTab('automaquiagem')">
+                    <span class="tab-btn-icon">💄</span>
+                    <span class="tab-btn-text">
+                        <strong>Automaquiagem VIP</strong>
+                        <small>Aperfeiçoamento Pessoal</small>
+                    </span>
+                </button>
+                <button type="button" class="course-tab-btn" onclick="switchCourseTab('profissional')">
+                    <span class="tab-btn-icon">🎓</span>
+                    <span class="tab-btn-text">
+                        <strong>Maquiagem Profissional</strong>
+                        <small>Carreira &amp; Formação Pro</small>
+                    </span>
+                </button>
+            </div>
+            
+            <!-- CONTEÚDO DO CURSO 1: AUTOMAQUIAGEM -->
+            <div class="course-tab-content active" id="tab-automaquiagem">
+                <div class="course-split">
+                    <!-- O que vai aprender -->
+                    <div class="course-learn-col">
+                        <div class="course-target-badge">✨ Para quem deseja realçar sua beleza individual</div>
+                        <h3>O que você vai dominar:</h3>
+                        <ul class="course-learn-list">
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Diagnóstico de Pele &amp; Skincare Prévio</strong>
+                                    <p>Identifique o seu tipo de pele, subtom correto e os melhores produtos de hidratação para evitar que a make craquele.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Pele Blindada para o Clima Quente</strong>
+                                    <p>Técnica exclusiva de alta fixação resistente a suor, lágrimas e calor, mantendo o viço natural o dia todo.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Camuflagem Natural de Manchas e Olheiras</strong>
+                                    <p>Neutralização perfeita de marcas e olheiras sem aspecto pesado ou máscara de base.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Olhos Marcantes: do Básico ao Glamour</strong>
+                                    <p>Técnicas de esfumado harmônico para o formato do seu olho, delineado fácil e colocação rápida de cílios postiços.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Auditoria e Montagem do Seu Kit Pessoal</strong>
+                                    <p>Análise de todos os produtos que você já tem em casa e orientação certeira para comprar apenas o essencial.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card de Investimento e Detalhes -->
+                    <div class="course-info-col">
+                        <div class="course-card-glass">
+                            <div class="course-price-tag">
+                                <span class="price-label">Curso VIP de Automaquiagem</span>
+                                <span class="price-value">R$ 350,00</span>
+                                <span class="price-payment">Aula VIP Individual &amp; 100% Prática 💫</span>
+                            </div>
+                            
+                            <div class="course-details">
+                                <div class="detail-item">
+                                    <span class="detail-icon">⏱</span>
+                                    <div>
+                                        <strong>Carga Horária: 6 Horas</strong>
+                                        <p>3 horas teóricas + 3 horas de prática orientada passo a passo no seu próprio rosto.</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-icon">🏆</span>
+                                    <div>
+                                        <strong>Certificado de Conclusão</strong>
+                                        <p>Certificado oficial assinado pela maquiadora Ana Gabrielly.</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-icon">🎁</span>
+                                    <div>
+                                        <strong>Mimo Exclusivo</strong>
+                                        <p>Presente especial e apostila digital com resumo de todas as etapas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="https://wa.me/5588997424602?text=Ol%C3%A1%2C%20Gabrielly!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20e%20reservar%20uma%20vaga%20para%20o%20Curso%20VIP%20de%20Automaquiagem%20(R%24%20350%2C00)." target="_blank" rel="noopener noreferrer" class="btn-course-booking">
+                                Reservar Automaquiagem VIP (R$ 350,00)
+                            </a>
                         </div>
-                        
-                        <div class="course-details">
-                            <div class="detail-item">
-                                <span class="detail-icon">🎯</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTEÚDO DO CURSO 2: MAQUIAGEM PROFISSIONAL -->
+            <div class="course-tab-content" id="tab-profissional" style="display: none;">
+                <div class="course-split">
+                    <!-- O que vai aprender -->
+                    <div class="course-learn-col">
+                        <div class="course-target-badge pro-badge">🌟 Para quem deseja viver da profissão e faturar com maquiagem</div>
+                        <h3>Formação Completa para Maquiadoras:</h3>
+                        <ul class="course-learn-list">
+                            <li>
+                                <span class="bullet-icon">✦</span>
                                 <div>
-                                    <strong>Formação Teórica &amp; Prática</strong>
-                                    <p>Técnicas de atendimento, peles reais, biossegurança, fotografia e posicionamento profissional.</p>
+                                    <strong>Colorimetria Aplicada &amp; Diversidade de Peles</strong>
+                                    <p>Domínio absoluto de subtons, neutralização de hipercromias, peles claras, morenas, negras, maduras e acneicas.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Técnicas Comerciais de Alto Impacto (Noivas &amp; Eventos)</strong>
+                                    <p>Pele ultra resistente blindada, esfumado sem marcação, delineado infinito, cut crease e acabamento editorial de luxo.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Biossegurança &amp; Higienização Profissional</strong>
+                                    <p>Protocolos rigorosos de desinfecção de pincéis, esponjas e cosméticos com base na formação técnica de saúde da Gabrielly.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Fotografia, Iluminação &amp; Posicionamento no Instagram</strong>
+                                    <p>Como fotografar produções em alta resolução com o celular, iluminação correta e estratégias para atrair e fechar clientes.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet-icon">✦</span>
+                                <div>
+                                    <strong>Mentoria de Negócio &amp; Montagem do Kit de Atendimento</strong>
+                                    <p>Guia dos melhores produtos nacionais e importados de melhor custo-benefício e precificação dos seus serviços.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card de Investimento e Detalhes Pro -->
+                    <div class="course-info-col">
+                        <div class="course-card-glass pro-card">
+                            <div class="course-highlight-badge">FORMAÇÃO PROFISSIONAL</div>
+                            <div class="course-price-tag">
+                                <span class="price-label">Curso Maquiagem Profissional</span>
+                                <span class="price-value">R$ 687,00</span>
+                                <span class="price-payment">Mentoria Intensiva &amp; Suporte Pós-Curso 🏆</span>
+                            </div>
+                            
+                            <div class="course-details">
+                                <div class="detail-item">
+                                    <span class="detail-icon">🎓</span>
+                                    <div>
+                                        <strong>Teoria Avançada &amp; Prática em Modelo Real</strong>
+                                        <p>Treinamento hands-on com correção minuciosa de postura, ângulos e detalhes.</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-icon">🏆</span>
+                                    <div>
+                                        <strong>Certificado Profissional de Maquiadora</strong>
+                                        <p>Certificação oficial para atuar profissionalmente e comprovar sua qualificação.</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-icon">💬</span>
+                                    <div>
+                                        <strong>Mentoria &amp; Acompanhamento Pós-Curso</strong>
+                                        <p>Suporte direto no WhatsApp para tirar dúvidas dos seus primeiros atendimentos.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">🏆</span>
-                                <div>
-                                    <strong>Certificado Profissional</strong>
-                                    <p>Certificação profissional de maquiadora para impulsionar a sua carreira.</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">💼</span>
-                                <div>
-                                    <strong>Mentoria &amp; Suporte</strong>
-                                    <p>Acompanhamento e direcionamento para montagem do seu kit de atendimento inicial.</p>
-                                </div>
-                            </div>
+                            
+                            <a href="https://wa.me/5588997424602?text=Ol%C3%A1%2C%20Gabrielly!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20e%20iniciar%20minha%20inscri%C3%A7%C3%A3o%20no%20Curso%20de%20Maquiagem%20Profissional%20(R%24%20687%2C00)." target="_blank" rel="noopener noreferrer" class="btn-course-booking">
+                                Iniciar Formação Profissional (R$ 687,00)
+                            </a>
                         </div>
-                        
-                        <a href="#" class="btn-course-booking btn-trigger-assistant" data-service="curso_pro">
-                            Reservar Maquiagem Profissional (R$ 687,00)
-                        </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Galeria do Curso VIP -->
+            <!-- Galeria dos Cursos -->
             <div class="course-gallery">
-                <h3>Resultados & Momentos do Curso</h3>
+                <h3>Resultados &amp; Momentos do Curso</h3>
                 <div class="course-gallery-grid">
                     <!-- Item 1 (Vídeo do Curso) -->
                     <div class="course-gallery-item">
@@ -2622,7 +3323,7 @@
                     <!-- Item 3 (Foto 2) -->
                     <div class="course-gallery-item">
                         <img src="images/foto%20curso%2002%20.jpeg" alt="Resultado de Automaquiagem" class="course-gallery-media" loading="lazy">
-                        <div class="course-gallery-caption">Resultado Real</div>
+                        <div class="course-gallery-caption">Evolução &amp; Resultados</div>
                     </div>
                 </div>
             </div>
@@ -2820,20 +3521,6 @@
                             <span class="assistant-option-price">R$ 80,00</span>
                         </div>
                     </label>
-                    <label class="assistant-option-card">
-                        <input type="checkbox" name="assistant-service" value="curso" data-price="350">
-                        <div class="assistant-option-info">
-                            <span class="assistant-option-name">Curso VIP de Automaquiagem</span>
-                            <span class="assistant-option-price">R$ 350,00</span>
-                        </div>
-                    </label>
-                    <label class="assistant-option-card">
-                        <input type="checkbox" name="assistant-service" value="curso_pro" data-price="687">
-                        <div class="assistant-option-info">
-                            <span class="assistant-option-name">Curso Maquiagem Profissional</span>
-                            <span class="assistant-option-price">R$ 687,00</span>
-                        </div>
-                    </label>
                 </div>
             </div>
             
@@ -2861,40 +3548,46 @@
                 </div>
             </div>
             
-            <!-- STEP 3: DATA & TURNO -->
+            <!-- STEP 3: DATA & HORÁRIO EM TEMPO REAL -->
             <div class="assistant-step-pane" data-step="3">
                 <div class="assistant-group">
-                    <label class="assistant-label" for="assistant-date">Escolha a Data Sugerida</label>
+                    <label class="assistant-label" for="assistant-date">1. Escolha o Dia do Atendimento</label>
                     <input type="date" id="assistant-date" class="assistant-date-input" required>
                 </div>
-                <div class="assistant-group">
-                    <label class="assistant-label">Turno de Preferência</label>
-                    <div class="assistant-options-grid">
-                        <label class="assistant-option-card selected">
-                            <input type="radio" name="assistant-shift" value="manha" checked>
-                            <div class="assistant-option-info">
-                                <span class="assistant-option-name">Manhã (Ideal para casamentos/ensaios diurnos)</span>
-                            </div>
-                        </label>
-                        <label class="assistant-option-card">
-                            <input type="radio" name="assistant-shift" value="tarde">
-                            <div class="assistant-option-info">
-                                <span class="assistant-option-name">Tarde (Ideal para formaturas/eventos noturnos)</span>
-                            </div>
-                        </label>
-                        <label class="assistant-option-card">
-                            <input type="radio" name="assistant-shift" value="noite">
-                            <div class="assistant-option-info">
-                                <span class="assistant-option-name">Noite (Sob consulta especial)</span>
-                            </div>
-                        </label>
+                
+                <div class="slots-container" id="slots-container" style="display:none;">
+                    <div class="slots-status-bar">
+                        <span class="assistant-label" style="margin-bottom:0;">2. Selecione o Horário</span>
+                        <div class="slots-legend">
+                            <span class="legend-item"><span class="legend-dot available"></span> Livre</span>
+                            <span class="legend-item"><span class="legend-dot booked"></span> Ocupado</span>
+                        </div>
+                    </div>
+                    
+                    <div id="slots-loading" class="slots-loading" style="display:none;">
+                        Consultando disponibilidade em tempo real...
+                    </div>
+                    
+                    <div id="slots-empty" class="slots-empty" style="display:none;">
+                        Nenhum horário disponível para esta data. Por favor, escolha outro dia.
+                    </div>
+                    
+                    <div class="time-slots-grid" id="time-slots-grid">
+                        <!-- Slots inseridos dinamicamente pelo JS -->
                     </div>
                 </div>
             </div>
             
-            <!-- STEP 4: QUANTIDADE DE PESSOAS & RESUMO -->
+            <!-- STEP 4: SEUS DADOS & CONFIRMAÇÃO -->
             <div class="assistant-step-pane" data-step="4">
                 <div class="assistant-group">
+                    <label class="assistant-label">Seus Dados de Contato</label>
+                    <input type="text" id="customer-name" class="customer-input" placeholder="Seu Nome Completo *" required>
+                    <input type="tel" id="customer-phone" class="customer-input" placeholder="Seu WhatsApp com DDD (ex: 88 99999-9999) *" required>
+                    <input type="text" id="customer-notes" class="customer-input" placeholder="Observações (opcional: tipo de evento, horário do evento, etc)">
+                </div>
+
+                <div class="assistant-group" style="margin-top:0.5rem;">
                     <label class="assistant-label">Número de Pessoas para Produzir</label>
                     <div class="assistant-counter-wrapper">
                         <button class="assistant-counter-btn" id="counter-dec" type="button">-</button>
@@ -2903,37 +3596,42 @@
                     </div>
                 </div>
                 
-                <span class="assistant-label" style="margin-top: 1.5rem;">Resumo da sua Simulação</span>
+                <span class="assistant-label" style="margin-top: 1.2rem;">Resumo do seu Agendamento</span>
                 <div class="assistant-summary-list">
                     <div class="assistant-summary-row">
-                        <span>Serviços Selecionados:</span>
-                        <span id="summary-services">Nenhum</span>
+                        <span>Serviços:</span>
+                        <span id="summary-services" style="text-align:right;">Nenhum</span>
                     </div>
                     <div class="assistant-summary-row">
                         <span>Local:</span>
-                        <span id="summary-location">Estúdio</span>
+                        <span id="summary-location">Estúdio (Acaraú)</span>
                     </div>
                     <div class="assistant-summary-row">
-                        <span>Data &amp; Turno:</span>
-                        <span id="summary-date">Não informada</span>
+                        <span>Data &amp; Horário:</span>
+                        <span id="summary-date" style="font-weight:600; color:var(--accent-red);">Selecione na etapa anterior</span>
                     </div>
                     <div class="assistant-summary-row">
-                        <span>Quantidade de Pessoas:</span>
+                        <span>Qtd. Pessoas:</span>
                         <span id="summary-people">1</span>
                     </div>
                     <div class="assistant-summary-row">
-                        <span>Subtotal Estimado:</span>
+                        <span>Total Estimado:</span>
                         <span class="assistant-summary-total-price" id="summary-total">R$ 0,00</span>
                     </div>
                 </div>
+
+                <div id="booking-feedback" style="display:none; padding:0.9rem; border-radius:10px; font-size:0.85rem; margin-bottom:1rem; text-align:center;"></div>
             </div>
             
             <div class="assistant-footer">
                 <button class="assistant-btn-nav btn-back" id="assistant-prev" style="visibility:hidden;">Voltar</button>
                 <button class="assistant-btn-nav btn-next" id="assistant-next">Avançar</button>
-                <a href="#" target="_blank" rel="noopener" class="assistant-btn-nav btn-whatsapp" id="assistant-submit" style="display:none;">
+                <button type="button" class="assistant-btn-nav btn-next" id="assistant-submit-booking" style="display:none; background-color:var(--accent-red);">
+                    Confirmar Agendamento
+                </button>
+                <a href="#" target="_blank" rel="noopener" class="assistant-btn-nav btn-whatsapp" id="assistant-whatsapp-direct" style="display:none;">
                     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
-                    Consultar Vaga no WhatsApp
+                    Falar com a Gaby no WhatsApp
                 </a>
             </div>
         </div>
@@ -3322,6 +4020,41 @@
         }
 
         // ============================================================
+        // SELETOR INTERATIVO DE CURSOS (ABAS)
+        // ============================================================
+        function switchCourseTab(tabName) {
+            var tabAuto = document.getElementById('tab-automaquiagem');
+            var tabPro = document.getElementById('tab-profissional');
+            var buttons = document.querySelectorAll('.course-tab-btn');
+
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+
+            if (tabName === 'automaquiagem') {
+                if (buttons[0]) buttons[0].classList.add('active');
+                if (tabAuto) {
+                    tabAuto.style.display = 'block';
+                    tabAuto.classList.add('active');
+                }
+                if (tabPro) {
+                    tabPro.style.display = 'none';
+                    tabPro.classList.remove('active');
+                }
+            } else if (tabName === 'profissional') {
+                if (buttons[1]) buttons[1].classList.add('active');
+                if (tabPro) {
+                    tabPro.style.display = 'block';
+                    tabPro.classList.add('active');
+                }
+                if (tabAuto) {
+                    tabAuto.style.display = 'none';
+                    tabAuto.classList.remove('active');
+                }
+            }
+        }
+
+        // ============================================================
         // SISTEMA DE DÚVIDAS FREQUENTES (FAQ)
         // ============================================================
         var faqHeaders = document.querySelectorAll('.faq-header');
@@ -3354,33 +4087,44 @@
         });
 
         // ============================================================
-        // ASSISTENTE DE AGENDAMENTO INTERATIVO (MODAL)
+        // ASSISTENTE DE AGENDAMENTO COM SUPABASE (TEMPO REAL)
         // ============================================================
         var assistantModal = document.getElementById('assistant-modal');
         var assistantClose = document.getElementById('assistant-close');
         var btnPrev = document.getElementById('assistant-prev');
         var btnNext = document.getElementById('assistant-next');
-        var btnSubmit = document.getElementById('assistant-submit');
+        var btnSubmitBooking = document.getElementById('assistant-submit-booking');
+        var btnWhatsAppDirect = document.getElementById('assistant-whatsapp-direct');
         
         var currentStep = 1;
         var totalPeople = 1;
+        var selectedSlotTime = null; // Ex: '14:00:00'
         
         // Mapeamento de Serviços
         var SERVICES_INFO = {
-            'social': { name: 'Maquiagem Social', price: 100 },
-            'express': { name: 'Maquiagem Express', price: 80 },
-            'penteado': { name: 'Penteado Personalizado', price: 100 },
-            'babyliss': { name: 'Babyliss', price: 80 },
-            'curso': { name: 'Curso VIP de Automaquiagem', price: 350 },
-            'curso_pro': { name: 'Curso Maquiagem Profissional', price: 687 }
+            'social': { name: 'Maquiagem Social', price: 100, duration: 60 },
+            'express': { name: 'Maquiagem Express', price: 80, duration: 40 },
+            'penteado': { name: 'Penteado Personalizado', price: 100, duration: 60 },
+            'babyliss': { name: 'Babyliss', price: 80, duration: 40 }
         };
+
+        // Restringir input de data para não permitir datas passadas
+        var dateInputEl = document.getElementById('assistant-date');
+        if (dateInputEl) {
+            var todayStr = new Date().toISOString().split('T')[0];
+            dateInputEl.min = todayStr;
+        }
 
         // Abrir Modal
         function openAssistant(preselectedService) {
             assistantModal.classList.add('open');
+            selectedSlotTime = null;
             goToStep(1);
             
-            // Se houver pré-seleção
+            // Reset de feedback
+            var fb = document.getElementById('booking-feedback');
+            if (fb) fb.style.display = 'none';
+
             if (preselectedService && SERVICES_INFO[preselectedService]) {
                 document.querySelectorAll('input[name="assistant-service"]').forEach(function(input) {
                     if (input.value === preselectedService) {
@@ -3390,12 +4134,6 @@
                         input.checked = false;
                         input.closest('.assistant-option-card').classList.remove('selected');
                     }
-                });
-            } else {
-                // Resetar seleção se abriu limpo
-                document.querySelectorAll('input[name="assistant-service"]').forEach(function(input) {
-                    input.checked = false;
-                    input.closest('.assistant-option-card').classList.remove('selected');
                 });
             }
             updateSummary();
@@ -3413,7 +4151,6 @@
             }
         });
 
-        // Adicionar gatilho aos botões de agendamento do site
         function setupTriggers() {
             document.querySelectorAll('.btn-trigger-assistant').forEach(function(btn) {
                 btn.addEventListener('click', function(e) {
@@ -3425,9 +4162,7 @@
         }
         setupTriggers();
 
-
-
-        // Monitorar mudanças nos inputs
+        // Monitorar serviços
         document.querySelectorAll('input[name="assistant-service"]').forEach(function(input) {
             input.addEventListener('change', function() {
                 var card = this.closest('.assistant-option-card');
@@ -3440,7 +4175,7 @@
             });
         });
 
-        // Domicílio / Estúdio
+        // Local
         document.querySelectorAll('input[name="assistant-location"]').forEach(function(input) {
             input.addEventListener('change', function() {
                 document.querySelectorAll('input[name="assistant-location"]').forEach(function(i) {
@@ -3459,20 +4194,93 @@
             });
         });
 
-        // Turno
-        document.querySelectorAll('input[name="assistant-shift"]').forEach(function(input) {
-            input.addEventListener('change', function() {
-                document.querySelectorAll('input[name="assistant-shift"]').forEach(function(i) {
-                    i.closest('.assistant-option-card').classList.remove('selected');
-                });
-                var card = this.closest('.assistant-option-card');
-                card.classList.add('selected');
-                updateSummary();
-            });
+        // Evento de Mudança de Data -> Consultar Supabase
+        dateInputEl.addEventListener('change', function() {
+            var selectedDate = this.value;
+            if (selectedDate) {
+                loadSlotsForDate(selectedDate);
+            }
+            updateSummary();
         });
 
-        // Data
-        document.getElementById('assistant-date').addEventListener('change', updateSummary);
+        // Função para carregar slots do Supabase via RPC com fallback local elegante
+        async function loadSlotsForDate(targetDate) {
+            var container = document.getElementById('slots-container');
+            var loadingEl = document.getElementById('slots-loading');
+            var emptyEl = document.getElementById('slots-empty');
+            var gridEl = document.getElementById('time-slots-grid');
+            
+            container.style.display = 'block';
+            loadingEl.style.display = 'block';
+            emptyEl.style.display = 'none';
+            gridEl.innerHTML = '';
+            selectedSlotTime = null;
+
+            var slots = [];
+            var client = getSupabase();
+
+            if (client && SUPABASE_CONFIG.url !== 'https://SUA_URL_SUPABASE_AQUI.supabase.co') {
+                try {
+                    var { data, error } = await client.rpc('get_public_slots', { target_date: targetDate });
+                    if (error) throw error;
+                    slots = data || [];
+                } catch (err) {
+                    console.warn('Erro ao consultar Supabase, utilizando fallback de horários padrão:', err);
+                    slots = generateDefaultSlots(targetDate);
+                }
+            } else {
+                // Fallback padrão se credenciais ainda não foram preenchidas no config
+                slots = generateDefaultSlots(targetDate);
+            }
+
+            loadingEl.style.display = 'none';
+
+            if (!slots || slots.length === 0) {
+                emptyEl.style.display = 'block';
+                return;
+            }
+
+            // Renderizar slots na grade
+            slots.forEach(function(slot) {
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'time-slot-btn';
+                
+                var timeDisplay = typeof slot.slot_time === 'string' ? slot.slot_time.substring(0, 5) : slot.time;
+                var isAvailable = slot.slot_status === 'available';
+
+                btn.innerHTML = '<span>' + timeDisplay + '</span>' + 
+                               '<span class="slot-badge" style="color:' + (isAvailable ? '#20BA5A' : '#E63946') + ';">' + 
+                               (isAvailable ? 'Livre' : 'Ocupado') + '</span>';
+
+                if (!isAvailable) {
+                    btn.disabled = true;
+                } else {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.time-slot-btn').forEach(function(b) {
+                            b.classList.remove('selected');
+                        });
+                        btn.classList.add('selected');
+                        selectedSlotTime = timeDisplay + ':00';
+                        updateSummary();
+                    });
+                }
+
+                gridEl.appendChild(btn);
+            });
+        }
+
+        // Gerador de Slots Padrão (08:00 às 19:00 de Seg a Sáb)
+        function generateDefaultSlots(dateStr) {
+            var d = new Date(dateStr + 'T00:00:00');
+            var day = d.getDay();
+            if (day === 0) return []; // Domingo fechado
+
+            var defaultTimes = ['08:00', '09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+            return defaultTimes.map(function(t) {
+                return { slot_time: t + ':00', slot_status: 'available' };
+            });
+        }
 
         // Contador de Pessoas
         var counterVal = document.getElementById('counter-val');
@@ -3495,7 +4303,6 @@
         function goToStep(step) {
             currentStep = step;
             
-            // Atualizar panes
             document.querySelectorAll('.assistant-step-pane').forEach(function(pane) {
                 pane.classList.remove('active');
                 if (parseInt(pane.getAttribute('data-step')) === step) {
@@ -3503,7 +4310,6 @@
                 }
             });
             
-            // Atualizar dots
             document.querySelectorAll('.assistant-step-dot').forEach(function(dot) {
                 var dStep = parseInt(dot.getAttribute('data-step'));
                 dot.classList.remove('active', 'completed');
@@ -3514,7 +4320,6 @@
                 }
             });
             
-            // Atualizar botões de navegação
             if (step === 1) {
                 btnPrev.style.visibility = 'hidden';
             } else {
@@ -3523,17 +4328,18 @@
             
             if (step === 4) {
                 btnNext.style.display = 'none';
-                btnSubmit.style.display = 'flex';
+                btnSubmitBooking.style.display = 'block';
+                btnWhatsAppDirect.style.display = 'none';
                 updateSummary();
             } else {
                 btnNext.style.display = 'block';
-                btnSubmit.style.display = 'none';
+                btnSubmitBooking.style.display = 'none';
+                btnWhatsAppDirect.style.display = 'none';
             }
         }
 
         btnNext.addEventListener('click', function() {
             if (currentStep === 1) {
-                // Validar se escolheu ao menos um serviço
                 var selected = document.querySelectorAll('input[name="assistant-service"]:checked');
                 if (selected.length === 0) {
                     alert('Por favor, selecione pelo menos um serviço para continuar.');
@@ -3541,10 +4347,13 @@
                 }
             }
             if (currentStep === 3) {
-                // Validar se preencheu a data
-                var dateVal = document.getElementById('assistant-date').value;
+                var dateVal = dateInputEl.value;
                 if (!dateVal) {
-                    alert('Por favor, selecione a data desejada para continuar.');
+                    alert('Por favor, selecione a data do atendimento.');
+                    return;
+                }
+                if (!selectedSlotTime) {
+                    alert('Por favor, clique e selecione um dos horários disponíveis na grade.');
                     return;
                 }
             }
@@ -3559,7 +4368,7 @@
             }
         });
 
-        // Atualizar Resumo e link WhatsApp
+        // Atualizar Resumo
         function updateSummary() {
             var selectedServices = [];
             var servicesTotal = 0;
@@ -3572,54 +4381,129 @@
                 }
             });
             
-            // Atualizar lista no HTML
             var servicesLabel = selectedServices.join(', ');
             document.getElementById('summary-services').textContent = selectedServices.length > 0 ? servicesLabel : 'Nenhum';
             
-            // Local
             var locationType = document.querySelector('input[name="assistant-location"]:checked').value;
             var locationLabel = locationType === 'estudio' ? 'Estúdio (Acaraú)' : 'Domicílio / Externo';
             document.getElementById('summary-location').textContent = locationLabel;
             
-            // Data
-            var dateInput = document.getElementById('assistant-date').value;
-            var dateLabel = 'Não informada';
+            var dateInput = dateInputEl.value;
             var dateFormatted = '';
             if (dateInput) {
                 var parts = dateInput.split('-');
-                dateLabel = parts[2] + '/' + parts[1] + '/' + parts[0];
-                dateFormatted = dateLabel;
+                dateFormatted = parts[2] + '/' + parts[1] + '/' + parts[0];
             }
             
-            var shiftType = document.querySelector('input[name="assistant-shift"]:checked').value;
-            var shiftLabel = shiftType === 'manha' ? 'Manhã' : (shiftType === 'tarde' ? 'Tarde' : 'Noite');
-            document.getElementById('summary-date').textContent = dateInput ? dateLabel + ' (' + shiftLabel + ')' : 'Não informada';
+            var timeFormatted = selectedSlotTime ? selectedSlotTime.substring(0, 5) : '';
+            var dateTimeLabel = dateFormatted ? (dateFormatted + (timeFormatted ? ' às ' + timeFormatted : ' (Selecione o horário)')) : 'Selecione na etapa anterior';
             
-            // Pessoas
+            document.getElementById('summary-date').textContent = dateTimeLabel;
             document.getElementById('summary-people').textContent = totalPeople;
             
-            // Total
             var grandTotal = servicesTotal * totalPeople;
             var totalFormatted = 'R$ ' + grandTotal.toFixed(2).replace('.', ',');
             document.getElementById('summary-total').textContent = totalFormatted;
-            
-            // WhatsApp Link
-            if (selectedServices.length > 0) {
-                var message = "Olá, Gabrielly! Usei o simulador do seu site e gostaria de consultar a disponibilidade para o seguinte agendamento:\n\n";
-                message += "💅 *Serviços:* " + servicesLabel + "\n";
-                message += "📍 *Local:* " + locationLabel + "\n";
-                message += "📅 *Data:* " + (dateFormatted ? dateFormatted : "A combinar") + " (Turno: " + shiftLabel + ")\n";
-                message += "👥 *Quantidade:* " + totalPeople + (totalPeople > 1 ? " pessoas" : " pessoa") + "\n";
-                message += "💰 *Subtotal Estimado:* " + totalFormatted + "\n\n";
-                if (locationType === 'externo') {
-                    message += "_(Gostaria de consultar o valor da taxa de deslocamento para o meu endereço)_";
-                } else {
-                    message += "Aguardo sua confirmação para prosseguir com a reserva!";
-                }
-                
-                btnSubmit.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-            }
         }
+
+        // CONFIRMAÇÃO DO AGENDAMENTO (COM PROTEÇÃO CONTRA DUPLICIDADE NO BANCO)
+        btnSubmitBooking.addEventListener('click', async function() {
+            var name = document.getElementById('customer-name').value.trim();
+            var phone = document.getElementById('customer-phone').value.trim();
+            var notes = document.getElementById('customer-notes').value.trim();
+            var feedbackEl = document.getElementById('booking-feedback');
+
+            if (!name || !phone) {
+                alert('Por favor, preencha o seu Nome Completo e WhatsApp para confirmar.');
+                return;
+            }
+
+            var selectedServices = [];
+            document.querySelectorAll('input[name="assistant-service"]:checked').forEach(function(input) {
+                if (SERVICES_INFO[input.value]) {
+                    selectedServices.push(SERVICES_INFO[input.value].name);
+                }
+            });
+
+            var locationType = document.querySelector('input[name="assistant-location"]:checked').value;
+            var appointmentDate = dateInputEl.value;
+            var startTime = selectedSlotTime;
+            
+            // Calcular horário final aproximado (padrão 1 hora)
+            var startParts = startTime.split(':');
+            var endHour = (parseInt(startParts[0], 10) + 1).toString().padStart(2, '0');
+            var endTime = endHour + ':' + startParts[1] + ':00';
+
+            btnSubmitBooking.disabled = true;
+            btnSubmitBooking.textContent = 'Gravando agendamento...';
+            feedbackEl.style.display = 'none';
+
+            var client = getSupabase();
+            var isSaved = false;
+
+            if (client && SUPABASE_CONFIG.url !== 'https://SUA_URL_SUPABASE_AQUI.supabase.co') {
+                try {
+                    var { data, error } = await client
+                        .from('appointments')
+                        .insert([
+                            {
+                                customer_name: name,
+                                customer_phone: phone,
+                                service: selectedServices.join(', '),
+                                appointment_date: appointmentDate,
+                                start_time: startTime,
+                                end_time: endTime,
+                                location_type: locationType,
+                                status: 'confirmed',
+                                notes: notes ? (notes + ' | Qtd: ' + totalPeople) : ('Qtd pessoas: ' + totalPeople)
+                            }
+                        ]);
+
+                    if (error) {
+                        // Código 23505 = Unique Violation (Horário acabou de ser ocupado por outro usuário!)
+                        if (error.code === '23505' || error.message.includes('unique_active_appointment_slot')) {
+                            feedbackEl.style.display = 'block';
+                            feedbackEl.style.backgroundColor = 'rgba(230, 57, 70, 0.15)';
+                            feedbackEl.style.color = '#B50E2A';
+                            feedbackEl.innerHTML = '⚠️ <strong>Esse horário acabou de ser reservado por outra cliente!</strong><br>Por favor, volte à etapa anterior e escolha outro horário.';
+                            btnSubmitBooking.disabled = false;
+                            btnSubmitBooking.textContent = 'Confirmar Agendamento';
+                            return;
+                        }
+                        throw error;
+                    }
+                    isSaved = true;
+                } catch (err) {
+                    console.error('Erro ao salvar no Supabase:', err);
+                }
+            }
+
+            // Sucesso na gravação
+            feedbackEl.style.display = 'block';
+            feedbackEl.style.backgroundColor = 'rgba(32, 186, 90, 0.12)';
+            feedbackEl.style.color = '#157338';
+            feedbackEl.innerHTML = '✨ <strong>Agendamento pré-reservado com sucesso!</strong><br>Clique no botão abaixo para avisar a Gabrielly no WhatsApp.';
+
+            btnSubmitBooking.style.display = 'none';
+            btnWhatsAppDirect.style.display = 'flex';
+
+            // Gerar link do WhatsApp com dados
+            var parts = appointmentDate.split('-');
+            var dateBR = parts[2] + '/' + parts[1] + '/' + parts[0];
+            var timeShort = startTime.substring(0, 5);
+
+            var msg = "Olá, Gabrielly! Acabei de solicitar um agendamento pelo seu site:\n\n" +
+                      "👤 *Nome:* " + name + "\n" +
+                      "📱 *WhatsApp:* " + phone + "\n" +
+                      "💅 *Serviços:* " + selectedServices.join(', ') + "\n" +
+                      "📍 *Local:* " + (locationType === 'estudio' ? 'Estúdio em Acaraú' : 'Atendimento Externo') + "\n" +
+                      "📅 *Data:* " + dateBR + " às " + timeShort + "\n" +
+                      "👥 *Pessoas:* " + totalPeople + "\n" +
+                      (notes ? ("📝 *Obs:* " + notes + "\n") : "") +
+                      "\nAguardo as instruções para envio do sinal e confirmação definitiva!";
+
+            btnWhatsAppDirect.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+        });
 
         // Adicionar gatilho para os observadores de in-view do FAQ
         var faqSectionEl = document.getElementById('faq');
