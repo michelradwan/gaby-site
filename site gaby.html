@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabrielly Makeup — Editorial &amp; Bridal Luxe</title>
-    <meta name="description"
-        content="Gabrielly Makeup — Alta maquiagem editorial, noivas e eventos de luxo em Acaraú, Ceará. Realce a sua essência com sofisticação.">
+    <meta name="description" content="Gabrielly Makeup — Alta maquiagem editorial, noivas e eventos de luxo em Acaraú, Ceará. Realce a sua essência com sofisticação.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="Gabrielly Makeup — Editorial &amp; Bridal Luxe">
-    <meta property="og:description"
-        content="Realçando a sua essência, revelando o seu brilho e esculpindo obras de arte na pele. Atendimento premium em Acaraú, Ceará.">
+    <meta property="og:description" content="Realçando a sua essência, revelando o seu brilho e esculpindo obras de arte na pele. Atendimento premium em Acaraú, Ceará.">
     <meta property="og:image" content="images/foto gaby 02.jpeg">
     <meta property="og:url" content="https://gabriellymmakeup.com.br">
 
     <!-- Favicon SVG -->
-    <link class="fav-icon" rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230E0A09'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='34' font-weight='300' fill='%23D4B375' letter-spacing='2'%3EG%3C/text%3E%3C/svg%3E">
+    <link class="fav-icon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230E0A09'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='34' font-weight='300' fill='%23D4B375' letter-spacing='2'%3EG%3C/text%3E%3C/svg%3E">
 
     <!-- Google Fonts Premium Combination -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- JSON-LD Schema.org BeautySalon -->
     <script type="application/ld+json">
@@ -59,11 +53,11 @@
             --accent-gold: #D4B375;
             --accent-gold-hover: #C39F5E;
             --accent-rose: #E8B4A6;
-
+            
             /* Veludo Vermelho */
             --accent-red: #9C001A;
             --accent-red-hover: #7E0013;
-
+            
             --velvet-dark: #0F0B0A;
             --velvet-card: rgba(24, 18, 17, 0.6);
             --glass-border: rgba(212, 179, 117, 0.22);
@@ -73,8 +67,7 @@
         }
 
         * {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -97,15 +90,10 @@
 
         /* --- TEXTURA DE FILME GRANULADO --- */
         .film-grain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh;
             background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.045;
-            pointer-events: none;
-            z-index: 9998;
+            opacity: 0.045; pointer-events: none; z-index: 9998;
         }
 
         /* --- SISTEMA DE REVEAL ON SCROLL --- */
@@ -121,28 +109,15 @@
             transform: translateY(0);
         }
 
-        .reveal-delay-1 {
-            transition-delay: 0.15s;
-        }
-
-        .reveal-delay-2 {
-            transition-delay: 0.3s;
-        }
-
-        .reveal-delay-3 {
-            transition-delay: 0.45s;
-        }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
 
         /* --- HEADER LUXO --- */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            position: fixed; top: 0; left: 0; width: 100%;
             padding: 2rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
             z-index: 5000;
             transition: var(--transition-smooth);
             backdrop-filter: blur(8px);
@@ -167,9 +142,7 @@
         }
 
         .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
+            display: flex; gap: 2.5rem; list-style: none;
         }
 
         .nav-links a {
@@ -186,11 +159,8 @@
 
         .nav-links a::after {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
+            position: absolute; bottom: 0; left: 0;
+            width: 0; height: 1px;
             background-color: var(--accent-red);
             transition: var(--transition-fast);
         }
@@ -212,21 +182,14 @@
         }
 
         .nav-header-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
+            display: flex; align-items: center; gap: 2rem;
         }
 
         .header-instagram {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            font-weight: 500;
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            text-decoration: none; color: var(--text-muted);
+            font-size: 0.7rem; letter-spacing: 0.2em;
+            text-transform: uppercase; font-weight: 500;
             transition: var(--transition-fast);
         }
 
@@ -235,79 +198,41 @@
         }
 
         .header-instagram svg {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 1.5;
+            width: 16px; height: 16px;
+            stroke: currentColor; fill: none; stroke-width: 1.5;
         }
 
-        body.dark-mode .header-instagram {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        body.dark-mode .header-instagram:hover {
-            color: var(--accent-red);
-        }
+        body.dark-mode .header-instagram { color: rgba(255, 255, 255, 0.6); }
+        body.dark-mode .header-instagram:hover { color: var(--accent-red); }
 
         /* --- HAMBÚRGUER BUTTON --- */
         .hamburger-btn {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 44px;
-            height: 44px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            gap: 6px;
-            z-index: 6000;
+            display: none; flex-direction: column; justify-content: center; align-items: center;
+            width: 44px; height: 44px; background: none; border: none;
+            cursor: pointer; gap: 6px; z-index: 6000;
         }
 
         .hamburger-btn span {
-            display: block;
-            width: 26px;
-            height: 1px;
+            display: block; width: 26px; height: 1px;
             background-color: var(--text-dark);
             transition: var(--transition-smooth);
             transform-origin: center;
         }
 
-        body.dark-mode .hamburger-btn span {
-            background-color: #FFF;
-        }
+        body.dark-mode .hamburger-btn span { background-color: #FFF; }
 
-        .hamburger-btn.open span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .hamburger-btn.open span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-
-        .hamburger-btn.open span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
+        .hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         /* --- MOBILE OVERLAY --- */
         .mobile-menu-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: rgba(250, 247, 244, 0.98);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
             z-index: 5500;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
+            flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none;
             transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -316,135 +241,72 @@
         }
 
         .mobile-menu-overlay.visible {
-            opacity: 1;
-            pointer-events: auto;
+            opacity: 1; pointer-events: auto;
         }
 
         .mobile-menu-overlay nav {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.2rem;
+            display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
         }
 
         .mobile-menu-overlay a {
             font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            font-weight: 300;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--text-dark);
-            padding: 0.5rem 2rem;
+            font-size: 2.2rem; font-weight: 300;
+            letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+            color: var(--text-dark); padding: 0.5rem 2rem;
             transition: var(--transition-smooth);
-            transform: translateY(30px);
-            opacity: 0;
+            transform: translateY(30px); opacity: 0;
         }
 
         .mobile-menu-overlay.visible a {
-            transform: translateY(0);
-            opacity: 1;
+            transform: translateY(0); opacity: 1;
         }
 
-        .mobile-menu-overlay a:nth-child(1) {
-            transition-delay: 0.05s;
-        }
+        .mobile-menu-overlay a:nth-child(1) { transition-delay: 0.05s; }
+        .mobile-menu-overlay a:nth-child(2) { transition-delay: 0.1s; }
+        .mobile-menu-overlay a:nth-child(3) { transition-delay: 0.15s; }
+        .mobile-menu-overlay a:nth-child(4) { transition-delay: 0.2s; }
+        .mobile-menu-overlay a:nth-child(5) { transition-delay: 0.25s; }
+        .mobile-menu-overlay a:nth-child(6) { transition-delay: 0.3s; }
 
-        .mobile-menu-overlay a:nth-child(2) {
-            transition-delay: 0.1s;
-        }
-
-        .mobile-menu-overlay a:nth-child(3) {
-            transition-delay: 0.15s;
-        }
-
-        .mobile-menu-overlay a:nth-child(4) {
-            transition-delay: 0.2s;
-        }
-
-        .mobile-menu-overlay a:nth-child(5) {
-            transition-delay: 0.25s;
-        }
-
-        .mobile-menu-overlay a:nth-child(6) {
-            transition-delay: 0.3s;
-        }
-
-        body.dark-mode .mobile-menu-overlay a {
-            color: #FFF;
-        }
-
-        .mobile-menu-overlay a:hover {
-            color: var(--accent-red);
-            transform: scale(1.05);
-        }
+        body.dark-mode .mobile-menu-overlay a { color: #FFF; }
+        .mobile-menu-overlay a:hover { color: var(--accent-red); transform: scale(1.05); }
 
         .mobile-menu-footer {
             margin-top: 4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: var(--transition-fast);
-            transform: translateY(30px);
-            opacity: 0;
+            display: flex; align-items: center; gap: 0.6rem;
+            color: var(--text-muted); font-size: 0.8rem; letter-spacing: 0.2em;
+            text-transform: uppercase; text-decoration: none; transition: var(--transition-fast);
+            transform: translateY(30px); opacity: 0;
         }
 
         .mobile-menu-overlay.visible .mobile-menu-footer {
-            transform: translateY(0);
-            opacity: 1;
+            transform: translateY(0); opacity: 1;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s, opacity 0.6s ease 0.35s;
         }
 
-        body.dark-mode .mobile-menu-footer {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .mobile-menu-footer:hover {
-            color: var(--accent-red);
-        }
-
-        .mobile-menu-footer svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 1.5;
-        }
+        body.dark-mode .mobile-menu-footer { color: rgba(255, 255, 255, 0.5); }
+        .mobile-menu-footer:hover { color: var(--accent-red); }
+        .mobile-menu-footer svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; }
 
         /* --- CANVAS --- */
         #glitter-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 2;
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 2;
             transform: translate3d(0, 0, 0);
         }
 
         /* --- SEÇÕES --- */
         section {
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 9rem 2rem;
-            position: relative;
-            z-index: 10;
-            background: transparent;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 9rem 2rem; position: relative; z-index: 10; background: transparent;
         }
 
         /* --- HERO --- */
         .hero {
-            justify-content: center;
-            text-align: center;
+            justify-content: center; text-align: center;
             background: radial-gradient(circle at 50% 40%, rgba(156, 0, 26, 0.03) 0%, transparent 70%);
             overflow: hidden;
         }
@@ -469,9 +331,7 @@
             will-change: transform;
         }
 
-        body.dark-mode .hero-header h1 {
-            color: #FFF;
-        }
+        body.dark-mode .hero-header h1 { color: #FFF; }
 
         .hero-location {
             font-size: 0.85rem;
@@ -501,45 +361,29 @@
 
         /* Botão Primário Hero - Red Velvet */
         .btn-hero-booking {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
+            display: inline-flex; align-items: center; gap: 15px;
             padding: 20px 48px;
             background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-hover) 100%);
-            color: #FFF;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            border-radius: 50px;
+            color: #FFF; text-decoration: none;
+            font-weight: 600; font-size: 0.8rem; letter-spacing: 0.25em;
+            text-transform: uppercase; border-radius: 50px;
             box-shadow: 0 15px 35px rgba(156, 0, 26, 0.25);
             transition: var(--transition-smooth);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255,255,255,0.1);
             will-change: transform;
         }
-
         .btn-hero-booking:hover {
             transform: translateY(-3px) !important;
             box-shadow: 0 20px 45px rgba(156, 0, 26, 0.38);
             background: linear-gradient(135deg, #B50E2A 0%, #8C0015 100%);
         }
-
-        .btn-hero-booking svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
+        .btn-hero-booking svg { width: 18px; height: 18px; fill: currentColor; }
 
         /* --- DECORATIVE SCROLL INDICATOR --- */
         .scroll-indicator {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
+            position: absolute; bottom: 3rem; left: 50%;
             transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; flex-direction: column; align-items: center;
             gap: 0.8rem;
             color: var(--text-muted);
             font-size: 0.65rem;
@@ -550,26 +394,16 @@
 
         .scroll-indicator::after {
             content: '';
-            width: 1px;
-            height: 50px;
+            width: 1px; height: 50px;
             background: linear-gradient(to bottom, var(--accent-red), transparent);
             animation: scrollLine 2s infinite ease-in-out;
             transform-origin: top;
         }
 
         @keyframes scrollLine {
-            0% {
-                transform: scaleY(0);
-            }
-
-            50% {
-                transform: scaleY(1);
-            }
-
-            100% {
-                transform: scaleY(0);
-                transform: translateY(50px);
-            }
+            0% { transform: scaleY(0); }
+            50% { transform: scaleY(1); }
+            100% { transform: scaleY(0); transform: translateY(50px); }
         }
 
         /* --- SEÇÃO SOBRE A GABRIELLY SPLIT --- */
@@ -581,7 +415,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .about-container {
             background-color: var(--bg-card);
             border: 1px solid var(--glass-border);
@@ -592,14 +425,12 @@
             box-shadow: 0 30px 80px rgba(14, 10, 9, 0.03);
             width: 100%;
         }
-
         .about-split {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 3.5rem;
             align-items: center;
         }
-
         .about-image-wrapper {
             position: relative;
             width: 100%;
@@ -609,7 +440,6 @@
             border: 1px solid var(--glass-border);
             box-shadow: 0 20px 45px rgba(14, 10, 9, 0.08);
         }
-
         .about-profile-img {
             width: 100%;
             height: 100%;
@@ -617,18 +447,15 @@
             object-position: center center;
             transition: var(--transition-smooth);
         }
-
         .about-profile-img:hover {
             transform: scale(1.03);
         }
-
         .about-text {
             text-align: left;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
-
         .about-text span {
             font-size: 0.72rem;
             letter-spacing: 0.35em;
@@ -638,7 +465,6 @@
             display: block;
             margin-bottom: 0.8rem;
         }
-
         .about-text h2 {
             font-family: 'Cinzel', serif;
             font-size: 2.8rem;
@@ -649,7 +475,6 @@
             color: var(--text-dark);
             line-height: 1.2;
         }
-
         .about-text p {
             color: var(--text-muted);
             font-size: 1.02rem;
@@ -657,7 +482,6 @@
             font-weight: 300;
             margin-bottom: 1.5rem;
         }
-
         .badge-award {
             display: inline-flex;
             align-items: center;
@@ -673,27 +497,28 @@
             text-align: left;
             position: relative;
             overflow: hidden;
-
+            
             /* Bordas premium douradas metálicas com fundo Vinho (accent-red) */
             border: 1.5px solid transparent;
-            background: linear-gradient(var(--accent-red), var(--accent-red)) padding-box,
-                linear-gradient(90deg,
-                    var(--accent-gold) 0%,
-                    var(--accent-rose) 50%,
-                    var(--accent-gold) 100%) border-box;
+            background: linear-gradient(var(--accent-red), var(--accent-red)) padding-box, 
+                        linear-gradient(90deg, 
+                            var(--accent-gold) 0%, 
+                            var(--accent-rose) 50%,
+                            var(--accent-gold) 100%
+                        ) border-box;
             background-size: 100% 100%, 200% auto;
             color: #FFFFFF;
-
+            
             /* Sombra dourada premium sutil */
-            box-shadow:
+            box-shadow: 
                 0 4px 15px rgba(156, 0, 26, 0.15),
                 0 2px 6px rgba(212, 179, 117, 0.12);
-
-            transition:
-                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                
+            transition: 
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
                 box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
                 color 0.3s ease;
-
+            
             animation: premiumBorderFlow 6s linear infinite;
             cursor: default;
         }
@@ -706,10 +531,12 @@
             left: -150%;
             width: 60%;
             height: 100%;
-            background: linear-gradient(90deg,
-                    rgba(255, 255, 255, 0) 0%,
-                    rgba(255, 255, 255, 0.35) 50%,
-                    rgba(255, 255, 255, 0) 100%);
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.35) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
             transform: skewX(-25deg);
             pointer-events: none;
             animation: premiumShineSweep 5s infinite ease-in-out;
@@ -727,14 +554,15 @@
 
         /* Ajustes para o modo escuro (Dark Mode) - mantendo o fundo vinho mas adaptando a sombra */
         body.dark-mode .badge-award {
-            background: linear-gradient(var(--accent-red), var(--accent-red)) padding-box,
-                linear-gradient(90deg,
-                    var(--accent-gold) 0%,
-                    var(--accent-rose) 50%,
-                    var(--accent-gold) 100%) border-box;
+            background: linear-gradient(var(--accent-red), var(--accent-red)) padding-box, 
+                        linear-gradient(90deg, 
+                            var(--accent-gold) 0%, 
+                            var(--accent-rose) 50%,
+                            var(--accent-gold) 100%
+                        ) border-box;
             background-size: 100% 100%, 200% auto;
             color: #FFFFFF;
-            box-shadow:
+            box-shadow: 
                 0 4px 20px rgba(0, 0, 0, 0.4),
                 0 2px 10px rgba(212, 179, 117, 0.15);
         }
@@ -746,11 +574,9 @@
             0% {
                 background-position: 0% 50%, 0% 50%;
             }
-
             50% {
                 background-position: 0% 50%, 100% 50%;
             }
-
             100% {
                 background-position: 0% 50%, 0% 50%;
             }
@@ -760,55 +586,44 @@
             0% {
                 left: -150%;
             }
-
             30% {
                 left: 150%;
             }
-
             100% {
                 left: 150%;
             }
         }
 
         @keyframes starScalePulse {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: scale(1);
                 filter: drop-shadow(0 0 2px rgba(212, 179, 117, 0.5));
             }
-
             50% {
                 transform: scale(1.22);
                 filter: drop-shadow(0 0 8px rgba(212, 179, 117, 0.95));
             }
         }
-
         @media (max-width: 900px) {
             .about-split {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
-
             .about-image-wrapper {
                 max-width: 400px;
                 margin: 0 auto;
             }
-
             .about-text {
                 align-items: center;
                 text-align: center;
             }
-
             .about-text h2 {
                 font-size: 2.2rem;
             }
-
             .badge-award {
                 text-align: center;
             }
         }
-
         @media (max-width: 768px) {
             .about-container {
                 padding: 2.5rem 1.5rem;
@@ -817,14 +632,11 @@
 
         /* --- SEÇÃO EXPERIÊNCIA / SERVIÇOS --- */
         .experience {
-            max-width: 1050px;
-            margin: 0 auto;
-            width: 100%;
+            max-width: 1050px; margin: 0 auto; width: 100%;
         }
 
         .section-intro {
-            text-align: center;
-            margin-bottom: 5rem;
+            text-align: center; margin-bottom: 5rem;
             max-width: 750px;
         }
 
@@ -841,26 +653,18 @@
 
         .section-intro h2::after {
             content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 1px;
+            position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 1px;
             background-color: var(--accent-red);
         }
 
         .section-intro p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            font-weight: 300;
+            font-size: 1.1rem; line-height: 1.8; font-weight: 300;
             margin-top: 1.5rem;
         }
 
-        body.dark-mode .section-intro p {
-            color: #C5BCB5;
-        }
+        body.dark-mode .section-intro p { color: #C5BCB5; }
 
         /* --- ACCORDION SYSTEM LUXO --- */
         .editorial-accordion-glass {
@@ -898,17 +702,10 @@
         }
 
         .accordion-header {
-            width: 100%;
-            padding: 2.5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: none;
-            border: none;
-            color: inherit;
-            cursor: pointer;
-            text-align: left;
-            transition: var(--transition-fast);
+            width: 100%; padding: 2.5rem 0;
+            display: flex; justify-content: space-between; align-items: center;
+            background: none; border: none; color: inherit; cursor: pointer;
+            text-align: left; transition: var(--transition-fast);
         }
 
         .accordion-title {
@@ -925,15 +722,11 @@
         }
 
         .accordion-icon {
-            width: 32px;
-            height: 32px;
+            width: 32px; height: 32px;
             border: 1px solid rgba(156, 0, 26, 0.3);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 200;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; font-weight: 200;
             transition: var(--transition-smooth);
             color: var(--accent-red);
         }
@@ -945,8 +738,7 @@
         }
 
         .accordion-content {
-            max-height: 0;
-            overflow: hidden;
+            max-height: 0; overflow: hidden;
             transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -963,9 +755,7 @@
             animation: fadeInBody 0.6s ease;
         }
 
-        body.dark-mode .accordion-body {
-            color: #CFC9C3;
-        }
+        body.dark-mode .accordion-body { color: #CFC9C3; }
 
         .accordion-body strong {
             color: var(--accent-red);
@@ -989,8 +779,7 @@
 
         .service-price::before {
             content: '';
-            width: 15px;
-            height: 1px;
+            width: 15px; height: 1px;
             background-color: var(--accent-red);
         }
 
@@ -1003,23 +792,14 @@
 
         /* Botão específico no accordion - Velvet Red */
         .btn-service-booking {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.8rem 1.8rem;
-            margin-top: 1.5rem;
-            border: 1px solid var(--accent-red);
-            border-radius: 50px;
-            color: var(--accent-red);
-            text-decoration: none;
-            font-size: 0.72rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: var(--transition-fast);
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.8rem 1.8rem; margin-top: 1.5rem;
+            border: 1px solid var(--accent-red); border-radius: 50px;
+            color: var(--accent-red); text-decoration: none;
+            font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+            font-weight: 600; transition: var(--transition-fast);
             align-self: flex-start;
         }
-
         .btn-service-booking:hover {
             background-color: var(--accent-red);
             color: #FFF;
@@ -1039,7 +819,6 @@
             -webkit-backdrop-filter: blur(25px);
             box-shadow: 0 20px 50px rgba(14, 10, 9, 0.02);
         }
-
         .rules-card h3 {
             font-family: 'Cinzel', serif;
             font-size: 2rem;
@@ -1050,19 +829,16 @@
             margin-bottom: 2.5rem;
             color: var(--accent-red);
         }
-
         .rules-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;
         }
-
         .rule-item {
             display: flex;
             flex-direction: column;
             gap: 0.6rem;
         }
-
         .rule-item h4 {
             font-family: 'Cinzel', serif;
             font-size: 1rem;
@@ -1071,25 +847,21 @@
             color: var(--text-dark);
             font-weight: 500;
         }
-
         .rule-item p {
             color: var(--text-muted);
             font-size: 0.88rem;
             line-height: 1.6;
             font-weight: 300;
         }
-
         .rule-item strong {
             color: var(--accent-red);
             font-weight: 600;
         }
-
         @media (max-width: 768px) {
             .rules-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-
             .rules-card {
                 padding: 2.5rem 1.5rem;
             }
@@ -1097,22 +869,15 @@
 
         /* --- GALERIA COM TRANSIÇÃO EM 3D --- */
         .galeria-section {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 9rem 2rem;
-            position: relative;
-            z-index: 20;
+            width: 100%; min-height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 9rem 2rem; position: relative; z-index: 20;
             background-color: var(--glass-bg);
             backdrop-filter: blur(30px) saturate(180%);
             -webkit-backdrop-filter: blur(30px) saturate(180%);
-            border-top: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-            box-shadow: 0 15px 50px rgba(13, 9, 8, 0.02);
-            transition: background-color 1s cubic-bezier(0.16, 1, 0.3, 1), border-color 1s ease;
+            border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 15px 50px rgba(13,9,8,0.02);
+            transition: background-color 1s cubic-bezier(0.16,1,0.3,1), border-color 1s ease;
         }
 
         body.dark-mode .galeria-section {
@@ -1121,43 +886,24 @@
         }
 
         .single-slide-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            aspect-ratio: 3/4;
-            margin: 3rem auto 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: translate3d(0, 0, 0);
+            position: relative; width: 100%; max-width: 500px; aspect-ratio: 3/4;
+            margin: 3rem auto 0 auto; display: flex; align-items: center; justify-content: center;
+            transform: translate3d(0,0,0);
         }
 
         .slide-frame {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 35px 80px rgba(14, 10, 9, 0.15);
-            transform: translate3d(0, 0, 0);
+            width: 100%; height: 100%; position: relative; border-radius: 12px; overflow: hidden;
+            background-color: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            box-shadow: 0 35px 80px rgba(14,10,9,0.15); transform: translate3d(0,0,0);
             perspective: 1200px;
         }
 
         .galeria-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             opacity: 0;
             transform: translate3d(100%, 0, -100px) rotateY(-35deg) scale(0.9);
             transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-            pointer-events: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+            pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end;
             will-change: transform, opacity;
             backface-visibility: hidden;
         }
@@ -1165,8 +911,7 @@
         .galeria-slide.active {
             opacity: 1;
             transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
-            pointer-events: auto;
-            z-index: 5;
+            pointer-events: auto; z-index: 5;
         }
 
         .galeria-slide.prev-slide {
@@ -1182,103 +927,53 @@
         }
 
         .galeria-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: center top;
+            transition: transform 1.5s cubic-bezier(0.16,1,0.3,1);
         }
 
-        .galeria-slide.active:hover .galeria-img {
-            transform: scale(1.05);
-        }
+        .galeria-slide.active:hover .galeria-img { transform: scale(1.05); }
 
         .placeholder-visual {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            padding: 2rem;
-            text-align: center;
-            background-color: rgba(236, 228, 220, 0.55);
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: none; flex-direction: column; align-items: center; justify-content: center;
+            color: var(--text-muted); padding: 2rem; text-align: center;
+            background-color: rgba(236,228,220,0.55);
             z-index: 1;
         }
-
         .placeholder-visual svg {
-            width: 40px;
-            height: 40px;
-            stroke: currentColor;
-            fill: none;
-            margin-bottom: 1.2rem;
-            opacity: 0.45;
+            width: 40px; height: 40px; stroke: currentColor; fill: none;
+            margin-bottom: 1.2rem; opacity: 0.45;
         }
-
         .placeholder-visual p {
-            font-size: 0.75rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
+            font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
             font-weight: 300;
         }
 
         .btn-slide {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%) translate3d(0, 0, 0);
+            position: absolute; top: 50%; transform: translateY(-50%) translate3d(0,0,0);
             background-color: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--glass-border);
-            color: var(--text-dark);
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
+            border: 1px solid var(--glass-border); color: var(--text-dark);
+            width: 64px; height: 64px; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; z-index: 10;
             transition: var(--transition-smooth);
-            box-shadow: 0 10px 30px rgba(14, 10, 9, 0.06);
+            box-shadow: 0 10px 30px rgba(14,10,9,0.06);
         }
 
         .btn-slide:hover {
-            background-color: var(--accent-red);
-            color: #FFF;
-            transform: translateY(-50%) scale(1.08) translate3d(0, 0, 0);
+            background-color: var(--accent-red); color: #FFF;
+            transform: translateY(-50%) scale(1.08) translate3d(0,0,0);
             border-color: var(--accent-red);
         }
 
-        .btn-slide.prev {
-            left: -88px;
-        }
+        .btn-slide.prev { left: -88px; }
+        .btn-slide.next { right: -88px; }
 
-        .btn-slide.next {
-            right: -88px;
-        }
-
-        .slide-dots {
-            display: flex;
-            gap: 14px;
-            margin-top: 2.5rem;
-            z-index: 10;
-        }
-
+        .slide-dots { display: flex; gap: 14px; margin-top: 2.5rem; z-index: 10; }
         .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(156, 0, 26, 0.15);
-            cursor: pointer;
-            transition: var(--transition-smooth);
+            width: 8px; height: 8px; border-radius: 50%;
+            background-color: rgba(156, 0, 26, 0.15); cursor: pointer; transition: var(--transition-smooth);
         }
-
         .dot.active {
             background-color: var(--accent-red);
             transform: scale(1.4);
@@ -1287,46 +982,33 @@
 
         /* --- DEPOIMENTOS --- */
         .testimonials-section {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%; max-width: 1200px; margin: 0 auto;
             padding: 9rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; flex-direction: column; align-items: center;
         }
 
         .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            width: 100%;
-            margin-top: 3rem;
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 3rem; width: 100%; margin-top: 3rem;
         }
 
         .testimonial-card {
             background-color: var(--bg-card);
             border: 1px solid var(--glass-border);
-            padding: 4rem 3.5rem;
-            border-radius: 16px;
-            backdrop-filter: blur(25px);
+            padding: 4rem 3.5rem; border-radius: 16px; backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             transition: var(--transition-smooth);
             position: relative;
-            box-shadow: 0 20px 50px rgba(14, 10, 9, 0.02);
+            box-shadow: 0 20px 50px rgba(14,10,9,0.02);
             overflow: hidden;
         }
 
         .testimonial-card::before {
             content: '“';
-            position: absolute;
-            top: 1.5rem;
-            left: 2.5rem;
+            position: absolute; top: 1.5rem; left: 2.5rem;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 8rem;
-            line-height: 1;
-            color: var(--accent-red);
-            opacity: 0.12;
+            font-size: 8rem; line-height: 1;
+            color: var(--accent-red); opacity: 0.12;
             pointer-events: none;
             transition: var(--transition-smooth);
         }
@@ -1344,49 +1026,32 @@
         }
 
         .testimonial-stars {
-            margin-bottom: 1.5rem;
-            color: var(--accent-red);
-            font-size: 0.95rem;
-            letter-spacing: 0.25em;
+            margin-bottom: 1.5rem; color: var(--accent-red);
+            font-size: 0.95rem; letter-spacing: 0.25em;
         }
 
         .testimonial-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.55rem;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            position: relative;
-            z-index: 2;
+            font-size: 1.55rem; font-style: italic;
+            line-height: 1.6; margin-bottom: 2.5rem; font-weight: 300;
+            position: relative; z-index: 2;
         }
 
-        .testimonial-author {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
+        .testimonial-author { display: flex; flex-direction: column; gap: 0.4rem; }
 
         .testimonial-name {
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            font-weight: 500;
+            font-size: 0.9rem; letter-spacing: 0.15em;
+            text-transform: uppercase; font-weight: 500;
         }
 
         .testimonial-role {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            letter-spacing: 0.08em;
+            font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em;
         }
 
         /* --- BOOKING --- */
         .booking {
-            min-height: 110vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            min-height: 110vh; display: flex; justify-content: center; align-items: center;
             background: radial-gradient(circle at 50% 60%, rgba(156, 0, 26, 0.03) 0%, transparent 60%);
             position: relative;
             overflow: hidden;
@@ -1394,114 +1059,70 @@
 
         .booking::before {
             content: '';
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
+            position: absolute; top: -10%; left: -10%; width: 120%; height: 120%;
             background: radial-gradient(circle at 70% 30%, rgba(156, 0, 26, 0.02) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .booking-content {
-            opacity: 0;
-            transform: translateY(50px) translate3d(0, 0, 0);
-            transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-            max-width: 800px;
-            text-align: center;
+            opacity: 0; transform: translateY(50px) translate3d(0,0,0);
+            transition: all 1.5s cubic-bezier(0.16,1,0.3,1);
+            max-width: 800px; text-align: center;
             padding: 0 2rem;
             z-index: 10;
         }
 
         .booking-content.visible {
-            opacity: 1;
-            transform: translateY(0) translate3d(0, 0, 0);
+            opacity: 1; transform: translateY(0) translate3d(0,0,0);
         }
 
         .booking h2 {
             font-family: 'Cinzel', serif;
-            font-size: 4.5rem;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 300;
+            font-size: 4.5rem; margin-bottom: 2rem; text-transform: uppercase;
+            letter-spacing: 0.15em; font-weight: 300;
             line-height: 1.1;
         }
-
+        
         .booking p {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.45rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin-bottom: 4rem;
-            font-weight: 300;
+            font-size: 1.45rem; line-height: 1.8; color: var(--text-muted);
+            margin-bottom: 4rem; font-weight: 300;
         }
 
         .booking-social {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.6rem;
-            margin-top: 2.5rem;
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            font-weight: 500;
-            transition: var(--transition-fast);
+            display: inline-flex; justify-content: center; align-items: center; gap: 0.6rem;
+            margin-top: 2.5rem; text-decoration: none; color: var(--text-muted);
+            font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+            font-weight: 500; transition: var(--transition-fast);
             padding: 0.5rem 1rem;
         }
 
-        .booking-social:hover {
-            color: var(--accent-red);
-        }
-
-        .booking-social svg {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 1.5;
-        }
+        .booking-social:hover { color: var(--accent-red); }
+        .booking-social svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; }
 
         /* Botão WhatsApp - Red Velvet */
         .btn-luxury-whats {
-            display: inline-flex;
-            align-items: center;
-            gap: 20px;
+            display: inline-flex; align-items: center; gap: 20px;
             padding: 24px 60px;
             background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-hover) 100%);
-            color: #FFF;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            border-radius: 50px;
+            color: #FFF; text-decoration: none;
+            font-weight: 600; font-size: 0.85rem; letter-spacing: 0.3em;
+            text-transform: uppercase; border-radius: 50px;
             box-shadow: 0 20px 45px rgba(156, 0, 26, 0.22);
             transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            pointer-events: auto;
-            transform: translate3d(0, 0, 0);
+            position: relative; overflow: hidden; pointer-events: auto;
+            transform: translate3d(0,0,0);
         }
 
-        .btn-luxury-whats.pulse {
-            animation: breathing-pulse 3.5s infinite ease-in-out;
-        }
+        .btn-luxury-whats.pulse { animation: breathing-pulse 3.5s infinite ease-in-out; }
 
         .btn-luxury-whats:hover {
             background: linear-gradient(135deg, #B50E2A 0%, #8C0015 100%);
             box-shadow: 0 25px 50px rgba(156, 0, 26, 0.35);
-            transform: scale(1.05) translate3d(0, -2px, 0);
+            transform: scale(1.05) translate3d(0,-2px,0);
         }
 
-        .btn-luxury-whats svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
+        .btn-luxury-whats svg { width: 22px; height: 22px; fill: currentColor; }
 
         /* --- BOTÃO FLUTUANTE DE CONVERSÃO --- */
         .floating-booking {
@@ -1511,16 +1132,14 @@
             z-index: 4500;
             opacity: 0;
             transform: translateY(20px) scale(0.9);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
             pointer-events: none;
         }
-
         .floating-booking.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
             pointer-events: auto;
         }
-
         .btn-floating-luxury {
             display: flex;
             align-items: center;
@@ -1536,16 +1155,14 @@
             text-transform: uppercase;
             border-radius: 50px;
             box-shadow: 0 12px 35px rgba(156, 0, 26, 0.25);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-
         .btn-floating-luxury:hover {
             background: linear-gradient(135deg, #B50E2A 0%, #8C0015 100%);
             box-shadow: 0 15px 35px rgba(156, 0, 26, 0.35);
             transform: translateY(-3px) scale(1.03);
         }
-
         .btn-floating-luxury svg {
             width: 16px;
             height: 16px;
@@ -1561,26 +1178,25 @@
             z-index: 10;
             transition: background-color 1.5s cubic-bezier(0.16, 1, 0.3, 1), color 1.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
+        
         .course-section.in-view {
-            background-color: #1C0609;
-            /* Vinho aveludado profundo */
+            background-color: #1C0609; /* Vinho aveludado profundo */
             color: #FAF7F4;
         }
-
+        
         .course-container {
             max-width: 1050px;
             margin: 0 auto;
             width: 100%;
             padding: 0 2.5rem;
         }
-
+        
         .course-section .section-intro {
             text-align: center;
             margin: 0 auto 4rem auto;
             max-width: 750px;
         }
-
+        
         .course-section .section-intro span {
             font-size: 0.72rem;
             letter-spacing: 0.35em;
@@ -1591,11 +1207,11 @@
             margin-bottom: 0.8rem;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .section-intro span {
             color: var(--accent-gold);
         }
-
+        
         .course-section h2 {
             font-family: 'Cinzel', serif;
             font-size: 2.8rem;
@@ -1606,11 +1222,11 @@
             color: var(--text-dark);
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view h2 {
             color: #FFFFFF;
         }
-
+        
         .course-section .section-intro p {
             color: var(--text-muted);
             font-size: 1.05rem;
@@ -1619,18 +1235,18 @@
             font-weight: 300;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .section-intro p {
             color: rgba(250, 247, 244, 0.75);
         }
-
+        
         .course-split {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
             gap: 4rem;
             align-items: start;
         }
-
+        
         .course-learn-col h3 {
             font-family: 'Cinzel', serif;
             font-size: 1.5rem;
@@ -1640,35 +1256,35 @@
             color: var(--accent-red);
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-learn-col h3 {
             color: var(--accent-gold);
         }
-
+        
         .course-learn-list {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 1.8rem;
         }
-
+        
         .course-learn-list li {
             display: flex;
             gap: 1.2rem;
             align-items: flex-start;
         }
-
+        
         .course-learn-list li .bullet-icon {
             font-size: 1rem;
             color: var(--accent-red);
             margin-top: 0.15rem;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-learn-list li .bullet-icon {
             color: var(--accent-gold);
         }
-
+        
         .course-learn-list li strong {
             display: block;
             font-size: 1.05rem;
@@ -1677,11 +1293,11 @@
             margin-bottom: 0.3rem;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-learn-list li strong {
             color: #FFFFFF;
         }
-
+        
         .course-learn-list li p {
             font-size: 0.92rem;
             line-height: 1.6;
@@ -1689,11 +1305,11 @@
             font-weight: 300;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-learn-list li p {
             color: rgba(250, 247, 244, 0.65);
         }
-
+        
         /* CARD INFORMAÇÃO DO CURSO VIP */
         .course-card-glass {
             background-color: var(--bg-card);
@@ -1706,13 +1322,13 @@
             transition: background-color 1.5s ease, border-color 1.5s ease, box-shadow 1.5s ease;
             position: relative;
         }
-
+        
         .course-section.in-view .course-card-glass {
             background-color: rgba(255, 255, 255, 0.03);
             border-color: rgba(212, 179, 117, 0.25);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
         }
-
+        
         .course-price-tag {
             text-align: center;
             border-bottom: 1px solid var(--glass-border);
@@ -1720,11 +1336,11 @@
             margin-bottom: 2rem;
             transition: border-color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-price-tag {
             border-color: rgba(255, 255, 255, 0.1);
         }
-
+        
         .course-price-tag .price-label {
             font-size: 0.65rem;
             letter-spacing: 0.25em;
@@ -1734,11 +1350,11 @@
             margin-bottom: 0.5rem;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-price-tag .price-label {
             color: rgba(250, 247, 244, 0.5);
         }
-
+        
         .course-price-tag .price-value {
             font-family: 'Cinzel', serif;
             font-size: 3.2rem;
@@ -1749,11 +1365,11 @@
             margin-bottom: 0.4rem;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-price-tag .price-value {
             color: var(--accent-gold);
         }
-
+        
         .course-price-tag .price-payment {
             font-size: 0.8rem;
             font-weight: 500;
@@ -1761,35 +1377,35 @@
             letter-spacing: 0.05em;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-price-tag .price-payment {
             color: #FFFFFF;
         }
-
+        
         .course-details {
             display: flex;
             flex-direction: column;
             gap: 2rem;
             margin-bottom: 3rem;
         }
-
+        
         .detail-item {
             display: flex;
             gap: 1.2rem;
             align-items: center;
         }
-
+        
         .detail-icon {
             font-size: 1.4rem;
             color: var(--accent-red);
             flex-shrink: 0;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .detail-icon {
             color: var(--accent-gold);
         }
-
+        
         .detail-item strong {
             display: block;
             font-size: 0.95rem;
@@ -1798,22 +1414,22 @@
             margin-bottom: 0.15rem;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .detail-item strong {
             color: #FFFFFF;
         }
-
+        
         .detail-item p {
             font-size: 0.85rem;
             color: var(--text-muted);
             font-weight: 300;
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .detail-item p {
             color: rgba(250, 247, 244, 0.6);
         }
-
+        
         .btn-course-booking {
             display: block;
             width: 100%;
@@ -1830,38 +1446,35 @@
             box-shadow: 0 10px 25px rgba(156, 0, 26, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
         }
-
+        
         .btn-course-booking:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px rgba(156, 0, 26, 0.25);
             background-color: var(--accent-red-hover);
         }
-
+        
         .course-section.in-view .btn-course-booking {
             background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
             color: var(--text-dark);
             box-shadow: 0 10px 25px rgba(212, 179, 117, 0.25);
         }
-
+        
         .course-section.in-view .btn-course-booking:hover {
             box-shadow: 0 15px 30px rgba(212, 179, 117, 0.4);
             transform: translateY(-2px) scale(1.01);
         }
-
+        
         @media (max-width: 900px) {
             .course-split {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-
             .course-section .section-intro h2 {
                 font-size: 2.2rem;
             }
-
             .course-card-glass {
                 padding: 2.5rem 1.5rem;
             }
-
             .course-price-tag .price-value {
                 font-size: 2.8rem;
             }
@@ -1874,11 +1487,11 @@
             padding-top: 5rem;
             transition: border-color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-gallery {
             border-top-color: rgba(212, 179, 117, 0.2);
         }
-
+        
         .course-gallery h3 {
             font-family: 'Cinzel', serif;
             font-size: 1.8rem;
@@ -1889,17 +1502,17 @@
             color: var(--accent-red);
             transition: color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-gallery h3 {
             color: var(--accent-gold);
         }
-
+        
         .course-gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-
+        
         .course-gallery-item {
             position: relative;
             border-radius: 15px;
@@ -1909,16 +1522,16 @@
             border: 1px solid var(--glass-border);
             transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 1.5s ease;
         }
-
+        
         .course-section.in-view .course-gallery-item {
             border-color: rgba(212, 179, 117, 0.2);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
         }
-
+        
         .course-gallery-item:hover {
             transform: translateY(-5px);
         }
-
+        
         .course-gallery-media {
             width: 100%;
             height: 100%;
@@ -1927,11 +1540,11 @@
             display: block;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
+        
         .course-gallery-item:hover .course-gallery-media {
             transform: scale(1.05);
         }
-
+        
         .course-gallery-caption {
             position: absolute;
             bottom: 0;
@@ -1946,60 +1559,52 @@
             text-transform: uppercase;
             text-align: center;
         }
-
+        
         @media (max-width: 900px) {
             .course-container {
                 padding: 0 1.5rem;
             }
-
             .course-info-col {
                 display: flex;
                 justify-content: center;
                 width: 100%;
             }
-
             .course-card-glass {
                 max-width: 480px;
                 width: 100%;
             }
         }
-
+        
         @media (max-width: 800px) {
             .course-gallery {
                 margin-top: 4.5rem;
                 padding-top: 3.5rem;
             }
-
             .course-gallery h3 {
                 font-size: 1.5rem;
                 margin-bottom: 2.5rem;
             }
-
             .course-gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.5rem;
             }
-
             .course-gallery-grid .course-gallery-item:first-child {
                 grid-column: span 2;
                 aspect-ratio: 16 / 9;
             }
         }
-
+        
         @media (max-width: 550px) {
             .course-gallery-grid {
                 grid-template-columns: 1fr;
             }
-
             .course-gallery-grid .course-gallery-item:first-child {
                 grid-column: span 1;
                 aspect-ratio: 4 / 5;
             }
-
             .course-gallery-item {
                 aspect-ratio: 4 / 5;
             }
-
             .course-section .section-intro h2 {
                 font-size: 1.45rem;
                 letter-spacing: 0.05em;
@@ -2011,152 +1616,614 @@
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 1100px) {
-            .btn-slide.prev {
-                left: -20px;
-            }
-
-            .btn-slide.next {
-                right: -20px;
-            }
+            .btn-slide.prev { left: -20px; }
+            .btn-slide.next { right: -20px; }
         }
 
         @media (max-width: 768px) {
-            .hero-header h1 {
-                font-size: 3.4rem;
-            }
-
-            .hero-tagline {
-                font-size: 1.6rem;
-            }
-
-            header {
-                padding: 1.5rem 2rem;
-            }
-
-            header.scrolled {
-                padding: 1rem 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger-btn {
-                display: flex;
-            }
-
-            .mobile-menu-overlay {
-                display: flex;
-            }
-
-            .header-instagram {
-                display: none;
-            }
-
-            .editorial-accordion-glass {
-                padding: 1.5rem 2rem;
-            }
-
-            .accordion-title {
-                font-size: 1.4rem;
-            }
-
-            .accordion-header {
-                padding: 2rem 0;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-
-            .single-slide-container {
-                max-width: 100%;
-                padding: 0 1rem;
-            }
-
-            .btn-slide {
-                width: 52px;
-                height: 52px;
-            }
-
-            .btn-slide.prev {
-                left: 10px;
-            }
-
-            .btn-slide.next {
-                right: 10px;
-            }
-
-            .booking h2 {
-                font-size: 3rem;
-            }
-
-            .btn-luxury-whats {
-                padding: 20px 40px;
-                font-size: 0.8rem;
-                letter-spacing: 0.2em;
-            }
-
-            .section-intro h2 {
-                font-size: 2.8rem;
-            }
-
-            .course-section .section-intro h2 {
-                font-size: 1.8rem;
-            }
-
-            .floating-booking {
-                bottom: 1.5rem;
-                right: 1.5rem;
-            }
-
-            .btn-floating-luxury {
-                padding: 0.9rem 1.5rem;
-                font-size: 0.65rem;
-            }
+            .hero-header h1 { font-size: 3.4rem; }
+            .hero-tagline { font-size: 1.6rem; }
+            header { padding: 1.5rem 2rem; }
+            header.scrolled { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .hamburger-btn { display: flex; }
+            .mobile-menu-overlay { display: flex; }
+            .header-instagram { display: none; }
+            .editorial-accordion-glass { padding: 1.5rem 2rem; }
+            .accordion-title { font-size: 1.4rem; }
+            .accordion-header { padding: 2rem 0; }
+            .testimonials-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .single-slide-container { max-width: 100%; padding: 0 1rem; }
+            .btn-slide { width: 52px; height: 52px; }
+            .btn-slide.prev { left: 10px; }
+            .btn-slide.next { right: 10px; }
+            .booking h2 { font-size: 3rem; }
+            .btn-luxury-whats { padding: 20px 40px; font-size: 0.8rem; letter-spacing: 0.2em; }
+            .section-intro h2 { font-size: 2.8rem; }
+            .course-section .section-intro h2 { font-size: 1.8rem; }
+            .floating-booking { bottom: 1.5rem; right: 1.5rem; }
+            .btn-floating-luxury { padding: 0.9rem 1.5rem; font-size: 0.65rem; }
         }
 
         /* prefers-reduced-motion */
         @media (prefers-reduced-motion: reduce) {
-            #glitter-canvas {
-                display: none;
-            }
+            #glitter-canvas { display: none; }
+            html { scroll-behavior: auto; }
+            * { animation-duration: 0.01ms !important; transition-duration: 0.3s !important; }
+            body.dark-mode { background-color: var(--velvet-dark) !important; }
+            .booking-content { opacity: 1 !important; transform: none !important; }
+            .hero-header { transform: none !important; opacity: 1 !important; filter: none !important; }
+        }
 
-            html {
-                scroll-behavior: auto;
-            }
+        /* --- FAQ SECTION --- */
+        .faq-section {
+            padding: 8rem 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            position: relative;
+            z-index: 10;
+            transition: background-color 1.5s cubic-bezier(0.16, 1, 0.3, 1), color 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .faq-section.in-view {
+            background-color: #0F0B0A;
+            color: #FAF7F4;
+        }
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2.5rem;
+        }
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 4rem;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+        .faq-section.in-view .faq-item {
+            background: rgba(24, 18, 17, 0.6);
+            border-color: rgba(212, 179, 117, 0.12);
+        }
+        .faq-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(212, 179, 117, 0.4);
+            box-shadow: 0 10px 30px rgba(14, 10, 9, 0.03);
+        }
+        .faq-header {
+            width: 100%;
+            padding: 2rem 2.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            outline: none;
+        }
+        .faq-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            padding-right: 1.5rem;
+        }
+        .faq-section.in-view .faq-title {
+            color: #FFFFFF;
+        }
+        .faq-header:hover .faq-title {
+            color: var(--accent-red);
+        }
+        .faq-section.in-view .faq-header:hover .faq-title {
+            color: var(--accent-gold);
+        }
+        .faq-icon {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--accent-red);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .faq-section.in-view .faq-icon {
+            color: var(--accent-gold);
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .faq-body {
+            padding: 0 2.5rem 2rem 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        .faq-section.in-view .faq-body {
+            color: rgba(250, 247, 244, 0.7);
+        }
+        .faq-body strong {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+        .faq-section.in-view .faq-body strong {
+            color: var(--accent-gold);
+        }
+        @media (max-width: 768px) {
+            .faq-container { padding: 0 1.5rem; }
+            .faq-header { padding: 1.5rem; }
+            .faq-body { padding: 0 1.5rem 1.5rem 1.5rem; }
+            .faq-title { font-size: 1rem; }
+        }
 
-            * {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.3s !important;
-            }
-
-            body.dark-mode {
-                background-color: var(--velvet-dark) !important;
-            }
-
-            .booking-content {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-
-            .hero-header {
-                transform: none !important;
-                opacity: 1 !important;
-                filter: none !important;
-            }
+        /* --- ASSISTENTE DE ORÇAMENTO MODAL --- */
+        .assistant-modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(14, 10, 9, 0.5);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .assistant-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .assistant-card {
+            background: rgba(250, 247, 244, 0.96);
+            border: 1px solid var(--glass-border);
+            width: 90%;
+            max-width: 580px;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+            position: relative;
+            transform: scale(0.92);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+        body.dark-mode .assistant-card {
+            background: rgba(24, 18, 17, 0.96);
+            border-color: rgba(212, 179, 117, 0.15);
+        }
+        .assistant-modal.open .assistant-card {
+            transform: scale(1);
+        }
+        .assistant-close {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10;
+        }
+        .assistant-close:hover {
+            color: var(--accent-red);
+        }
+        body.dark-mode .assistant-close:hover {
+            color: var(--accent-gold);
+        }
+        
+        .assistant-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .assistant-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        body.dark-mode .assistant-header h3 {
+            color: #FFFFFF;
+        }
+        .assistant-header p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+        
+        .assistant-steps-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        .assistant-steps-indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0;
+            width: 100%; height: 1px;
+            background: rgba(14, 10, 9, 0.08);
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+        body.dark-mode .assistant-steps-indicator::before {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .assistant-step-dot {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            border: 1px solid var(--text-muted);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+        body.dark-mode .assistant-step-dot {
+            background: var(--velvet-dark);
+        }
+        .assistant-step-dot.active {
+            background: var(--accent-red);
+            border-color: var(--accent-red);
+            color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(156, 0, 26, 0.35);
+        }
+        body.dark-mode .assistant-step-dot.active {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--text-dark);
+            box-shadow: 0 0 15px rgba(212, 179, 117, 0.35);
+        }
+        .assistant-step-dot.completed {
+            background: var(--text-dark);
+            border-color: var(--text-dark);
+            color: #FFFFFF;
+        }
+        body.dark-mode .assistant-step-dot.completed {
+            background: #FFFFFF;
+            border-color: #FFFFFF;
+            color: var(--text-dark);
+        }
+        
+        .assistant-step-pane {
+            display: none;
+            flex-direction: column;
+            overflow-y: auto;
+            flex-grow: 1;
+            padding-right: 0.5rem;
+        }
+        .assistant-step-pane.active {
+            display: flex;
+        }
+        
+        /* Form controls */
+        .assistant-group {
+            margin-bottom: 1.5rem;
+        }
+        .assistant-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            display: block;
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-label {
+            color: #FFFFFF;
+        }
+        
+        /* Grid of Options */
+        .assistant-options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .assistant-option-card {
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        body.dark-mode .assistant-option-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(212, 179, 117, 0.12);
+            color: #FFF;
+        }
+        .assistant-option-card:hover {
+            border-color: var(--accent-red);
+            background: rgba(156, 0, 26, 0.02);
+        }
+        body.dark-mode .assistant-option-card:hover {
+            border-color: var(--accent-gold);
+            background: rgba(212, 179, 117, 0.02);
+        }
+        .assistant-option-card.selected {
+            border-color: var(--accent-red);
+            background: rgba(156, 0, 26, 0.04);
+        }
+        body.dark-mode .assistant-option-card.selected {
+            border-color: var(--accent-gold);
+            background: rgba(212, 179, 117, 0.05);
+        }
+        .assistant-option-card input[type="checkbox"],
+        .assistant-option-card input[type="radio"] {
+            margin-right: 1.2rem;
+            accent-color: var(--accent-red);
+            width: 18px; height: 18px;
+            cursor: pointer;
+        }
+        body.dark-mode .assistant-option-card input[type="checkbox"],
+        body.dark-mode .assistant-option-card input[type="radio"] {
+            accent-color: var(--accent-gold);
+        }
+        .assistant-option-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+        .assistant-option-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-option-name {
+            color: #FFFFFF;
+        }
+        .assistant-option-price {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            color: var(--accent-red);
+            font-weight: 500;
+        }
+        body.dark-mode .assistant-option-price {
+            color: var(--accent-gold);
+        }
+        
+        /* Date / Shift selectors */
+        .assistant-date-input {
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.3);
+            color: var(--text-dark);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .assistant-date-input {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(212, 179, 117, 0.12);
+            color: #FFFFFF;
+        }
+        .assistant-date-input:focus {
+            border-color: var(--accent-red);
+        }
+        body.dark-mode .assistant-date-input:focus {
+            border-color: var(--accent-gold);
+        }
+        
+        /* Counter controls */
+        .assistant-counter-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .assistant-counter-btn {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .assistant-counter-btn {
+            border-color: rgba(212, 179, 117, 0.12);
+            color: #FFFFFF;
+        }
+        .assistant-counter-btn:hover {
+            border-color: var(--accent-red);
+            color: var(--accent-red);
+        }
+        body.dark-mode .assistant-counter-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        .assistant-counter-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: 30px;
+            text-align: center;
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-counter-value {
+            color: #FFFFFF;
+        }
+        
+        /* Info alert block */
+        .assistant-info-alert {
+            background: rgba(156, 0, 26, 0.04);
+            border-left: 3px solid var(--accent-red);
+            padding: 1rem 1.2rem;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-top: 1rem;
+        }
+        body.dark-mode .assistant-info-alert {
+            background: rgba(212, 179, 117, 0.05);
+            border-left-color: var(--accent-gold);
+            color: rgba(250, 247, 244, 0.7);
+        }
+        
+        /* Summary pane */
+        .assistant-summary-list {
+            background: rgba(14, 10, 9, 0.02);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--glass-border);
+        }
+        body.dark-mode .assistant-summary-list {
+            background: rgba(255, 255, 255, 0.01);
+            border-color: rgba(212, 179, 117, 0.1);
+        }
+        .assistant-summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+        body.dark-mode .assistant-summary-row {
+            color: rgba(250, 247, 244, 0.7);
+        }
+        .assistant-summary-row:last-child {
+            margin-bottom: 0;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(14, 10, 9, 0.06);
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+        body.dark-mode .assistant-summary-row:last-child {
+            border-top-color: rgba(255, 255, 255, 0.06);
+            color: #FFFFFF;
+        }
+        .assistant-summary-total-price {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-red) !important;
+        }
+        body.dark-mode .assistant-summary-total-price {
+            color: var(--accent-gold) !important;
+        }
+        
+        /* Footer / Navigation */
+        .assistant-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        .assistant-btn-nav {
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .assistant-btn-nav.btn-back {
+            background: none;
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+        body.dark-mode .assistant-btn-nav.btn-back {
+            border-color: rgba(212, 179, 117, 0.12);
+            color: rgba(250, 247, 244, 0.6);
+        }
+        .assistant-btn-nav.btn-back:hover {
+            border-color: var(--text-dark);
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-btn-nav.btn-back:hover {
+            border-color: #FFFFFF;
+            color: #FFFFFF;
+        }
+        .assistant-btn-nav.btn-next {
+            background-color: var(--accent-red);
+            color: #FFFFFF;
+            flex-grow: 1;
+            text-align: center;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .assistant-btn-nav.btn-next:hover {
+            background-color: var(--accent-red-hover);
+            box-shadow: 0 8px 20px rgba(156, 0, 26, 0.2);
+            transform: translateY(-1px);
+        }
+        body.dark-mode .assistant-btn-nav.btn-next {
+            background-color: var(--accent-gold);
+            color: var(--text-dark);
+        }
+        body.dark-mode .assistant-btn-nav.btn-next:hover {
+            background-color: var(--accent-gold-hover);
+            box-shadow: 0 8px 20px rgba(212, 179, 117, 0.2);
+        }
+        .assistant-btn-nav.btn-whatsapp {
+            background: #25D366;
+            color: #FFFFFF;
+            flex-grow: 1;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            text-decoration: none;
+        }
+        .assistant-btn-nav.btn-whatsapp:hover {
+            background: #20BA5A;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+            transform: translateY(-1px);
+        }
+        .assistant-btn-nav.btn-whatsapp svg {
+            width: 16px; height: 16px;
+            fill: currentColor;
+        }
+        @media (max-width: 580px) {
+            .assistant-card { padding: 2rem; width: 95%; }
+            .assistant-header h3 { font-size: 1.4rem; }
+            .assistant-option-card { padding: 0.9rem 1.1rem; }
+            .assistant-option-name { font-size: 0.85rem; }
+            .assistant-option-price { font-size: 0.85rem; }
+            .assistant-footer { flex-direction: column-reverse; gap: 0.8rem; }
+            .assistant-btn-nav.btn-next { width: 100%; }
         }
     </style>
 </head>
-
 <body>
 
     <div class="film-grain"></div>
 
     <!-- Menu Mobile -->
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay" role="dialog" aria-modal="true"
-        aria-label="Menu de navegação">
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
         <nav>
             <a href="#" onclick="closeMobileMenu()">Início</a>
             <a href="#galeria" onclick="closeMobileMenu()">Galeria</a>
@@ -2167,11 +2234,7 @@
             <a href="#booking" onclick="closeMobileMenu()">Agendar</a>
         </nav>
         <a href="https://www.instagram.com/gabriellymmakeup" target="_blank" rel="noopener" class="mobile-menu-footer">
-            <svg viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             @gabriellymmakeup
         </a>
     </div>
@@ -2188,13 +2251,8 @@
             <li><a href="#booking">Agendar</a></li>
         </ul>
         <div class="nav-header-right">
-            <a href="https://www.instagram.com/gabriellymmakeup" target="_blank" rel="noopener" class="header-instagram"
-                aria-label="Instagram @gabriellymmakeup">
-                <svg viewBox="0 0 24 24">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
+            <a href="https://www.instagram.com/gabriellymmakeup" target="_blank" rel="noopener" class="header-instagram" aria-label="Instagram @gabriellymmakeup">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                 @gabriellymmakeup
             </a>
             <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
@@ -2212,15 +2270,10 @@
             <h1 class="reveal-delay-1">Gabrielly Makeup</h1>
             <p class="hero-location reveal-delay-2">📍 Acaraú • Ceará</p>
             <p class="hero-tagline reveal-delay-3">A beleza que revela quem você realmente é.</p>
-            <p class="hero-tagline reveal-delay-3"
-                style="font-size: 1.25rem; font-family: 'Montserrat', sans-serif; font-style: normal; margin-top: -2rem; max-width: 650px; font-weight: 300;">
-                Especialista em maquiagem para noivas, eventos e ensaios.</p>
+            <p class="hero-tagline reveal-delay-3" style="font-size: 1.25rem; font-family: 'Montserrat', sans-serif; font-style: normal; margin-top: -2rem; max-width: 650px; font-weight: 300;">Especialista em maquiagem para noivas, eventos e ensaios.</p>
             <div class="reveal-delay-3" style="margin-top: 2rem;">
                 <a href="#" class="btn-hero-booking btn-trigger-assistant">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z" />
-                    </svg>
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.795 1.48 5.429 0 9.845-4.415 9.849-9.841.002-2.63-1.023-5.101-2.886-6.964a9.757 9.757 0 0 0-6.963-2.826c-5.43 0-9.844 4.414-9.848 9.84-.001 1.83.499 3.579 1.448 5.161l-.965 3.525 3.61-.947zm11.233-5.392c-.227-.113-1.342-.662-1.551-.738-.208-.075-.359-.112-.51.113-.151.225-.584.738-.716.888-.132.15-.264.168-.491.055-.227-.113-.957-.352-1.824-1.127-.675-.602-1.13-1.346-1.262-1.571-.132-.225-.014-.347.1-.459.102-.101.227-.264.34-.396.113-.132.151-.226.227-.378.075-.152.038-.283-.019-.396-.056-.113-.51-1.226-.699-1.68-.184-.444-.369-.383-.51-.39l-.434-.008c-.151 0-.396.056-.604.283-.208.227-.792.775-.792 1.887s.811 2.189.925 2.34c.113.151 1.595 2.435 3.864 3.414.54.232.961.372 1.289.476.541.172 1.032.148 1.422.09.434-.064 1.342-.548 1.531-1.057.189-.51.189-.945.132-1.039-.057-.094-.208-.151-.435-.264z"/></svg>
                     Quero Agendar Meu Horário
                 </a>
             </div>
@@ -2232,99 +2285,63 @@
     <div class="galeria-section" id="galeria">
         <div class="section-intro reveal">
             <h2>Minhas Produções</h2>
-            <p>Alguns dos meus trabalhos recentes. Deslize ou use as setas para ver a delicadeza de cada detalhe na
-                pele.</p>
+            <p>Alguns dos meus trabalhos recentes. Deslize ou use as setas para ver a delicadeza de cada detalhe na pele.</p>
         </div>
         <div class="single-slide-container reveal reveal-delay-1">
             <button class="btn-slide prev" id="btn-prev" aria-label="Anterior">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M15 19l-7-7 7-7" />
-                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 19l-7-7 7-7"/></svg>
             </button>
             <div class="slide-frame">
                 <!-- SLIDE 1 (VÍDEO PORTFÓLIO) -->
                 <div class="galeria-slide">
-                    <video class="galeria-img lazy-video" autoplay muted loop playsinline preload="none"
-                        poster="images/foto%20gaby%2002.jpeg"
-                        style="object-fit: cover; width: 100%; height: 100%; border: none;">
+                    <video class="galeria-img lazy-video" autoplay muted loop playsinline preload="none" poster="images/foto%20gaby%2002.jpeg" style="object-fit: cover; width: 100%; height: 100%; border: none;">
                         <source data-src="images/video%2001%20gaby.mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
                     </video>
                 </div>
                 <!-- SLIDE 2 -->
                 <div class="galeria-slide">
-                    <img src="images/foto gaby 02.jpeg" alt="Gabrielly Makeup - Noiva Couture" class="galeria-img"
-                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <img src="images/foto gaby 02.jpeg" alt="Gabrielly Makeup - Noiva Couture" class="galeria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="placeholder-visual">
-                        <svg viewBox="0 0 24 24" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <path d="M21 15l-5-5L5 21" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
                         <p>Noiva Couture</p>
                     </div>
                 </div>
                 <!-- SLIDE 2 -->
                 <div class="galeria-slide">
-                    <img src="images/foto gaby 03.jpeg" alt="Gabrielly Makeup - Social Privée" class="galeria-img"
-                        loading="lazy"
-                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <img src="images/foto gaby 03.jpeg" alt="Gabrielly Makeup - Social Privée" class="galeria-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="placeholder-visual">
-                        <svg viewBox="0 0 24 24" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <path d="M21 15l-5-5L5 21" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
                         <p>Social Privée</p>
                     </div>
                 </div>
                 <!-- SLIDE 3 -->
                 <div class="galeria-slide">
-                    <img src="images/foto gaby 05.jpeg" alt="Gabrielly Makeup - Estilo Editorial" class="galeria-img"
-                        loading="lazy"
-                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <img src="images/foto gaby 05.jpeg" alt="Gabrielly Makeup - Estilo Editorial" class="galeria-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="placeholder-visual">
-                        <svg viewBox="0 0 24 24" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <path d="M21 15l-5-5L5 21" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
                         <p>Estilo Editorial</p>
                     </div>
                 </div>
                 <!-- SLIDE 4 -->
                 <div class="galeria-slide">
-                    <img src="images/foto gaby 06.jpeg" alt="Gabrielly Makeup - Gala Premium" class="galeria-img"
-                        loading="lazy"
-                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <img src="images/foto gaby 06.jpeg" alt="Gabrielly Makeup - Gala Premium" class="galeria-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="placeholder-visual">
-                        <svg viewBox="0 0 24 24" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <path d="M21 15l-5-5L5 21" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
                         <p>Gala Premium</p>
                     </div>
                 </div>
                 <!-- SLIDE 5 -->
                 <div class="galeria-slide">
-                    <img src="images/foto 04 gaby.jpeg" alt="Gabrielly Makeup - Atelier" class="galeria-img"
-                        loading="lazy"
-                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <img src="images/foto 04 gaby.jpeg" alt="Gabrielly Makeup - Atelier" class="galeria-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="placeholder-visual">
-                        <svg viewBox="0 0 24 24" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <path d="M21 15l-5-5L5 21" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
                         <p>Atelier</p>
                     </div>
                 </div>
             </div>
             <button class="btn-slide next" id="btn-next" aria-label="Seguinte">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M9 5l7 7-7 7" />
-                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg>
             </button>
         </div>
         <div class="slide-dots" id="slide-dots"></div>
@@ -2335,23 +2352,15 @@
         <div class="about-container reveal">
             <div class="about-split">
                 <div class="about-image-wrapper">
-                    <img src="images/WhatsApp%20Image%202026-07-01%20at%2023.34.07%20(1).jpeg"
-                        alt="Ana Gabrielly - Maquiadora Premiada" class="about-profile-img">
+                    <img src="images/WhatsApp%20Image%202026-07-01%20at%2023.34.07%20(1).jpeg" alt="Ana Gabrielly - Maquiadora Premiada" class="about-profile-img">
                 </div>
                 <div class="about-text">
                     <span>Conheça a Profissional</span>
                     <h2>Quem é Ana Gabrielly?</h2>
-                    <p>Olá, sou Ana Gabrielly. Tenho 20 anos e sou apaixonada pela arte da maquiagem. Com formação
-                        técnica em Enfermagem, descobri minha verdadeira paixão ao me aventurar no universo da beleza.
-                        Há quase 2 anos, venho aprimorando minhas habilidades e criando produções personalizadas de alta
-                        fidelidade para as minhas clientes.</p>
-                    <p>Ao unir precisão técnica e sensibilidade artística, me dedico a compreender os desejos de cada
-                        mulher, proporcionando resultados que destacam e celebram a sua beleza natural.</p>
+                    <p>Olá, sou Ana Gabrielly. Tenho 20 anos e sou apaixonada pela arte da maquiagem. Com formação técnica em Enfermagem, descobri minha verdadeira paixão ao me aventurar no universo da beleza. Já tenho mais de 2 anos de trabalho, aprimorando minhas habilidades e criando produções personalizadas de alta fidelidade para as minhas clientes.</p>
+                    <p>Ao unir precisão técnica e sensibilidade artística, me dedico a compreender os desejos de cada mulher, proporcionando resultados que destacam e celebram a sua beleza natural.</p>
                     <div class="badge-award">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         Vencedora do Prêmio Melhores do Ano 2025 - Acaraú
                     </div>
                 </div>
@@ -2363,10 +2372,9 @@
     <section class="experience" id="experiencia">
         <div class="section-intro reveal">
             <h2>Menu de Serviços</h2>
-            <p>Escolha a experiência ideal para o seu momento. Todos os atendimentos são personalizados e focados no
-                conforto e na durabilidade da sua produção.</p>
+            <p>Escolha a experiência ideal para o seu momento. Todos os atendimentos são personalizados e focados no conforto e na durabilidade da sua produção.</p>
         </div>
-
+        
         <div class="editorial-accordion-glass reveal reveal-delay-1">
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
@@ -2376,12 +2384,9 @@
                 <div class="accordion-content">
                     <div class="accordion-body">
                         <strong>Glamour &amp; Sofisticação</strong>
-                        <p>Uma produção impecável desenvolvida com técnica blindada para garantir máxima durabilidade.
-                            Ideal para eventos especiais, casamentos, formaturas ou ensaios fotográficos. Inclui
-                            aplicação de cílios postiços luxuosos para um toque extra de glamour, além de esfumados e
-                            pigmentos refinados para valorizar a beleza dos seus olhos.</p>
+                        <p>Uma produção impecável desenvolvida com técnica blindada para garantir máxima durabilidade. Ideal para eventos especiais, casamentos, formaturas ou ensaios fotográficos. Inclui aplicação de cílios postiços luxuosos para um toque extra de glamour, além de esfumados e pigmentos refinados para valorizar a beleza dos seus olhos.</p>
                         <p>Aproximadamente 1h15 • Acabamento impecável resistente a água e suor.</p>
-                        <p class="service-price">R$ 90,00</p>
+                        <p class="service-price">R$ 100,00</p>
                         <a href="#" class="btn-service-booking btn-trigger-assistant" data-service="social">Agendar Maquiagem Social</a>
                     </div>
                 </div>
@@ -2395,12 +2400,9 @@
                 <div class="accordion-content">
                     <div class="accordion-body">
                         <strong>Leveza &amp; Naturalidade</strong>
-                        <p>A beleza da simplicidade. Uma técnica focada em construir uma pele natural realçada de forma
-                            leve, limpa e discreta. Perfeita para reuniões de trabalho, eventos diurnos ou para quem
-                            prefere um visual minimalista elegante. Esta modalidade não inclui cílios postiços, sombras
-                            complexas ou pigmentos.</p>
+                        <p>A beleza da simplicidade. Uma técnica focada em construir uma pele natural realçada de forma leve, limpa e discreta. Perfeita para reuniões de trabalho, eventos diurnos ou para quem prefere um visual minimalista elegante. Esta modalidade não inclui cílios postiços, sombras complexas ou pigmentos.</p>
                         <p>Aproximadamente 45 minutos • Pele fresca com efeito glow natural.</p>
-                        <p class="service-price">R$ 70,00</p>
+                        <p class="service-price">R$ 80,00</p>
                         <a href="#" class="btn-service-booking btn-trigger-assistant" data-service="express">Agendar Maquiagem Express</a>
                     </div>
                 </div>
@@ -2414,11 +2416,9 @@
                 <div class="accordion-content">
                     <div class="accordion-body">
                         <strong>Design &amp; Acabamento para o Cabelo</strong>
-                        <p>Penteados elegantes estruturados de acordo com o seu desejo e estilo do evento. Desenvolvemos
-                            designs despojados, soltos românticos, semi presos modernos, rabos de cavalo imponentes ou
-                            tranças super trabalhadas.</p>
+                        <p>Penteados elegantes estruturados de acordo com o seu desejo e estilo do evento. Desenvolvemos designs despojados, soltos românticos, semi presos modernos, rabos de cavalo imponentes ou tranças super trabalhadas.</p>
                         <p>Aproximadamente 1h00 • Inclui produtos profissionais de fixação para alta durabilidade.</p>
-                        <p class="service-price">R$ 90,00</p>
+                        <p class="service-price">R$ 100,00</p>
                         <a href="#" class="btn-service-booking btn-trigger-assistant" data-service="penteado">Agendar Penteado</a>
                     </div>
                 </div>
@@ -2432,11 +2432,9 @@
                 <div class="accordion-content">
                     <div class="accordion-body">
                         <strong>Movimento, Ondas &amp; Volume</strong>
-                        <p>A finalização perfeita para dar balanço aos fios. Ideal para criar cabelos com movimentos
-                            fluidos, ondas volumosas clássicas ou cachos definidos, proporcionando uma moldura radiante
-                            para o seu rosto.</p>
+                        <p>A finalização perfeita para dar balanço aos fios. Ideal para criar cabelos com movimentos fluidos, ondas volumosas clássicas ou cachos definidos, proporcionando uma moldura radiante para o seu rosto.</p>
                         <p>Aproximadamente 40 minutos • Acabamento leve com toque sedoso e alta durabilidade.</p>
-                        <p class="service-price">R$ 70,00</p>
+                        <p class="service-price">R$ 80,00</p>
                         <a href="#" class="btn-service-booking btn-trigger-assistant" data-service="babyliss">Agendar Babyliss</a>
                     </div>
                 </div>
@@ -2449,26 +2447,19 @@
             <div class="rules-grid">
                 <div class="rule-item">
                     <h4>Agendamento &amp; Sinal</h4>
-                    <p>Para efetuar e confirmar a sua reserva, solicitamos o pagamento de um sinal de <strong>50% do
-                            valor</strong> do procedimento. Esse valor é integralmente abatido no dia do atendimento,
-                        restando apenas o pagamento do valor restante.</p>
+                    <p>Para efetuar e confirmar a sua reserva, solicitamos o pagamento de um sinal de <strong>50% do valor</strong> do procedimento. Esse valor é integralmente abatido no dia do atendimento, restando apenas o pagamento do valor restante.</p>
                 </div>
                 <div class="rule-item">
                     <h4>Cancelamentos</h4>
-                    <p>Em caso de desmarque ou imprevistos por parte da cliente, o valor do sinal não será devolvido,
-                        sendo retido como taxa de cancelamento do horário reservado.</p>
+                    <p>Em caso de desmarque ou imprevistos por parte da cliente, o valor do sinal não será devolvido, sendo retido como taxa de cancelamento do horário reservado.</p>
                 </div>
                 <div class="rule-item">
                     <h4>Uso de Ácidos na Pele</h4>
-                    <p>Caso faça uso contínuo de ácidos ou tratamentos dermatológicos fortes, pedimos que
-                        <strong>suspenda o uso 3 dias antes</strong> do atendimento, para garantir a aderência, viço e
-                        fixação ideal da maquiagem.
-                    </p>
+                    <p>Caso faça uso contínuo de ácidos ou tratamentos dermatológicos fortes, pedimos que <strong>suspenda o uso 3 dias antes</strong> do atendimento, para garantir a aderência, viço e fixação ideal da maquiagem.</p>
                 </div>
                 <div class="rule-item">
                     <h4>Atendimento a Domicílio</h4>
-                    <p>Para atendimentos fora do estúdio (ex: domicílio, hotéis ou chácaras), será cobrada uma taxa
-                        adicional de deslocamento calculada sob consulta, dependendo da sua região.</p>
+                    <p>Para atendimentos fora do estúdio (ex: domicílio, hotéis ou chácaras), será cobrada uma taxa adicional de deslocamento calculada sob consulta, dependendo da sua região.</p>
                 </div>
             </div>
         </div>
@@ -2480,11 +2471,9 @@
             <div class="section-intro">
                 <span>Aperfeiçoe Sua Beleza</span>
                 <h2>Curso VIP de Automaquiagem</h2>
-                <p>Estou aqui para lhe convidar a participar da melhor experiência que você terá com a maquiagem. Nós
-                    vamos passar um dia incrível aprendendo técnicas de maquiagem para você se sentir confiante e
-                    bonita. 💫</p>
+                <p>Estou aqui para lhe convidar a participar da melhor experiência que você terá com a maquiagem. Nós vamos passar um dia incrível aprendendo técnicas de maquiagem para você se sentir confiante e bonita. 💫</p>
             </div>
-
+            
             <div class="course-split">
                 <!-- O que vai aprender -->
                 <div class="course-learn-col">
@@ -2494,62 +2483,57 @@
                             <span class="bullet-icon">✦</span>
                             <div>
                                 <strong>Técnicas Básicas e Avançadas</strong>
-                                <p>Aprenda desde a preparação higiênica e hidratação adequada até técnicas avançadas de
-                                    maquiagem para festas.</p>
+                                <p>Aprenda desde a preparação higiênica e hidratação adequada até técnicas avançadas de maquiagem para festas.</p>
                             </div>
                         </li>
                         <li>
                             <span class="bullet-icon">✦</span>
                             <div>
                                 <strong>Preparação de Pele Completa</strong>
-                                <p>Entenda como identificar o seu tipo de pele e aplicar bases e corretivos para um
-                                    acabamento perfeito.</p>
+                                <p>Entenda como identificar o seu tipo de pele e aplicar bases e corretivos para um acabamento perfeito.</p>
                             </div>
                         </li>
                         <li>
                             <span class="bullet-icon">✦</span>
                             <div>
                                 <strong>Técnica de Pele Blindada</strong>
-                                <p>Aprenda o segredo profissional de fazer uma maquiagem super resistente à água, suor e
-                                    com durabilidade extrema.</p>
+                                <p>Aprenda o segredo profissional de fazer uma maquiagem super resistente à água, suor e com durabilidade extrema.</p>
                             </div>
                         </li>
                         <li>
                             <span class="bullet-icon">✦</span>
                             <div>
                                 <strong>Camuflagem de Manchas</strong>
-                                <p>Técnicas eficientes e naturais para neutralizar melasma, marcas de acne, cicatrizes e
-                                    olheiras profundas.</p>
+                                <p>Técnicas eficientes e naturais para neutralizar melasma, marcas de acne, cicatrizes e olheiras profundas.</p>
                             </div>
                         </li>
                         <li>
                             <span class="bullet-icon">✦</span>
                             <div>
                                 <strong>Técnicas de Olhos e Cílios</strong>
-                                <p>Domine o esfumado perfeito, delineados simétricos e a aplicação rápida e confortável
-                                    de cílios postiços.</p>
+                                <p>Domine o esfumado perfeito, delineados simétricos e a aplicação rápida e confortável de cílios postiços.</p>
                             </div>
                         </li>
                         <li>
                             <span class="bullet-icon">✦</span>
                             <div>
                                 <strong>Orientação de Kit Essencial</strong>
-                                <p>Saiba exatamente quais produtos e pincéis são realmente necessários para começar,
-                                    evitando gastos desnecessários.</p>
+                                <p>Saiba exatamente quais produtos e pincéis são realmente necessários para começar, evitando gastos desnecessários.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
-
-                <!-- Informações e CTA -->
-                <div class="course-info-col">
+                
+                <!-- Informações e CTA (Cards dos Cursos) -->
+                <div class="course-info-col" style="display: flex; flex-direction: column; gap: 2rem;">
+                    <!-- Card 1: Automaquiagem -->
                     <div class="course-card-glass">
                         <div class="course-price-tag">
-                            <span class="price-label">Investimento Único</span>
-                            <span class="price-value">R$ 300,00</span>
-                            <span class="price-payment">Super Acessível 💸</span>
+                            <span class="price-label">Curso VIP de Automaquiagem</span>
+                            <span class="price-value">R$ 350,00</span>
+                            <span class="price-payment">Individual &amp; Personalizado 💸</span>
                         </div>
-
+                        
                         <div class="course-details">
                             <div class="detail-item">
                                 <span class="detail-icon">⏱</span>
@@ -2569,27 +2553,62 @@
                                 <span class="detail-icon">🎁</span>
                                 <div>
                                     <strong>Um Mimo Especial 💄</strong>
-                                    <p>Um presente exclusivo preparado com carinho para você se sentir ainda mais
-                                        bonita!</p>
+                                    <p>Um presente exclusivo preparado com carinho para você se sentir ainda mais bonita!</p>
                                 </div>
                             </div>
                         </div>
-
+                        
                         <a href="#" class="btn-course-booking btn-trigger-assistant" data-service="curso">
-                            Quero Reservar Minha Experiência
+                            Reservar Automaquiagem (R$ 350,00)
+                        </a>
+                    </div>
+
+                    <!-- Card 2: Maquiagem Profissional -->
+                    <div class="course-card-glass">
+                        <div class="course-price-tag">
+                            <span class="price-label">Curso Maquiagem Profissional</span>
+                            <span class="price-value">R$ 687,00</span>
+                            <span class="price-payment">Formação Completa para Maquiadoras 🌟</span>
+                        </div>
+                        
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <div>
+                                    <strong>Formação Teórica &amp; Prática</strong>
+                                    <p>Técnicas de atendimento, peles reais, biossegurança, fotografia e posicionamento profissional.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏆</span>
+                                <div>
+                                    <strong>Certificado Profissional</strong>
+                                    <p>Certificação profissional de maquiadora para impulsionar a sua carreira.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">💼</span>
+                                <div>
+                                    <strong>Mentoria &amp; Suporte</strong>
+                                    <p>Acompanhamento e direcionamento para montagem do seu kit de atendimento inicial.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-course-booking btn-trigger-assistant" data-service="curso_pro">
+                            Reservar Maquiagem Profissional (R$ 687,00)
                         </a>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Galeria do Curso VIP -->
             <div class="course-gallery">
                 <h3>Resultados & Momentos do Curso</h3>
                 <div class="course-gallery-grid">
                     <!-- Item 1 (Vídeo do Curso) -->
                     <div class="course-gallery-item">
-                        <video class="course-gallery-media lazy-video" autoplay muted loop playsinline preload="none"
-                            poster="images/foto%20curso%2001.jpeg">
+                        <video class="course-gallery-media lazy-video" autoplay muted loop playsinline preload="none" poster="images/foto%20curso%2001.jpeg">
                             <source data-src="images/video%20curso%20gaby%201%20.mp4" type="video/mp4">
                             Seu navegador não suporta vídeos.
                         </video>
@@ -2597,14 +2616,12 @@
                     </div>
                     <!-- Item 2 (Foto 1) -->
                     <div class="course-gallery-item">
-                        <img src="images/foto%20curso%2001.jpeg" alt="Aluna no Curso de Automaquiagem"
-                            class="course-gallery-media" loading="lazy">
+                        <img src="images/foto%20curso%2001.jpeg" alt="Aluna no Curso de Automaquiagem" class="course-gallery-media" loading="lazy">
                         <div class="course-gallery-caption">Mentoria VIP</div>
                     </div>
                     <!-- Item 3 (Foto 2) -->
                     <div class="course-gallery-item">
-                        <img src="images/foto%20curso%2002%20.jpeg" alt="Resultado de Automaquiagem"
-                            class="course-gallery-media" loading="lazy">
+                        <img src="images/foto%20curso%2002%20.jpeg" alt="Resultado de Automaquiagem" class="course-gallery-media" loading="lazy">
                         <div class="course-gallery-caption">Resultado Real</div>
                     </div>
                 </div>
@@ -2621,10 +2638,7 @@
         <div class="testimonials-grid reveal reveal-delay-1">
             <div class="testimonial-card">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Mulher, eu simplesmente não tenho palavras pro seu trabalho! Eu chorei do
-                    início ao fim da cerimônia, abracei todo mundo e, quando me olhei no espelho no fim da festa, a
-                    maquiagem ainda estava intacta, sem um borrão sequer. Todo mundo elogiou a pele, parecia que eu
-                    tinha nascido assim kkk. Obrigada por ter deixado meu dia mais perfeito!"</p>
+                <p class="testimonial-text">"Mulher, eu simplesmente não tenho palavras pro seu trabalho! Eu chorei do início ao fim da cerimônia, abracei todo mundo e, quando me olhei no espelho no fim da festa, a maquiagem ainda estava intacta, sem um borrão sequer. Todo mundo elogiou a pele, parecia que eu tinha nascido assim kkk. Obrigada por ter deixado meu dia mais perfeito!"</p>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Beatriz Vasconcelos</span>
                     <span class="testimonial-role">Noiva de Acaraú, CE</span>
@@ -2632,10 +2646,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Gaby, vim aqui te agradecer! Eu tinha muito medo de ficar parecendo que
-                    estava com aquela 'máscara' de reboco, sabe? Mas você fez uma maquiagem super leve e que valorizou
-                    meus traços. O melhor foi que durou o evento inteiro sob aquele mormaço de Acaraú sem abrir na testa
-                    ou no nariz. Ganhou uma cliente pra vida!"</p>
+                <p class="testimonial-text">"Gaby, vim aqui te agradecer! Eu tinha muito medo de ficar parecendo que estava com aquela 'máscara' de reboco, sabe? Mas você fez uma maquiagem super leve e que valorizou meus traços. O melhor foi que durou o evento inteiro sob aquele mormaço de Acaraú sem abrir na testa ou no nariz. Ganhou uma cliente pra vida!"</p>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Mariana Frota</span>
                     <span class="testimonial-role">Madrinha de Casamento</span>
@@ -2643,10 +2654,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Gaby do céu, as fotos da minha colação de grau ficaram surreais! A pele
-                    estava impecável, sem aquele efeito estourado do flash que eu morria de medo. Minhas amigas ficaram
-                    todas me perguntando quem tinha feito. Além de ser uma profissional incrível, o seu papo no atelier
-                    deixou meu dia super leve. Já quero a próxima!"</p>
+                <p class="testimonial-text">"Gaby do céu, as fotos da minha colação de grau ficaram surreais! A pele estava impecável, sem aquele efeito estourado do flash que eu morria de medo. Minhas amigas ficaram todas me perguntando quem tinha feito. Além de ser uma profissional incrível, o seu papo no atelier deixou meu dia super leve. Já quero a próxima!"</p>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Clara Silveira</span>
                     <span class="testimonial-role">Formanda</span>
@@ -2654,10 +2662,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Menina, eu sou muito chata com maquiagem e geralmente saio querendo lavar o
-                    rosto quando faço com alguém kkk. Mas com você foi diferente, você ouviu cada detalhe do que eu
-                    queria e me deixou super à vontade. Me senti muito maravilhosa! A maquiagem durou a noite toda e a
-                    pele não ficou oleosa. Perfeita demais!"</p>
+                <p class="testimonial-text">"Menina, eu sou muito chata com maquiagem e geralmente saio querendo lavar o rosto quando faço com alguém kkk. Mas com você foi diferente, você ouviu cada detalhe do que eu queria e me deixou super à vontade. Me senti muito maravilhosa! A maquiagem durou a noite toda e a pele não ficou oleosa. Perfeita demais!"</p>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Alícia Meireles</span>
                     <span class="testimonial-role">Cliente Recorrente</span>
@@ -2788,38 +2793,45 @@
                 <span class="assistant-label">Selecione os Serviços Desejados</span>
                 <div class="assistant-options-grid">
                     <label class="assistant-option-card">
-                        <input type="checkbox" name="assistant-service" value="social" data-price="90">
+                        <input type="checkbox" name="assistant-service" value="social" data-price="100">
                         <div class="assistant-option-info">
                             <span class="assistant-option-name">Maquiagem Social</span>
-                            <span class="assistant-option-price">R$ 90,00</span>
+                            <span class="assistant-option-price">R$ 100,00</span>
                         </div>
                     </label>
                     <label class="assistant-option-card">
-                        <input type="checkbox" name="assistant-service" value="express" data-price="70">
+                        <input type="checkbox" name="assistant-service" value="express" data-price="80">
                         <div class="assistant-option-info">
                             <span class="assistant-option-name">Maquiagem Express</span>
-                            <span class="assistant-option-price">R$ 70,00</span>
+                            <span class="assistant-option-price">R$ 80,00</span>
                         </div>
                     </label>
                     <label class="assistant-option-card">
-                        <input type="checkbox" name="assistant-service" value="penteado" data-price="90">
+                        <input type="checkbox" name="assistant-service" value="penteado" data-price="100">
                         <div class="assistant-option-info">
                             <span class="assistant-option-name">Penteado Personalizado</span>
-                            <span class="assistant-option-price">R$ 90,00</span>
+                            <span class="assistant-option-price">R$ 100,00</span>
                         </div>
                     </label>
                     <label class="assistant-option-card">
-                        <input type="checkbox" name="assistant-service" value="babyliss" data-price="70">
+                        <input type="checkbox" name="assistant-service" value="babyliss" data-price="80">
                         <div class="assistant-option-info">
                             <span class="assistant-option-name">Babyliss</span>
-                            <span class="assistant-option-price">R$ 70,00</span>
+                            <span class="assistant-option-price">R$ 80,00</span>
                         </div>
                     </label>
                     <label class="assistant-option-card">
-                        <input type="checkbox" name="assistant-service" value="curso" data-price="300">
+                        <input type="checkbox" name="assistant-service" value="curso" data-price="350">
                         <div class="assistant-option-info">
                             <span class="assistant-option-name">Curso VIP de Automaquiagem</span>
-                            <span class="assistant-option-price">R$ 300,00</span>
+                            <span class="assistant-option-price">R$ 350,00</span>
+                        </div>
+                    </label>
+                    <label class="assistant-option-card">
+                        <input type="checkbox" name="assistant-service" value="curso_pro" data-price="687">
+                        <div class="assistant-option-info">
+                            <span class="assistant-option-name">Curso Maquiagem Profissional</span>
+                            <span class="assistant-option-price">R$ 687,00</span>
                         </div>
                     </label>
                 </div>
@@ -2950,23 +2962,23 @@
         var btnTargetX = 0, btnTargetY = 0, btnCurrX = 0, btnCurrY = 0;
 
         // Scroll Reveal Observer (Acelerado e suave)
-        var revealObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
+        var revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
         }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
 
-        document.querySelectorAll('.reveal').forEach(function (el) {
+        document.querySelectorAll('.reveal').forEach(function(el) {
             revealObserver.observe(el);
         });
 
         // Booking Section Observer
         var bookingEl = document.querySelector('.booking');
         var bookingContent = document.querySelector('.booking-content');
-        var bookingObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
+        var bookingObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     bookingContent.classList.add('visible');
                 }
@@ -2975,9 +2987,9 @@
         bookingObserver.observe(bookingEl);
 
         var resizeTimer = null;
-        window.addEventListener('resize', function () {
+        window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function () {
+            resizeTimer = setTimeout(function() {
                 winW = window.innerWidth;
                 winH = window.innerHeight;
                 isMobile = winW < 768;
@@ -2987,9 +2999,9 @@
 
         // HEADER SCROLL & FLOATING BUTTON
         var lastScrollTop = 0;
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             var st = window.pageYOffset || document.documentElement.scrollTop;
-
+            
             // Header sticky show/hide
             if (st > 80) { headerEl.classList.add('scrolled'); } else { headerEl.classList.remove('scrolled'); }
             if (st > lastScrollTop && st > 200) { headerEl.classList.add('hidden'); } else { headerEl.classList.remove('hidden'); }
@@ -3009,12 +3021,12 @@
         var pageScrollTarget = 0;
         var pageScrollCurrent = 0;
         var LERP = 0.082;
-        var LERP_HERO = 0.052;
+        var LERP_HERO = 0.052; 
 
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             var st = window.pageYOffset || document.documentElement.scrollTop;
             var docH = document.documentElement.scrollHeight - window.innerHeight;
-
+            
             heroScrollTarget = Math.min(st / 800, 1);
             pageScrollTarget = Math.min(Math.max(st / (docH || 1), 0), 1);
         }, { passive: true });
@@ -3040,17 +3052,17 @@
             document.body.style.overflow = '';
         }
 
-        hamburgerBtn.addEventListener('click', function () { if (mobileMenuOpen) { closeMobileMenu(); } else { openMobileMenu(); } });
-        mobileOverlay.addEventListener('click', function (e) { if (e.target === mobileOverlay) { closeMobileMenu(); } });
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && mobileMenuOpen) { closeMobileMenu(); } });
+        hamburgerBtn.addEventListener('click', function() { if (mobileMenuOpen) { closeMobileMenu(); } else { openMobileMenu(); } });
+        mobileOverlay.addEventListener('click', function(e) { if (e.target === mobileOverlay) { closeMobileMenu(); } });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && mobileMenuOpen) { closeMobileMenu(); } });
 
         // ACCORDION
-        document.querySelectorAll('.accordion-header').forEach(function (btn) {
-            btn.addEventListener('click', function () {
+        document.querySelectorAll('.accordion-header').forEach(function(btn) {
+            btn.addEventListener('click', function() {
                 var item = this.parentElement;
                 var content = item.querySelector('.accordion-content');
                 var isActive = item.classList.contains('active');
-                document.querySelectorAll('.accordion-item').forEach(function (el) {
+                document.querySelectorAll('.accordion-item').forEach(function(el) {
                     el.classList.remove('active');
                     el.querySelector('.accordion-content').style.maxHeight = '0';
                     el.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
@@ -3082,7 +3094,7 @@
         function AmbientParticle() {
             this.reset(true);
         }
-        AmbientParticle.prototype.reset = function (init) {
+        AmbientParticle.prototype.reset = function(init) {
             this.x = Math.random() * winW;
             this.y = init ? Math.random() * winH : winH + 10;
             this.size = Math.random() * 2.2 + 0.6;
@@ -3096,11 +3108,11 @@
             this.oscillationDistance = Math.random() * 2;
             this.angle = Math.random() * Math.PI * 2;
         };
-        AmbientParticle.prototype.update = function () {
+        AmbientParticle.prototype.update = function() {
             this.y += this.speedY;
             this.angle += this.oscillationSpeed;
             this.x += this.speedX + Math.sin(this.angle) * 0.05 * this.oscillationDistance;
-
+            
             if (this.alpha < this.maxAlpha) {
                 this.alpha += 0.01;
             }
@@ -3109,7 +3121,7 @@
                 this.reset(false);
             }
         };
-        AmbientParticle.prototype.draw = function () {
+        AmbientParticle.prototype.draw = function() {
             gCtx.save();
             gCtx.globalAlpha = Math.max(0, this.alpha);
             gCtx.shadowBlur = 8;
@@ -3158,7 +3170,7 @@
             if (title) title.style.transform = 'none';
             if (loc) loc.style.transform = 'none';
             if (tags) {
-                tags.forEach(function (el) {
+                tags.forEach(function(el) {
                     el.style.transform = 'none';
                 });
             }
@@ -3182,18 +3194,18 @@
         var activeSlideIndex = 0;
         var autoSlideTimer = null;
 
-        slides.forEach(function (_, index) {
+        slides.forEach(function(_, index) {
             var dot = document.createElement('div');
             dot.classList.add('dot');
             if (index === 0) { dot.classList.add('active'); }
-            dot.addEventListener('click', function () { changeSlide(index); });
+            dot.addEventListener('click', function() { changeSlide(index); });
             dotsContainer.appendChild(dot);
         });
 
         var dots = document.querySelectorAll('.dot');
 
         function changeSlide(index) {
-            slides.forEach(function (slide) {
+            slides.forEach(function(slide) {
                 slide.classList.remove('active', 'prev-slide', 'next-slide');
             });
             dots[activeSlideIndex].classList.remove('active');
@@ -3221,29 +3233,29 @@
 
         function resetAutoSlide() {
             clearTimeout(autoSlideTimer);
-            autoSlideTimer = setTimeout(function () { changeSlide(activeSlideIndex + 1); }, 10000);
+            autoSlideTimer = setTimeout(function() { changeSlide(activeSlideIndex + 1); }, 10000);
         }
 
-        btnNext.addEventListener('click', function () { changeSlide(activeSlideIndex + 1); });
-        btnPrev.addEventListener('click', function () { changeSlide(activeSlideIndex - 1); });
+        btnNext.addEventListener('click', function() { changeSlide(activeSlideIndex + 1); });
+        btnPrev.addEventListener('click', function() { changeSlide(activeSlideIndex - 1); });
 
         // Touch swipe robusto
         var touchStartX = 0;
         var touchStartY = 0;
         var slideFrame = document.querySelector('.slide-frame');
-
-        slideFrame.addEventListener('touchstart', function (e) {
+        
+        slideFrame.addEventListener('touchstart', function(e) {
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
         }, { passive: true });
-
-        slideFrame.addEventListener('touchend', function (e) {
+        
+        slideFrame.addEventListener('touchend', function(e) {
             var touchEndX = e.changedTouches[0].clientX;
             var touchEndY = e.changedTouches[0].clientY;
-
+            
             var dx = touchEndX - touchStartX;
             var dy = touchEndY - touchStartY;
-
+            
             if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
                 changeSlide(activeSlideIndex + (dx < 0 ? 1 : -1));
             }
@@ -3252,7 +3264,7 @@
         resetAutoSlide();
 
         // BOTÃO WHATSAPP MAGNÉTICO
-        window.addEventListener('mousemove', function (e) {
+        window.addEventListener('mousemove', function(e) {
             if (isMobile) { return; }
             var rect = whatsBtn.getBoundingClientRect();
             var cx = rect.left + rect.width / 2;
@@ -3269,7 +3281,7 @@
         });
 
         // Lazy loading para os vídeos principais
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             var mainVideo = document.querySelector('.galeria-slide video.lazy-video');
             if (mainVideo) {
                 var source = mainVideo.querySelector('source');
@@ -3284,11 +3296,11 @@
         var courseVideoLoaded = false;
         var courseSectionEl = document.getElementById('curso');
         if (courseSectionEl) {
-            var courseSectionObserver = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
+            var courseSectionObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('in-view');
-
+                        
                         // Carregar o vídeo do curso sob demanda (somente quando estiver na tela)
                         if (!courseVideoLoaded) {
                             var courseVideo = entry.target.querySelector('video.lazy-video');
@@ -3355,11 +3367,12 @@
         
         // Mapeamento de Serviços
         var SERVICES_INFO = {
-            'social': { name: 'Maquiagem Social', price: 90 },
-            'express': { name: 'Maquiagem Express', price: 70 },
-            'penteado': { name: 'Penteado Personalizado', price: 90 },
-            'babyliss': { name: 'Babyliss', price: 70 },
-            'curso': { name: 'Curso VIP de Automaquiagem', price: 300 }
+            'social': { name: 'Maquiagem Social', price: 100 },
+            'express': { name: 'Maquiagem Express', price: 80 },
+            'penteado': { name: 'Penteado Personalizado', price: 100 },
+            'babyliss': { name: 'Babyliss', price: 80 },
+            'curso': { name: 'Curso VIP de Automaquiagem', price: 350 },
+            'curso_pro': { name: 'Curso Maquiagem Profissional', price: 687 }
         };
 
         // Abrir Modal
@@ -3624,5 +3637,4 @@
         }
     </script>
 </body>
-
 </html>
