@@ -14,17 +14,20 @@ CREATE TABLE IF NOT EXISTS public.business_hours (
     UNIQUE(day_of_week)
 );
 
--- Inserir horários de funcionamento padrão (Segunda a Sábado das 08:00 às 19:00)
+-- Inserir / Atualizar horários de funcionamento: TODOS OS DIAS das 08:00 às 20:00
 INSERT INTO public.business_hours (day_of_week, start_time, end_time, slot_duration_minutes, is_active)
 VALUES 
-    (1, '08:00', '19:00', 60, true), -- Segunda
-    (2, '08:00', '19:00', 60, true), -- Terça
-    (3, '08:00', '19:00', 60, true), -- Quarta
-    (4, '08:00', '19:00', 60, true), -- Quinta
-    (5, '08:00', '19:00', 60, true), -- Sexta
-    (6, '08:00', '19:00', 60, true), -- Sábado
-    (0, '08:00', '14:00', 60, false) -- Domingo fechado por padrão
-ON CONFLICT (day_of_week) DO NOTHING;
+    (0, '08:00', '20:00', 60, true), -- Domingo
+    (1, '08:00', '20:00', 60, true), -- Segunda
+    (2, '08:00', '20:00', 60, true), -- Terça
+    (3, '08:00', '20:00', 60, true), -- Quarta
+    (4, '08:00', '20:00', 60, true), -- Quinta
+    (5, '08:00', '20:00', 60, true), -- Sexta
+    (6, '08:00', '20:00', 60, true)  -- Sábado
+ON CONFLICT (day_of_week) DO UPDATE SET 
+    start_time = EXCLUDED.start_time,
+    end_time = EXCLUDED.end_time,
+    is_active = EXCLUDED.is_active;
 
 
 -- 2. TABELA DE DIAS BLOQUEADOS (FOLGAS / FERIADOS / EXCEÇÕES)

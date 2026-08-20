@@ -4270,13 +4270,9 @@
             });
         }
 
-        // Gerador de Slots Padrão (08:00 às 19:00 de Seg a Sáb)
+        // Gerador de Slots Padrão (08:00 às 20:00 - Todos os dias)
         function generateDefaultSlots(dateStr) {
-            var d = new Date(dateStr + 'T00:00:00');
-            var day = d.getDay();
-            if (day === 0) return []; // Domingo fechado
-
-            var defaultTimes = ['08:00', '09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+            var defaultTimes = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
             return defaultTimes.map(function(t) {
                 return { slot_time: t + ':00', slot_status: 'available' };
             });
